@@ -1,5 +1,0 @@
-# TON Dev Documentation
-
-TBD
-
-## 

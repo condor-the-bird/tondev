@@ -1,3 +1,9 @@
 site_name: TON DEV Knowledge-base
 
+nav:
+    - Compilers: 
+        - 'About': ../Compilers/About.md
+    - SDK: ..\SDK\Overview.md
+    - FAQ: ..\FAQ
 
+    
