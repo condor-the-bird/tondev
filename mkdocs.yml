@@ -15,11 +15,28 @@ nav:
 
     - SDK:
         - 'Overview': 'SDK/Overview.md'
+        - 'Installation': 'SDK/Installation.md'
+        - Client Library Modules:     
+            - 'Modules Overview': 'SDK/Client Libraries/Library Modules/Overview.md'
+            - 'Contracts': 'SDK/Client Libraries/Library Modules/Contracts.md'
+            - 'Queries': 'SDK/Client Libraries/Library Modules/Queries.md'
+            - 'Crypto': 'SDK/Client Libraries/Library Modules/Crypto.md'
+        - Using Client Libraries:
+            - 'Rust': 'SDK/Client Libraries/Using Libraries/Rust.md'
+            - 'JavaScript': 'SDK/Client Libraries/Using Libraries/Node.js.md'
+        - Local Node:
+            - 'Local Node': 'SDK/Local node/Local Node.md'
+            - 'Node SE Giver': 'SDK/Local node/Node SE Giver.md'
+        - Misc:
+            - 'Getting Logs': 'SDK/Auxiliaries/Getting Logs.md'
+            - 'TON SDK CLI': 'SDK/Auxiliaries/TON SDK CLI.md'
+            - 'Troubleshooting': 'SDK/Auxiliaries/Troubleshooting.md'
+            - 'Installing Ubuntu VM': 'SDK/Auxiliaries/Installing Ubuntu VM.md'
     - FAQ: 
         - 'Smart Contracts': 'FAQ/Smart Contracts.md'
     - TON Blockchain:
         - 'Gas Price Basics': 'TON Blockchain/Gas Calculation Basics.md'
     - Glossary: 'Glossary.md'
- 
+    - Release notes
 
     
