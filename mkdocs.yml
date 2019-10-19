@@ -1,14 +1,4 @@
 site_name: TON DEV Knowledge-base
-
-nav:
-    - Compilers:
-        - 'About': 'Compilers/About.md'
-    - SDK:
-        - 'Overview': 'SDK/Overview.md'
-    - FAQ: 
-        - 'Smart Contracts': 'FAQ/Smart Contracts.md'
-    - TON Blockchain:
-        - 'Gas Price Basics': 'TON Blockchain/Gas Price Basics.md'
-    - Glossary: Glossary.md 
+ 
 
     
