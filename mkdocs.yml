@@ -1,4 +1,25 @@
 site_name: TON DEV Knowledge-base
+
+nav: 
+    - Compilers:
+        - 'About': 'Compilers/About.md'
+        - 'Linker CLI': 'Compilers/Linker CLI.md'
+        - 'ABI Specification': 'Compilers/ABI Specification.md'
+        - Solidity Compiler:
+            - 'Reference Guide': 'Compilers/Solidity Compiler/Reference Guide.md'
+            - 'Feature Support': 'Compilers/Solidity Compiler/Solidity Support Status.md'
+            - 'Usage': 'Compilers/Solidity Compiler/Usage.md'
+        - LLVM Compiler:
+            - 'C Support Status': 'Compilers/LLVM Compiler/C Support Status.md' 
+            - 'Debugging options': 'Compilers/LLVM Compiler/Debugging options.md' 
+
+    - SDK:
+        - 'Overview': 'SDK/Overview.md'
+    - FAQ: 
+        - 'Smart Contracts': 'FAQ/Smart Contracts.md'
+    - TON Blockchain:
+        - 'Gas Price Basics': 'TON Blockchain/Gas Calculation Basics.md'
+    - Glossary: 'Glossary.md'
  
 
     
