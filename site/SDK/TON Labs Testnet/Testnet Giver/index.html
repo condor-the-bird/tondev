@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Testnet Giver - TON DEV Knowledge-base</title>
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../../..">TON DEV Knowledge-base</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../../../Glossary/">The Moonspeak</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Compilers <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../Compilers/About/">Intro</a>
+</li>
+                                    
+<li >
+    <a href="../../../Compilers/Linker CLI/">Linker CLI</a>
+</li>
+                                    
+<li >
+    <a href="../../../Compilers/Specification of ABI/">Specification of ABI</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">LLVM Compiler</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Compilers/LLVM Compiler/C Support Status/">Language Features</a>
+</li>
+            
+<li >
+    <a href="../../../Compilers/LLVM Compiler/C to TVM Library/">C to TVM Library</a>
+</li>
+            
+<li >
+    <a href="../../../Compilers/LLVM Compiler/Compiler Highlights/">Compiler Highlights</a>
+</li>
+            
+<li >
+    <a href="../../../Compilers/LLVM Compiler/Debugging Options/">Debugging Options</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Solidity Compiler</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Compilers/Solidity-Compiler/Reference Guide/">Reference Guide</a>
+</li>
+            
+<li >
+    <a href="../../../Compilers/Solidity-Compiler/Solidity Support Status/">Solidity Support Status</a>
+</li>
+            
+<li >
+    <a href="../../../Compilers/Solidity-Compiler/Usage/">Usage</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">FAQ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../FAQ/SDK and Integration/">SDK and Integration</a>
+</li>
+                                    
+<li >
+    <a href="../../../FAQ/Smart Contracts/">Smart Contracts</a>
+</li>
+                                    
+<li >
+    <a href="../../../FAQ/Solidity Compiler/">Solidity Compiler</a>
+</li>
+                                    
+<li >
+    <a href="../../../FAQ/TON and TVM/">TON and TVM</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">SDK <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../Installation/">Installation</a>
+</li>
+                                    
+<li >
+    <a href="../../Overview/">Overview</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Auxiliaries</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Auxiliaries/Getting Logs/">Getting Logs</a>
+</li>
+            
+<li >
+    <a href="../../Auxiliaries/Installing Ubuntu VM/">Installing Ubuntu VM</a>
+</li>
+            
+<li >
+    <a href="../../Auxiliaries/TON SDK CLI/">TON SDK CLI</a>
+</li>
+            
+<li >
+    <a href="../../Auxiliaries/Troubleshooting/">Troubleshooting</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Client Libraries</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#">Library Modules</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Client Libraries/Library Modules/Contracts/">Contracts</a>
+</li>
+            
+<li >
+    <a href="../../Client Libraries/Library Modules/Crypto/">Crypto</a>
+</li>
+            
+<li >
+    <a href="../../Client Libraries/Library Modules/Overview/">Overview</a>
+</li>
+            
+<li >
+    <a href="../../Client Libraries/Library Modules/Queries/">Queries</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Using Libraries</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Client Libraries/Using Libraries/Node.js/">Node.js</a>
+</li>
+            
+<li >
+    <a href="../../Client Libraries/Using Libraries/Rust/">Rust</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Local node</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Local node/Local Node/">Local Node</a>
+</li>
+            
+<li >
+    <a href="../../Local node/Node SE Giver/">Node SE Giver</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">TON Labs Testnet</a>
+    <ul class="dropdown-menu">
+            
+<li class="active">
+    <a href="./">Testnet Giver</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">TON Blockchain <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../TON Blockchain/Gal Calculation Basics/">Gas Calculation Basics</a>
+</li>
+                                    
+<li >
+    <a href="../../../TON Blockchain/Lite Client Guide/">Lite client</a>
+</li>
+                                    
+<li >
+    <a href="../../../TON Blockchain/Replay Attack Protection/">Replay Attack Protection</a>
+</li>
+                                    
+<li >
+    <a href="../../../TON Blockchain/Storage Fee Calculation/">Storage Fee Calculation</a>
+</li>
+                                    
+<li >
+    <a href="../../../TON Blockchain/TON Blockchain/">TON Blockchain</a>
+</li>
+                                    
+<li >
+    <a href="../../../TON Blockchain/TON Virtual Machine/">Introduction</a>
+</li>
+                                    
+<li >
+    <a href="../../../TON Blockchain/TON Whitepaper/">TON Whitepaper</a>
+</li>
+                                    
+<li >
+    <a href="../../../TON Blockchain/TVM Error Codes/">TVM Error Codes</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../../Local node/Node SE Giver/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../../../TON Blockchain/Gal Calculation Basics/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#preparation">Preparation</a></li>
+            <li><a href="#prerequisites">Prerequisites</a></li>
+        <li class="main "><a href="#basic-installation">Basic Installation</a></li>
+            <li><a href="#run-the-local-node">Run the Local Node</a></li>
+        <li class="main "><a href="#manual-installation">Manual Installation</a></li>
+        <li class="main "><a href="#install-client-libraries">Install Client Libraries</a></li>
+            <li><a href="#rust">Rust</a></li>
+            <li><a href="#nodejs">Node.js</a></li>
+            <li><a href="#web">Web</a></li>
+            <li><a href="#react-native">React Native</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h2 id="preparation">Preparation</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Install the latest version of <a href="https://docs.docker.com/install/">Docker</a>. See installation tips in the screenshots below:</li>
+</ul>
+<p><img alt="img" src="https://tonlabs.zeroheight.com/uploads/LXwZDEvN59LmO5AEg9PXjg.png" /></p>
+<p><img alt="img" src="https://tonlabs.zeroheight.com/uploads/HlTD8VkiUFQIvrd7ucCeHw.png" /></p>
+<ul>
+<li>For Linux users, make sure that you are able to run docker as non-root user (see <a href="https://docs.docker.com/install/linux/linux-postinstall/">https://docs.docker.com/install/linux/linux-postinstall/</a>);</li>
+</ul>
+<blockquote>
+<p><strong>Tip</strong>: check this page for more Docker installation options <a href="https://phoenixnap.com/kb/how-to-install-docker-on-ubuntu-18-04">https://phoenixnap.com/kb/how-to-install-docker-on-ubuntu-18-04</a>.</p>
+</blockquote>
+<ul>
+<li>Install <a href="https://www.digitalocean.com/community/tutorial_collections/38">Node.js 10.x</a> or newer.</li>
+</ul>
+<blockquote>
+<p>Make sure that Docker daemon is running on your computer. To check its status, call <code>docker ps</code>. </p>
+<p>Note that it is recommended to have at least 2Gb of RAM to use Node SE efficiently.</p>
+</blockquote>
+<h2 id="basic-installation">Basic Installation</h2>
+<p>This is the easiest version. You can only call three commands to install the solution.</p>
+<p>First, install TON Labs CLI by running:</p>
+<pre><code class="shell">npm install -g ton-dev-cli
+</code></pre>
+
+<blockquote>
+<p><strong>Important</strong>: If you get errors related to permissions when trying to install packages globally, you can try to fix them using the following options: </p>
+</blockquote>
+<p><a href="https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally">https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally</a>. </p>
+<blockquote>
+<p>Or call:</p>
+</blockquote>
+<pre><code class="shell"> sudo chown -R $(whoami) $(npm root -g)
+</code></pre>
+
+<blockquote>
+<p>If you fail, run the command under <code>sudo</code>.</p>
+</blockquote>
+<p>Then setup your machine. The step is optional, because <code>tondev start</code> and <code>tondev sol</code> perform the step on demand (see below).</p>
+<pre><code class="shell">tondev setup
+</code></pre>
+
+<h3 id="run-the-local-node">Run the Local Node</h3>
+<p>Call the following command to run the local node instance (Node SE):</p>
+<pre><code class="shell">tondev start
+</code></pre>
+
+<h2 id="manual-installation">Manual Installation</h2>
+<p>If you have troubles with <code>tondev</code> CLI utility you can install all required components yourself with the following commands:</p>
+<blockquote>
+<p>Note that Windows and Linux use different slashes (<strong>/</strong> vs. *<em>*</em>) for system paths. Make sure to change them as needed in the paths to avoid errors. </p>
+</blockquote>
+<pre><code class="shell">docker pull tonlabs/local-node
+docker pull tonlabs/compilers
+
+docker create -e USER_AGREEMENT=yes --name tonlabs-local-node -i -p80:80 tonlabs/local-node
+mkdir &lt;user home directory&gt;/.tonlabs/compilers/projects
+docker create -e USER_AGREEMENT=yes --name tonlabs-compilers -it --mount type=bind,dst=/projects,src=&lt;user home directory&gt;/.tonlabs/compilers/projects tonlabs/compilers
+
+docker start tonlabs-local-node
+docker start tonlabs-compilers
+
+</code></pre>
+
+<p>Home directory may have one of the following formats:</p>
+<ul>
+<li>Windows:<code>C:\Users\User1</code></li>
+<li>MacOS:<code>'/Users/johnDough'</code></li>
+<li>Linux: <code>/home/johnDough</code></li>
+</ul>
+<p>​      </p>
+<iframe class="no-border max-full-width full-height flex-grow" src="https://www.youtube.com/embed/S-WxdIL3vIA?autohide=1&amp;showinfo=0&amp;rel=0&amp;fs=0" style="max-width: 100%; height: 346px; -webkit-box-flex: 1; flex-grow: 1; border: none;"></iframe>
+
+<h2 id="install-client-libraries">Install Client Libraries</h2>
+<blockquote>
+<p><strong>Tip</strong>: go to the Getting Started section, to create your own environment and a test project from scratch according to detailed guidelines.</p>
+</blockquote>
+<h3 id="rust">Rust</h3>
+<ol>
+<li>Add a dependency into your cargo manifest:</li>
+</ol>
+<pre><code class="shell">[dependencies]
+ton-client-rs = &quot;0.11.1&quot;
+</code></pre>
+
+<ol>
+<li>Call the following command:</li>
+</ol>
+<pre><code class="shell">cargo update
+</code></pre>
+
+<h3 id="nodejs">Node.js</h3>
+<p>Call the following command to install Node.js client library (the recommended version comes first):</p>
+<pre><code class="shell">&quot;dependencies&quot;: { &quot;ton-client-node-js&quot;: &quot;^0.12.1&quot;}
+</code></pre>
+
+<p>Then execute (in the project folder):</p>
+<pre><code class="shell">~/ton-dev/hello$ npm install   
+</code></pre>
+
+<p>Or instead of steps 1 and 2 call:</p>
+<pre><code class="shell">npm install ton-client-node-js
+</code></pre>
+
+<h3 id="web">Web</h3>
+<p>Call the following command to install client library for web browsers:</p>
+<pre><code class="shell">npm install ton-client-web-js
+</code></pre>
+
+<h3 id="react-native">React Native</h3>
+<p>Call the following command to install client library for React Native:</p>
+<pre><code class="shell">npm install ton-client-react-native-js 
+</code></pre>
+
+<iframe class="no-border max-full-width full-height flex-grow" src="https://www.youtube.com/embed/FMLTyQ2bYvE?autohide=1&amp;showinfo=0&amp;rel=0&amp;fs=0" style="max-width: 100%; height: 346px; -webkit-box-flex: 1; flex-grow: 1; border: none;"></iframe>
+
+<blockquote>
+<p>Visit <a href="https://ton.dev/">TON Dev</a> for additional product, company &amp; community info.</p>
+</blockquote></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

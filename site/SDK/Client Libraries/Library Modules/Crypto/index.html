@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Crypto - TON DEV Knowledge-base</title>
+        <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../../../..">TON DEV Knowledge-base</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../../../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../../../../Glossary/">The Moonspeak</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Compilers <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../../Compilers/About/">Intro</a>
+</li>
+                                    
+<li >
+    <a href="../../../../Compilers/Linker CLI/">Linker CLI</a>
+</li>
+                                    
+<li >
+    <a href="../../../../Compilers/Specification of ABI/">Specification of ABI</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">LLVM Compiler</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../../Compilers/LLVM Compiler/C Support Status/">Language Features</a>
+</li>
+            
+<li >
+    <a href="../../../../Compilers/LLVM Compiler/C to TVM Library/">C to TVM Library</a>
+</li>
+            
+<li >
+    <a href="../../../../Compilers/LLVM Compiler/Compiler Highlights/">Compiler Highlights</a>
+</li>
+            
+<li >
+    <a href="../../../../Compilers/LLVM Compiler/Debugging Options/">Debugging Options</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Solidity Compiler</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../../Compilers/Solidity-Compiler/Reference Guide/">Reference Guide</a>
+</li>
+            
+<li >
+    <a href="../../../../Compilers/Solidity-Compiler/Solidity Support Status/">Solidity Support Status</a>
+</li>
+            
+<li >
+    <a href="../../../../Compilers/Solidity-Compiler/Usage/">Usage</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">FAQ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../../FAQ/SDK and Integration/">SDK and Integration</a>
+</li>
+                                    
+<li >
+    <a href="../../../../FAQ/Smart Contracts/">Smart Contracts</a>
+</li>
+                                    
+<li >
+    <a href="../../../../FAQ/Solidity Compiler/">Solidity Compiler</a>
+</li>
+                                    
+<li >
+    <a href="../../../../FAQ/TON and TVM/">TON and TVM</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">SDK <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../Installation/">Installation</a>
+</li>
+                                    
+<li >
+    <a href="../../../Overview/">Overview</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Auxiliaries</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Auxiliaries/Getting Logs/">Getting Logs</a>
+</li>
+            
+<li >
+    <a href="../../../Auxiliaries/Installing Ubuntu VM/">Installing Ubuntu VM</a>
+</li>
+            
+<li >
+    <a href="../../../Auxiliaries/TON SDK CLI/">TON SDK CLI</a>
+</li>
+            
+<li >
+    <a href="../../../Auxiliaries/Troubleshooting/">Troubleshooting</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Client Libraries</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#">Library Modules</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../Contracts/">Contracts</a>
+</li>
+            
+<li class="active">
+    <a href="./">Crypto</a>
+</li>
+            
+<li >
+    <a href="../Overview/">Overview</a>
+</li>
+            
+<li >
+    <a href="../Queries/">Queries</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Using Libraries</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Using Libraries/Node.js/">Node.js</a>
+</li>
+            
+<li >
+    <a href="../../Using Libraries/Rust/">Rust</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Local node</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Local node/Local Node/">Local Node</a>
+</li>
+            
+<li >
+    <a href="../../../Local node/Node SE Giver/">Node SE Giver</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">TON Labs Testnet</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../TON Labs Testnet/Testnet Giver/">Testnet Giver</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">TON Blockchain <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../../TON Blockchain/Gal Calculation Basics/">Gas Calculation Basics</a>
+</li>
+                                    
+<li >
+    <a href="../../../../TON Blockchain/Lite Client Guide/">Lite client</a>
+</li>
+                                    
+<li >
+    <a href="../../../../TON Blockchain/Replay Attack Protection/">Replay Attack Protection</a>
+</li>
+                                    
+<li >
+    <a href="../../../../TON Blockchain/Storage Fee Calculation/">Storage Fee Calculation</a>
+</li>
+                                    
+<li >
+    <a href="../../../../TON Blockchain/TON Blockchain/">TON Blockchain</a>
+</li>
+                                    
+<li >
+    <a href="../../../../TON Blockchain/TON Virtual Machine/">Introduction</a>
+</li>
+                                    
+<li >
+    <a href="../../../../TON Blockchain/TON Whitepaper/">TON Whitepaper</a>
+</li>
+                                    
+<li >
+    <a href="../../../../TON Blockchain/TVM Error Codes/">TVM Error Codes</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../Contracts/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../Overview/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#key-store">Key Store</a></li>
+        <li class="main "><a href="#reference-links">Reference Links</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p>TON Client Library is shipped with a crypto module that contains the following set of crypto functions for TON blockchain.</p>
+<ul>
+<li>math and random: generate_random_bytes, modular_power, factorize;</li>
+<li>sha256, sha512;</li>
+<li>generate_random_ed25519_keys;</li>
+<li>scrypt;</li>
+<li>menmonic: mnemonic_get_words, mnemonic_generate_random, mnemonic_from_entropy, mnemonic_is_valid, mnemonic_seed_from_phrase_and_salt, mnemonic_entropy_from_phrase;</li>
+<li>HD Keys: hdkey_xprv_from_mnemonic, hdkey_secret_from_xprv, hdkey_public_from_xprv, hdkey_derive_from_xprv, hdkey_derive_from_xprv_path;</li>
+<li>NaCl: nacl_sign_keys, nacl_sign_keys_from_secret, nacl_box_keys, nacl_box_keys_from_secret_key, nacl_secret_box, nacl_secret_box_open, nacl_box, nacl_box_open, nacl_sign, nacl_sign_open, nacl_sign_detached;</li>
+<li>Key store: keystore_add, keystore_remove, clear.</li>
+</ul>
+<h2 id="key-store">Key Store</h2>
+<p>The crypto module holds a set of key pairs accessible through a handle. A key pair can be added to a key store or removed from it. Once added to a keystore, a key pair gets a handle assigned to it. This handle can be used in relevant crypto functions instead of the key pair itself.</p>
+<h2 id="reference-links">Reference Links</h2>
+<p>Follow the link to our github repository to get the list of our crypto-functions: <a href="https://github.com/tonlabs/ton-client-js/blob/75270514d6e1051fe7159b7bcc79f1110ebe6d1b/types.js#L55">https://github.com/tonlabs/ton-client-js/blob/75270514d6e1051fe7159b7bcc79f1110ebe6d1b/types.js#L55</a></p>
+<p>These functions are standard and familiar to the professional audience. For a brief guide, follow the link: <a href="https://github.com/dchest/tweetnacl-js/blob/master/README.md#documentation">https://github.com/dchest/tweetnacl-js/blob/master/README.md#documentation</a> (search for functions starting with <code>nacl</code>).</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Gas Calculation Basics - TON DEV Knowledge-base</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">TON DEV Knowledge-base</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../../Glossary/">The Moonspeak</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Compilers <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../Compilers/About/">Intro</a>
+</li>
+                                    
+<li >
+    <a href="../../Compilers/Linker CLI/">Linker CLI</a>
+</li>
+                                    
+<li >
+    <a href="../../Compilers/Specification of ABI/">Specification of ABI</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">LLVM Compiler</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Compilers/LLVM Compiler/C Support Status/">Language Features</a>
+</li>
+            
+<li >
+    <a href="../../Compilers/LLVM Compiler/C to TVM Library/">C to TVM Library</a>
+</li>
+            
+<li >
+    <a href="../../Compilers/LLVM Compiler/Compiler Highlights/">Compiler Highlights</a>
+</li>
+            
+<li >
+    <a href="../../Compilers/LLVM Compiler/Debugging Options/">Debugging Options</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Solidity Compiler</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Compilers/Solidity-Compiler/Reference Guide/">Reference Guide</a>
+</li>
+            
+<li >
+    <a href="../../Compilers/Solidity-Compiler/Solidity Support Status/">Solidity Support Status</a>
+</li>
+            
+<li >
+    <a href="../../Compilers/Solidity-Compiler/Usage/">Usage</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">FAQ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../FAQ/SDK and Integration/">SDK and Integration</a>
+</li>
+                                    
+<li >
+    <a href="../../FAQ/Smart Contracts/">Smart Contracts</a>
+</li>
+                                    
+<li >
+    <a href="../../FAQ/Solidity Compiler/">Solidity Compiler</a>
+</li>
+                                    
+<li >
+    <a href="../../FAQ/TON and TVM/">TON and TVM</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">SDK <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../SDK/Installation/">Installation</a>
+</li>
+                                    
+<li >
+    <a href="../../SDK/Overview/">Overview</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Auxiliaries</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../SDK/Auxiliaries/Getting Logs/">Getting Logs</a>
+</li>
+            
+<li >
+    <a href="../../SDK/Auxiliaries/Installing Ubuntu VM/">Installing Ubuntu VM</a>
+</li>
+            
+<li >
+    <a href="../../SDK/Auxiliaries/TON SDK CLI/">TON SDK CLI</a>
+</li>
+            
+<li >
+    <a href="../../SDK/Auxiliaries/Troubleshooting/">Troubleshooting</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Client Libraries</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#">Library Modules</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../SDK/Client Libraries/Library Modules/Contracts/">Contracts</a>
+</li>
+            
+<li >
+    <a href="../../SDK/Client Libraries/Library Modules/Crypto/">Crypto</a>
+</li>
+            
+<li >
+    <a href="../../SDK/Client Libraries/Library Modules/Overview/">Overview</a>
+</li>
+            
+<li >
+    <a href="../../SDK/Client Libraries/Library Modules/Queries/">Queries</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Using Libraries</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../SDK/Client Libraries/Using Libraries/Node.js/">Node.js</a>
+</li>
+            
+<li >
+    <a href="../../SDK/Client Libraries/Using Libraries/Rust/">Rust</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Local node</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../SDK/Local node/Local Node/">Local Node</a>
+</li>
+            
+<li >
+    <a href="../../SDK/Local node/Node SE Giver/">Node SE Giver</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">TON Labs Testnet</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../SDK/TON Labs Testnet/Testnet Giver/">Testnet Giver</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">TON Blockchain <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li class="active">
+    <a href="./">Gas Calculation Basics</a>
+</li>
+                                    
+<li >
+    <a href="../Lite Client Guide/">Lite client</a>
+</li>
+                                    
+<li >
+    <a href="../Replay Attack Protection/">Replay Attack Protection</a>
+</li>
+                                    
+<li >
+    <a href="../Storage Fee Calculation/">Storage Fee Calculation</a>
+</li>
+                                    
+<li >
+    <a href="../TON Blockchain/">TON Blockchain</a>
+</li>
+                                    
+<li >
+    <a href="../TON Virtual Machine/">Introduction</a>
+</li>
+                                    
+<li >
+    <a href="../TON Whitepaper/">TON Whitepaper</a>
+</li>
+                                    
+<li >
+    <a href="../TVM Error Codes/">TVM Error Codes</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../../SDK/TON Labs Testnet/Testnet Giver/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../Lite Client Guide/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#gas-calculation-basics">Gas Calculation Basics</a></li>
+            <li><a href="#ton-gas-implementation">TON Gas Implementation</a></li>
+            <li><a href="#ton-labs-implementation">TON Labs Implementation</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="gas-calculation-basics">Gas Calculation Basics</h1>
+<h2 id="ton-gas-implementation">TON Gas Implementation</h2>
+<h3 id="specification-overview"><strong>Specification Overview</strong></h3>
+<p>The entire state of TVM consists of the five components:</p>
+<ul>
+<li>stack</li>
+<li>control registers</li>
+<li>current continuation</li>
+<li>current codepage</li>
+<li>gas limits</li>
+</ul>
+<p>Collectively these are called SCCCG.</p>
+<p>The <strong>Gas</strong> component limits gas usage and сontains four signed 64-bit integers:</p>
+<ul>
+<li>the remaining gas: <strong>gr</strong></li>
+<li>the current gas limit: <strong>gl</strong></li>
+<li>the maximal gas limit: <strong>gm</strong></li>
+<li>the gas credit: <strong>gc</strong>.</li>
+</ul>
+<p>The following is always true:</p>
+<p><strong>0 ≤ gl ≤ gm, gc ≥ 0, and gr ≤ gl + gc</strong></p>
+<p><strong>gc</strong> is initialized by zero for internal messages, <strong>gr</strong> is initialized by <strong>gl + gc</strong> and gradually decreases, as the TVM runs. When <strong>gr</strong> becomes negative or if contract terminates with <strong>gc &gt; 0</strong>, an <strong>out of gas</strong> exception is triggered.</p>
+<p>According to the original TON, for most primitives gas is calculated according to the following formula:</p>
+<p><strong>Pb := 10 + b</strong></p>
+<p>where <strong>b</strong> is the instruction length in bits. The same is true for TON Labs implementation.</p>
+<p>Apart from integer constants, the following expressions may appear:</p>
+<ul>
+<li>The total price of loading cells. Currently it is 100 gas units per cell.</li>
+<li>The total price of creating new Cells from Builders. Currently it is 500 gas units.</li>
+<li>Exception throwing. 50 gas units per exception.</li>
+<li>Tuple gas price. 1 gas unit for every tuple element.</li>
+</ul>
+<p>The usage of these additional integers remains unclear now. Research is underway.</p>
+<h3 id="global-gas-limits">Global gas limits</h3>
+<p>Global gas limits are values stored in the masterchain configuration contract. Global values are standard and do not change at contract deployment. Only validator consensus can modify them.</p>
+<p>The following values are now used for shardchains:</p>
+<ul>
+<li>Global_gas_price = 1000</li>
+<li>Global_gas_limit = 1000000</li>
+<li>Global_gas_credit = 10000</li>
+<li>Global_block_gas_limit = 10000000</li>
+</ul>
+<h3 id="gas-related-tvm-primitives">Gas-related TVM primitives</h3>
+<p>These is the list of official TVM primitives used for gas-related operations:</p>
+<ul>
+<li>F800 — ACCEPT, sets current gas limit gl to its maximal allowed value gm, and resets the gas credit gc to zero, decreasing the value of gr by gc in the process. In other words, the current smart contract agrees to buy some gas to finish the current transaction. This action is required to process external messages, which bring no value (hence no gas) with themselves.</li>
+<li>F801 — SETGASLIMIT (g – ), sets current gas limit gl to the minimum of g and gm, and resets the gas credit gc to zero. If the gas consumed so far (including the present instruction) exceeds the resulting value of gl , an (unhandled) out of gas exception is thrown before setting new gas limits. Notice that SETGASLIMIT with an argument g ≥ 2 63 − 1 is equivalent to ACCEPT.</li>
+<li>F802 — BUYGAS (x – ), computes the amount of gas that can be bought for x nanograms, and sets gl accordingly in the same way as SETGASLIMIT.</li>
+<li>F804 — GRAMTOGAS (x – g), computes the amount of gas that can be bought for x nanograms. If x is negative, returns 0. If g exceeds 2 63−1, it is replaced with this value.</li>
+<li>F805 — GASTOGRAM (g – x), computes the price of g gas in nanograms.</li>
+<li>F806–F80F — Reserved for gas-related primitives. These are yet to be released.</li>
+</ul>
+<p>All of the above are operational in the TON TVM implementation.</p>
+<h2 id="ton-labs-implementation">TON Labs Implementation</h2>
+<p>The general gas formula is the same as specified by TON specifications. Overall, TON Labs nodes operate in compliance with the specification.</p>
+<p>For every executed primitive, the amount of gas is added to the virtual machine according to the specification formula. Gas value for every primitive is based on <strong>gr</strong>.</p>
+<h3 id="gas-initialization-types">Gas initialization types</h3>
+<p><strong>1. Calling contract from another contract</strong></p>
+<p>An internal message with a balance value is received. In this case, the following formulas are applied to determine limits:</p>
+<ul>
+<li>gm = min(account balance / gas price, global_gas_limit)</li>
+<li>gl = min(message value / gas price, global_gas_limit)</li>
+<li>gc = 0</li>
+<li>gr = gc + gl</li>
+</ul>
+<p>By default gas costs are allocated to the caller contract that triggers the transaction with a message. Accepting is also available for internal contracts. If ACCEPT is not called, gas is taken from the caller contract according to the message value. In other words, the message value defines the current limit. The message value determines the starting TVM gas limit.</p>
+<p>So, to put it plain, if ACCEPT is not called, the message pays, if ACCEPT is used, additional gas can be bought by the target contract. This approach enables flexible contract design where either total gas is paid by the caller contract (but in this case it has to have enough gas at any moment of time) or the target contract also incurs costs.</p>
+<p><strong>2. Offchain contract call</strong></p>
+<p>External messages do not carry balance values. In this case, the values are calculated according to the following formulas:</p>
+<ul>
+<li>gm = min(account balance / gas price, global_gas_limit)</li>
+<li>gl = 0</li>
+<li>gc = min(gm, global_gas_credit)</li>
+<li>gr = gc + gl</li>
+</ul>
+<p>As external messages have no gas value, gas is credited to execute it. Target contracts have to cover costs by calling Accept to buy gas.</p>
+<p>If a contract returns an exception before the credit is given, no gas fee applies</p>
+<p>As the public code for node has just been released this documentation is likely to be updated.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

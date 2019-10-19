@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Language Features - TON DEV Knowledge-base</title>
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../../..">TON DEV Knowledge-base</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../../../Glossary/">The Moonspeak</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Compilers <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../About/">Intro</a>
+</li>
+                                    
+<li >
+    <a href="../../Linker CLI/">Linker CLI</a>
+</li>
+                                    
+<li >
+    <a href="../../Specification of ABI/">Specification of ABI</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">LLVM Compiler</a>
+    <ul class="dropdown-menu">
+            
+<li class="active">
+    <a href="./">Language Features</a>
+</li>
+            
+<li >
+    <a href="../C to TVM Library/">C to TVM Library</a>
+</li>
+            
+<li >
+    <a href="../Compiler Highlights/">Compiler Highlights</a>
+</li>
+            
+<li >
+    <a href="../Debugging Options/">Debugging Options</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Solidity Compiler</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Solidity-Compiler/Reference Guide/">Reference Guide</a>
+</li>
+            
+<li >
+    <a href="../../Solidity-Compiler/Solidity Support Status/">Solidity Support Status</a>
+</li>
+            
+<li >
+    <a href="../../Solidity-Compiler/Usage/">Usage</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">FAQ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../FAQ/SDK and Integration/">SDK and Integration</a>
+</li>
+                                    
+<li >
+    <a href="../../../FAQ/Smart Contracts/">Smart Contracts</a>
+</li>
+                                    
+<li >
+    <a href="../../../FAQ/Solidity Compiler/">Solidity Compiler</a>
+</li>
+                                    
+<li >
+    <a href="../../../FAQ/TON and TVM/">TON and TVM</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">SDK <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../SDK/Installation/">Installation</a>
+</li>
+                                    
+<li >
+    <a href="../../../SDK/Overview/">Overview</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Auxiliaries</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../SDK/Auxiliaries/Getting Logs/">Getting Logs</a>
+</li>
+            
+<li >
+    <a href="../../../SDK/Auxiliaries/Installing Ubuntu VM/">Installing Ubuntu VM</a>
+</li>
+            
+<li >
+    <a href="../../../SDK/Auxiliaries/TON SDK CLI/">TON SDK CLI</a>
+</li>
+            
+<li >
+    <a href="../../../SDK/Auxiliaries/Troubleshooting/">Troubleshooting</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Client Libraries</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#">Library Modules</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../SDK/Client Libraries/Library Modules/Contracts/">Contracts</a>
+</li>
+            
+<li >
+    <a href="../../../SDK/Client Libraries/Library Modules/Crypto/">Crypto</a>
+</li>
+            
+<li >
+    <a href="../../../SDK/Client Libraries/Library Modules/Overview/">Overview</a>
+</li>
+            
+<li >
+    <a href="../../../SDK/Client Libraries/Library Modules/Queries/">Queries</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Using Libraries</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../SDK/Client Libraries/Using Libraries/Node.js/">Node.js</a>
+</li>
+            
+<li >
+    <a href="../../../SDK/Client Libraries/Using Libraries/Rust/">Rust</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Local node</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../SDK/Local node/Local Node/">Local Node</a>
+</li>
+            
+<li >
+    <a href="../../../SDK/Local node/Node SE Giver/">Node SE Giver</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">TON Labs Testnet</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../SDK/TON Labs Testnet/Testnet Giver/">Testnet Giver</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">TON Blockchain <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../TON Blockchain/Gal Calculation Basics/">Gas Calculation Basics</a>
+</li>
+                                    
+<li >
+    <a href="../../../TON Blockchain/Lite Client Guide/">Lite client</a>
+</li>
+                                    
+<li >
+    <a href="../../../TON Blockchain/Replay Attack Protection/">Replay Attack Protection</a>
+</li>
+                                    
+<li >
+    <a href="../../../TON Blockchain/Storage Fee Calculation/">Storage Fee Calculation</a>
+</li>
+                                    
+<li >
+    <a href="../../../TON Blockchain/TON Blockchain/">TON Blockchain</a>
+</li>
+                                    
+<li >
+    <a href="../../../TON Blockchain/TON Virtual Machine/">Introduction</a>
+</li>
+                                    
+<li >
+    <a href="../../../TON Blockchain/TON Whitepaper/">TON Whitepaper</a>
+</li>
+                                    
+<li >
+    <a href="../../../TON Blockchain/TVM Error Codes/">TVM Error Codes</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../../Specification of ABI/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../C to TVM Library/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#language-features">Language Features</a></li>
+        <li class="main "><a href="#c-standard-library">C Standard Library</a></li>
+        <li class="main "><a href="#c-for-tvm">C for TVM</a></li>
+        <li class="main "><a href="#convenience">Convenience</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="language-features">Language Features</h1>
+<table>
+<thead>
+<tr>
+<th><strong>FEATURE</strong></th>
+<th><strong>USAGE</strong></th>
+<th><strong>SUPPORT STATUS</strong></th>
+<th><strong>COMMENTS &amp; WORKAROUNDS</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>6.2.1 Scopes of identifiers</strong></td>
+<td>Define scope and visibility rules</td>
+<td>Supported by LLVM</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>6.2.2 Linkages of identifiers</strong></td>
+<td>Define linkage types: external, internal, no linkage</td>
+<td>Supported but not in the default pipeline. LLVM bitcode linkage is required</td>
+<td>The linker has to support linkage of multiple translation units.The workaround is to compile each translation unit into LLVM IR: <em>clang -S -c -O3 input1.c -emit-llvm -o input1.ll</em> <em>clang -S -c -O3 input2.c -emit-llvm -o input2.ll</em> Link the IR together: <em>llvm-link input1.ll input2.ll -o input.bc</em> And compiling the result: <em>clang -O3 -S -c input.bc</em></td>
+</tr>
+<tr>
+<td><strong>6.2.3 Name spaces of identifiers</strong></td>
+<td>Define classes of identifiers with disambiguation rules</td>
+<td>Supported by LLVM</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>6.2.4 Storage durations of objects</strong></td>
+<td>Define automatic, static and other lifetimes</td>
+<td>Supported by LLVM</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>6.2.5 Types</strong></td>
+<td>Define types in C</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Integer types</strong></td>
+<td>_Bool, char, short, int, long, long long as well as their signed and unsigned counterparts</td>
+<td>Now a workaround is implemented, proper i257 is work in progress</td>
+<td>All integers are 257 bits wide</td>
+</tr>
+<tr>
+<td><strong>Floating point types</strong></td>
+<td></td>
+<td>Not supported</td>
+<td>Floating point type does not exist in the TVM. It only works with 257-bit integers.</td>
+</tr>
+<tr>
+<td><strong>Complex types</strong></td>
+<td>Complex numbers</td>
+<td>Not supported</td>
+<td>Complex types do not exist in the TVM. It only works with 257-bit integers.</td>
+</tr>
+<tr>
+<td><strong>Enumerations</strong></td>
+<td></td>
+<td>Supported by LLVM</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Void type</strong></td>
+<td></td>
+<td>Supported by LLVM</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Array type</strong></td>
+<td></td>
+<td>Supported, see notes</td>
+<td>Dynamic arrays not supported, optimizations pending. Arrays are currently implemented as general memory (via dictionaries), but tuples are considered. Also, additional testing is needed.</td>
+</tr>
+<tr>
+<td><strong>Structure type</strong></td>
+<td></td>
+<td>Supported, see notes</td>
+<td>byval mishandling is a known issue. There are two types of transfer: by value and by reference. Byval is not supported, so the <strong>workaround</strong> is to use transfer by reference.</td>
+</tr>
+<tr>
+<td><strong>Union type</strong></td>
+<td></td>
+<td>Supported</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Function type</strong></td>
+<td></td>
+<td>Supported</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Point type</strong></td>
+<td></td>
+<td>Supported</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Qualifiers</strong></td>
+<td>const, volatile, restrict</td>
+<td>Supported by LLVM</td>
+<td>Persistent data handling needs coverage</td>
+</tr>
+<tr>
+<td><strong>6.2.5.9 Representation of unsigned types</strong></td>
+<td>Specifies that overflow is not possible for unsigned integers</td>
+<td>Not supported</td>
+<td>Unsigned integers currently work the same way signed ones do. We have more testing in the pipeline and do not recommend using coding practices and tricks that rely on overflow values.</td>
+</tr>
+<tr>
+<td><strong>6.2.6 Representations of types</strong></td>
+<td>Restrict binary representation of values</td>
+<td>Supported by LLVM</td>
+<td>We use <a href="https://en.wikipedia.org/wiki/Signed_number_representations">SMR</a> for signed numbers and it is in line with the specification (6.2.6.2). It also allow representing signed numbers with more bits than its unsigned counterpart.</td>
+</tr>
+<tr>
+<td><strong>6.2.7 Compatible type and composite type</strong></td>
+<td>Define value conversion rules</td>
+<td>Supported by LLVM</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>6.3 Conversions</strong></td>
+<td>Define type conversion rules</td>
+<td>Supported by LLVM</td>
+<td>All the conversions are supported, but testing is still in progress</td>
+</tr>
+<tr>
+<td><strong>6.4 Lexical elements</strong></td>
+<td>Define C syntax</td>
+<td>Supported by LLVM</td>
+<td>The syntax was not changed</td>
+</tr>
+<tr>
+<td><strong>6.5 Expressions</strong></td>
+<td>Define rules to build an expression in C and the relevant semantics</td>
+<td>Generally supported, additional checking may be required</td>
+<td>bitwise operations on signed integers contain implementation particularities. No SMR issues expected unless Clang assumes a different representation</td>
+</tr>
+<tr>
+<td><strong>6.6 Constant Expressions</strong></td>
+<td>Defines expressions that are calculated in compile time, defines the <code>sizeof</code> semantics</td>
+<td>The feature itself is supported by LLVM, but we supply Clang with false integer type size information. i257 activities block the feature</td>
+<td>Full support requires correct operation of sizeof work making sure that <code>(T*)((char *)a + sizeof(*a))</code> is the same as<code>&amp;a[1]</code></td>
+</tr>
+<tr>
+<td><strong>6.7 Declarations, except 6.7.8 Initialization</strong></td>
+<td>Define how syntax and semantics of declarations (and definitions in C)</td>
+<td>Supported by LLVM</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>6.7.8 Initialization</strong></td>
+<td>Defines value initialization</td>
+<td>Pending, testing in progress</td>
+<td>Issues not supporting implicit 0 initialization for static data were tested. Now it is necessary to makes sure that all initialization cases from N1256 (C99) work correctly and that the linker supports all related sections. For example, the <strong>.comm</strong> directive is not supported now.</td>
+</tr>
+<tr>
+<td><strong>6.8 Statements and blocks</strong></td>
+<td>Define constructs shaping control-flow in C: loops, if, switch, goto, return, etc</td>
+<td>Supported</td>
+<td>More optimization needed. Switch is currently lowered with <em>LLVM lowerswitch</em> pass, native support under consideration, as well as additional control-flow optimizations</td>
+</tr>
+<tr>
+<td><strong>6.9 External definitions</strong></td>
+<td></td>
+<td>Define how external function and objects are declared in C</td>
+<td>Not supported by the Linker, workaround to be provided</td>
+</tr>
+<tr>
+<td><strong>6.10 Preprocessing directives</strong></td>
+<td></td>
+<td><code>#define</code>, <code>#include</code>, etc</td>
+<td>Supported by LLVM</td>
+</tr>
+<tr>
+<td><strong>J.2 Undefined behavior</strong></td>
+<td></td>
+<td>Limited support</td>
+<td>Tests and feedback needed</td>
+</tr>
+<tr>
+<td><strong>TVM builtins</strong></td>
+<td>For each core, non-stack manipulation instruction in TVM there has to be an intrinsic-based way to generate it in the compiler. A low-level library developer has to be familiar with these intrinsics. For example an LDU instruction accessible via the <strong>llvm.tvm.ldu</strong> intrinsic.</td>
+<td>Partially supported, more effort needed</td>
+<td>Limitation related to the current runtime implementation</td>
+</tr>
+<tr>
+<td><strong>TVM annotations</strong></td>
+<td>Denote special meaning for functions (e.g. sign check, public method, etc.) and data (e.g. persistent data)</td>
+<td>Partially supported</td>
+<td>Naming rules used instead of annotations (not optimal)</td>
+</tr>
+<tr>
+<td><strong>Persistent data semantic</strong></td>
+<td></td>
+<td>Supported</td>
+<td>More optimizations needed</td>
+</tr>
+</tbody>
+</table>
+<h1 id="c-standard-library">C Standard Library</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FEATURE</strong></td>
+<td><strong>USAGE</strong></td>
+<td><strong>SUPPORT STATUS</strong></td>
+<td><strong>COMMENTS &amp; WORKAROUNDS</strong></td>
+</tr>
+<tr>
+<td><strong>7.1.3 Reserved identifiers</strong></td>
+<td>Define the list of identifiers that have to be avoided in our libraries</td>
+<td>Reserved identifiers are used</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>7.2 Diagnostics<assert.h></strong></td>
+<td>Defines the assert macro: a standard debugging tool used by C / C++ developers</td>
+<td>Not supported</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>7.4 Character handling <ctype.h></strong></td>
+<td>Character operations</td>
+<td>Not supported, low priority</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>7.57.10 Sizes of integer types <limits.h> Errors <errno.h></strong></td>
+<td>A low level method for handling errors in  the library and in system calls</td>
+<td>Not supported</td>
+<td>Considered for support if required to achieve compatibility with other parts of the C standard library</td>
+</tr>
+<tr>
+<td><strong>7.8 Format conversion of integer types <inttypes.h></strong></td>
+<td>Used for printing, converting to/from strings and for some auxiliary functions</td>
+<td>Not supported, low priority</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>7.10 Sizes of integer types <limits.h></strong></td>
+<td>Integer type size definition</td>
+<td>Not supported, but considered for implementation</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>7.15 Variable arguments <stdarg.h></strong></td>
+<td>Variable argument processing</td>
+<td>Not supported</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>7.16 Boolean type and values <stdbool.h></strong></td>
+<td>Define <code>bool</code>, <code>true</code>, <code>false</code> and <code>_ _bool_true_false_are_defined</code></td>
+<td>Not supported, but planned to</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>7.17 Common definitions <stddef.h></strong></td>
+<td>Define <code>ptrdiff_t</code>, <code>size_t</code>, <code>wchar_t</code>, <code>NULL</code>, <code>offsetof</code></td>
+<td>Not supported</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>7.18 Integer types <stdint.h></strong></td>
+<td>Used to define <code>intN_t</code>, <code>intptr_t</code>, and other integer types, as well as macro that set their limits</td>
+<td>Not supported</td>
+<td>Considered for implementation if proves to help  serialization / deserialization</td>
+</tr>
+<tr>
+<td><strong>7.20 General utilities<stdlib.h></strong></td>
+<td>Used to define general utility items that we do not seem to need now except for the functions listed below</td>
+<td>Not supported, only partial implementation can be planned</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>7.20.3 Memory management functions</strong></td>
+<td><code>calloc</code>, <code>malloc</code>, <code>realloc</code>, <code>free</code></td>
+<td>Not supported, high priority</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>7.20.4 Communication with the environment</strong></td>
+<td><code>abort</code>, <code>exit</code>, <code>atexit</code>, <code>_Exit</code>, <code>getenv</code>, <code>system</code></td>
+<td>Not supported, low priority</td>
+<td>Standard C program termination mechanisms under consideration</td>
+</tr>
+<tr>
+<td><strong>7.20.5 Searching and sorting utilities</strong></td>
+<td></td>
+<td>Not supported, partially implemented and being tested</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>7.21 String handling<string.h></strong></td>
+<td>Stings &amp; memory operations</td>
+<td>Not implemented, only the features below have priority</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>7.21.2 Copying functions</strong></td>
+<td>memcpy, memmove, aslo its string conterparts.</td>
+<td>Implemented partially in the runtime, needs to be moved to the std lib</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>7.21.4 Comparison functions</strong></td>
+<td><code>memcmp</code></td>
+<td>Not implemented</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>7.21.6 Miscellaneous functions</strong></td>
+<td><code>memset</code></td>
+<td>Implemented as a part of the runtime, need to be moved to the std lib</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>7.23 Date and time <time.h></strong></td>
+<td></td>
+<td>Not implemented</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="c-for-tvm">C for TVM</h1>
+<p>Numbers in the Feature column indicate references to the TON TVM specification. Please, refer to the original document. </p>
+<table>
+<thead>
+<tr>
+<th><strong>FEATURE</strong></th>
+<th><strong>USAGE</strong></th>
+<th><strong>SUPPORT STATUS</strong></th>
+<th><strong>COMMENTS</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TVM types</strong></td>
+<td></td>
+<td>Partially implemented</td>
+<td>Only integers are supported</td>
+</tr>
+<tr>
+<td><strong>Operations with cells (A.7)</strong></td>
+<td>Slice, Builder, Dictionary, Message, External &amp; Internal addresses, etc.</td>
+<td>Partially implemented in the runtime</td>
+<td>Standard node operations involve data types specified in Assembly instructions. These Assembly instructions are converted into C equivalents at some point of the optimization process</td>
+</tr>
+<tr>
+<td><strong>Operations with dictionaries (A.10)</strong></td>
+<td><code>#include &lt;cell.h&gt;</code></td>
+<td>Limited implementation in the runtime</td>
+<td>A low level library that is implemented via cell intrinsics to provide developer-friendly cell handling options.</td>
+</tr>
+<tr>
+<td><strong>GAS related logic (A.11.2)</strong></td>
+<td>Functions to buy gas for Grams and vice versa, defines gas limits</td>
+<td>Not implemented</td>
+<td>Same as above for dictionaries</td>
+</tr>
+<tr>
+<td><strong>Operations with time (A.11.4)</strong></td>
+<td>Current time, time of the current block and transaction</td>
+<td>Not implemented</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Hashing and cryptography (A.11.5)</strong></td>
+<td></td>
+<td>Not implemented</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Currency</strong> <strong>manipulation (A.11.6)</strong></td>
+<td>Loads and stores Grams</td>
+<td>Partial implementation</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Message serialization</strong></td>
+<td></td>
+<td>Implemented</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Message deserialization</strong></td>
+<td></td>
+<td>Implemented</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Outbound message and output action (A.11.8)</strong></td>
+<td></td>
+<td>Partially implemented</td>
+<td>Sending messages available</td>
+</tr>
+<tr>
+<td><strong>Debug support (A.12)</strong></td>
+<td></td>
+<td>Partially implemented</td>
+<td>For more details on available debugging options, navigate to the <a href="https://docs.ton.dev/86757ecb2/p/065f99/t/0217cc"><strong>Debugging options</strong></a> topic.</td>
+</tr>
+<tr>
+<td><strong>Events emitting</strong></td>
+<td></td>
+<td>Not implemented</td>
+<td>Planned</td>
+</tr>
+</tbody>
+</table>
+<h1 id="convenience">Convenience</h1>
+<table>
+<thead>
+<tr>
+<th><strong>FEATURE</strong></th>
+<th><strong>USAGE</strong></th>
+<th><strong>SUPPORT STATUS</strong></th>
+<th><strong>NOTES &amp; SUGGESTIONS</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Toolchain support in the driver: the driver should use our std lib headers (or don't use it at all) instead of using the system ones</td>
+<td></td>
+<td>Not implemented</td>
+<td>Planned</td>
+</tr>
+<tr>
+<td>Toolchain support in the driver: default pipeline is to be available</td>
+<td><code>clang -O3 input.c</code>should produce a .boc file (or return a compilation error)</td>
+<td>Not implemented</td>
+<td>Planned</td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

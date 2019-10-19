@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Contracts - TON DEV Knowledge-base</title>
+        <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../../../..">TON DEV Knowledge-base</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../../../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../../../../Glossary/">The Moonspeak</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Compilers <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../../Compilers/About/">Intro</a>
+</li>
+                                    
+<li >
+    <a href="../../../../Compilers/Linker CLI/">Linker CLI</a>
+</li>
+                                    
+<li >
+    <a href="../../../../Compilers/Specification of ABI/">Specification of ABI</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">LLVM Compiler</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../../Compilers/LLVM Compiler/C Support Status/">Language Features</a>
+</li>
+            
+<li >
+    <a href="../../../../Compilers/LLVM Compiler/C to TVM Library/">C to TVM Library</a>
+</li>
+            
+<li >
+    <a href="../../../../Compilers/LLVM Compiler/Compiler Highlights/">Compiler Highlights</a>
+</li>
+            
+<li >
+    <a href="../../../../Compilers/LLVM Compiler/Debugging Options/">Debugging Options</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Solidity Compiler</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../../Compilers/Solidity-Compiler/Reference Guide/">Reference Guide</a>
+</li>
+            
+<li >
+    <a href="../../../../Compilers/Solidity-Compiler/Solidity Support Status/">Solidity Support Status</a>
+</li>
+            
+<li >
+    <a href="../../../../Compilers/Solidity-Compiler/Usage/">Usage</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">FAQ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../../FAQ/SDK and Integration/">SDK and Integration</a>
+</li>
+                                    
+<li >
+    <a href="../../../../FAQ/Smart Contracts/">Smart Contracts</a>
+</li>
+                                    
+<li >
+    <a href="../../../../FAQ/Solidity Compiler/">Solidity Compiler</a>
+</li>
+                                    
+<li >
+    <a href="../../../../FAQ/TON and TVM/">TON and TVM</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">SDK <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../Installation/">Installation</a>
+</li>
+                                    
+<li >
+    <a href="../../../Overview/">Overview</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Auxiliaries</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Auxiliaries/Getting Logs/">Getting Logs</a>
+</li>
+            
+<li >
+    <a href="../../../Auxiliaries/Installing Ubuntu VM/">Installing Ubuntu VM</a>
+</li>
+            
+<li >
+    <a href="../../../Auxiliaries/TON SDK CLI/">TON SDK CLI</a>
+</li>
+            
+<li >
+    <a href="../../../Auxiliaries/Troubleshooting/">Troubleshooting</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Client Libraries</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#">Library Modules</a>
+    <ul class="dropdown-menu">
+            
+<li class="active">
+    <a href="./">Contracts</a>
+</li>
+            
+<li >
+    <a href="../Crypto/">Crypto</a>
+</li>
+            
+<li >
+    <a href="../Overview/">Overview</a>
+</li>
+            
+<li >
+    <a href="../Queries/">Queries</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Using Libraries</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Using Libraries/Node.js/">Node.js</a>
+</li>
+            
+<li >
+    <a href="../../Using Libraries/Rust/">Rust</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Local node</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Local node/Local Node/">Local Node</a>
+</li>
+            
+<li >
+    <a href="../../../Local node/Node SE Giver/">Node SE Giver</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">TON Labs Testnet</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../TON Labs Testnet/Testnet Giver/">Testnet Giver</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">TON Blockchain <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../../TON Blockchain/Gal Calculation Basics/">Gas Calculation Basics</a>
+</li>
+                                    
+<li >
+    <a href="../../../../TON Blockchain/Lite Client Guide/">Lite client</a>
+</li>
+                                    
+<li >
+    <a href="../../../../TON Blockchain/Replay Attack Protection/">Replay Attack Protection</a>
+</li>
+                                    
+<li >
+    <a href="../../../../TON Blockchain/Storage Fee Calculation/">Storage Fee Calculation</a>
+</li>
+                                    
+<li >
+    <a href="../../../../TON Blockchain/TON Blockchain/">TON Blockchain</a>
+</li>
+                                    
+<li >
+    <a href="../../../../TON Blockchain/TON Virtual Machine/">Introduction</a>
+</li>
+                                    
+<li >
+    <a href="../../../../TON Blockchain/TON Whitepaper/">TON Whitepaper</a>
+</li>
+                                    
+<li >
+    <a href="../../../../TON Blockchain/TVM Error Codes/">TVM Error Codes</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../../../Auxiliaries/Troubleshooting/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../Crypto/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#about-the-abi">About the ABI</a></li>
+        <li class="main "><a href="#compiling-to-tvc">Compiling to TVC</a></li>
+        <li class="main "><a href="#deploying-contracts">Deploying contracts</a></li>
+        <li class="main "><a href="#running-contracts">Running contracts</a></li>
+            <li><a href="#running-functions">Running functions</a></li>
+            <li><a href="#running-locally">Running  locally</a></li>
+        <li class="main "><a href="#decoding-messages">Decoding messages</a></li>
+        <li class="main "><a href="#advanced-features">Advanced Features</a></li>
+            <li><a href="#signing-messages-externally">Signing messages externally</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h2 id="about-the-abi">About the ABI</h2>
+<p>Despite the fact that each TON contract is actually a single function, the TON SDK allows defining multiple functions within it. To achieve it, the original multi-functional contract is compiled into a single function one with an incoming message dispatcher.</p>
+<p>For correct encoding incoming messages to these contracts and decoding output ones, the SDK Library uses an ABI: a structural description of input/output messages related to contract functions.</p>
+<h2 id="compiling-to-tvc">Compiling to TVC</h2>
+<p>With the SDK compiler you can:</p>
+<ul>
+<li>obtain TVM-ready code from Solidity sources.</li>
+<li>obtain TVM-ready code from our LLVM-based compiler that can potentially take source code in various general purpose languages. Now we have an implementation of the C language.</li>
+</ul>
+<p>The <a href="https://docs.ton.dev/86757ecb2/p/09bb3d">Toolchain documentation</a> contains all information on TON Labs Toolchain.</p>
+<p>The Compiler Kit is shipped as a Docker container with pre-configured tools ready to work.</p>
+<h2 id="deploying-contracts">Deploying contracts</h2>
+<p>The Contracts module of the TON Labs Client Library allows you to deploy a compiled contract to the blockchain. </p>
+<p>To deploy a contract, you need TVM-ready code (<em>.tvc file), an ABI (</em>.abi.json file) and a key pair.</p>
+<blockquote>
+<p><strong>Note</strong>: a contract cannot be deployed before it has some amount of Grams on its balance. All attempts to deploy a contract with a zero balance will fail.</p>
+</blockquote>
+<p>So, before deploying a contract, run another one to transfer Grams to the contract you plan to deploy. Make sure that the transferred amount covers all deployment fees and costs.</p>
+<p>Or, in case you are using Node SE instance, use the pre-deployed Giver for it.</p>
+<p>Add this code to your index.js file:</p>
+<pre><code class="javascript">const nodeSeGiverAddress = 'a46af093b38fcae390e9af5104a93e22e82c29bcb35bf88160e4478417028884';
+const nodeSeGiverAbi = {
+    &quot;ABI version&quot;: 1,
+    &quot;functions&quot;: [
+        {
+            &quot;name&quot;: &quot;constructor&quot;,
+            &quot;inputs&quot;: [
+            ],
+            &quot;outputs&quot;: [
+            ]
+        },
+        {
+            &quot;name&quot;: &quot;sendGrams&quot;,
+            &quot;inputs&quot;: [
+                {&quot;name&quot;:&quot;dest&quot;,&quot;type&quot;:&quot;uint256&quot;},
+                {&quot;name&quot;:&quot;amount&quot;,&quot;type&quot;:&quot;uint64&quot;}
+            ],
+            &quot;outputs&quot;: [
+            ]
+        }
+    ],
+    &quot;events&quot;: [
+    ],
+    &quot;data&quot;: [
+    ]
+};
+async function get_grams_from_giver(client, account) {
+    const { contracts, queries } = client;
+    const result = await contracts.run({
+        address: giverAddress,
+        functionName: 'sendGrams',
+        abi: giverAbi,
+        input: {
+            dest: `0x${account}`,
+            amount: 10000000000
+        },
+        keyPair: null,
+    });
+
+    const wait = await queries.accounts.waitFor(
+        {
+            id: { eq: account },
+            storage: {
+                balance: {
+                    Grams: { gt: &quot;0&quot; }
+                }
+            }
+        },
+        'id storage {balance {Grams}}'
+    );
+};
+</code></pre>
+
+<p>Now you need to calculate future address by generating deploy message of the contract to know where to transfer funds for deploy.</p>
+<pre><code class="javascript">const futureHelloAddress = (await client.contracts.createDeployMessage({
+        package: HelloContract.package,
+        constructorParams: {},
+        keyPair: helloKeys,
+    })).address;
+    console.log(`Future address of the contract will be: ${futureHelloAddress}`);
+</code></pre>
+
+<p>Transfer some grams to this address:</p>
+<pre><code class="javascript">    await get_grams_from_giver(client, futureHelloAddress);
+    console.log(`Grams were transfered from giver to ${futureHelloAddress}`); 
+</code></pre>
+
+<p>Now you are ready to initialize the account with contract code by deploying it. Run</p>
+<pre><code class="javascript">const helloAddress = (await client.contracts.deploy({
+    package: HelloContract.package,
+    constructorParams: {},
+    keyPair: helloKeys,
+})).address;
+console.log(`Hello contract was deployed at address: ${helloAddress}`);
+</code></pre>
+
+<p>The <strong>package</strong> parameter is a structure with two fields: <code>abi</code> and <code>imageBase64</code>, where:</p>
+<ul>
+<li><code>abi</code> is a contract ABI;</li>
+<li><code>imageBase64</code> is the TVC code encoded with base64.</li>
+</ul>
+<p>The <code>contructorParams</code> includes parameters passed to the constructor. It can be empty and expressed as <code>{}</code>, if the constructor has no parameters.</p>
+<p>The <code>keyPair</code> is a mandatory parameter that specifies the following:</p>
+<ul>
+<li>public key is placed into contract initial state as a rule for deploying ABI-based contracts;</li>
+<li>secret key is used to sign a constructor invocation.</li>
+</ul>
+<p>The deployment method executes the following sequence:</p>
+<ol>
+<li>Prepares a deploy request.</li>
+<li>Sends a constructor message to a node </li>
+<li>Waits until the deployment is complete.</li>
+<li>Generates the constructor invocation request.</li>
+<li>Sends the invocation to the blockchain node.</li>
+<li>Waits until the invocation phase is complete.</li>
+</ol>
+<p>The returned result contains an account address assigned to the newly deployed contract.</p>
+<h2 id="running-contracts">Running contracts</h2>
+<h3 id="running-functions">Running functions</h3>
+<p>Running a contract implies the following steps:</p>
+<ol>
+<li>Generating an input message to contract with a function name and parameter values.</li>
+<li>Posting this message to the node.</li>
+<li>Waiting until the node runs the contract at the TVM, recording the result into blockchain and synchronizing the changes with TON.</li>
+<li>Reading an output message with function result from the blockchain and decoding it.</li>
+</ol>
+<p>In the SDK all these steps are incorporated within the <code>run</code> library method.</p>
+<p>To run a contract, we need its address, an ABI, a function name with parameters and a key pair if message signing is required.</p>
+<pre><code class="javascript">const resut = await client.contracts.run({
+    address: helloAddress,
+    abi: HelloContract.package.abi,
+    functionName: 'sayHello',
+    input: {},
+    keyPair: helloKeys,
+});
+</code></pre>
+
+<p>The result contains the <code>output</code> field with a decoded output message returned by the source contract function.</p>
+<p>If an optional <code>keyPair</code> parameter is specified, the input message is signed and accompanied with a public key. So, the contract can perform authorization using a verifiable public key passed to it.</p>
+<h3 id="running-locally">Running  locally</h3>
+<p>Cases are when all a contract function does is calculate some data based on the current contract state and return the calculation result. In these cases we do not need the standard sequence to run a contract. Instead, the following steps are taken:</p>
+<ol>
+<li>Generate an input message to contract with a function name and parameter values.</li>
+<li>Read the current contract state into an application. The contract state is taken from ArangoDB.</li>
+<li>Run the contract code on a lightweight TVM included into the client library by passing a contract state and an input message.</li>
+<li>Decode the contract output message.</li>
+</ol>
+<p>This running method is less time-consuming and involves no fees related to a regular contract execution.</p>
+<blockquote>
+<p><strong>Note</strong>: local contract invocation does not impact the blockchain: all transactions, message and state change produces are just discarded.</p>
+</blockquote>
+<p>To execute a contract inside an application just use the <code>runLocal</code> method instead of <code>run</code>. The parameters are the same, only the method name differs.</p>
+<pre><code class="javascript">const localResponse = await client.contracts.runLocal({
+    address: helloAddress,
+    abi: HelloContract.package.abi,
+    functionName: 'sayHello',
+    input: {},
+    keyPair: helloKeys,
+});   
+</code></pre>
+
+<h2 id="decoding-messages">Decoding messages</h2>
+<p>Some contract functions can generate output messages targeted at some external services. Mainly, these are integration services designed as a <em>glue</em> between blockchain contracts and regular REST (or similar) services.</p>
+<p>Typically, these services use the following scenario:</p>
+<ol>
+<li>The service subscribes to messages changes in a blockchain. Usually a subscription is filtered by messages related to a specific account.</li>
+<li>When a new message comes to a blockchain, an integration service is triggered. It reads and decodes this message.</li>
+<li>Then, the integration service invokes an offchain service using parameters according to the decoded data.</li>
+</ol>
+<p>For these services the Client library provides the <code>decodeOutputMessage</code> method. It decodes output messages recorded into a blockchain.</p>
+<p>In addition to decoding output messages the Client library provides the <code>decodeInputMessage</code> method that decodes input messages.</p>
+<p><strong>Note</strong>: Decoding requires an ABI and is only applicable to ABI compliant messages.</p>
+<p>Advanced Features</p>
+<h2 id="advanced-features">Advanced Features</h2>
+<h3 id="signing-messages-externally">Signing messages externally</h3>
+<p>Although the library provides friendly and simple functions to deploy and run contracts, there are cases when more precision and control is required to deploy and run an application contract.</p>
+<p>For example, an application can use a crypto provider inaccessible from the client library (e.g. a JavaCard crypto provider).</p>
+<p>To solve this, the library offers several functions:</p>
+<ul>
+<li><code>createUnsignedDeployRequest</code> and <code>createUnsignedRunRequest</code> – these functions take the same parameters as the <code>deploy</code> or <code>run</code> functions except that instead of <code>keyPair</code> only the public key is passed. This function returns an encoded message body and a byte buffer required to produce a signature.</li>
+<li><code>createSignedDeployMessage</code> and <code>createSignedRunMessage</code>– this functions take an unsigned message body, sign bytes and the public key. The output is a message compatible with a blockchain node.</li>
+<li><code>createDeployMessage</code> and <code>createRunMessage</code> – these functions generate the same sequence.</li>
+</ul>
+<p>The example below shows how to create an unsigned deploy message, sign it and then combine the unsigned message with the signature and finally to deploy the signed message.</p>
+<pre><code class="javascript">async function testExternalSigning(client) {
+    const { contracts, crypto } = client;
+
+        // Generate Key Pair
+
+    const masterKeys = await crypto.ed25519Keypair();
+
+        // Prepare deploy params and use only public key
+
+    const deployParams = {
+        package: events_package,
+        constructorParams: {},
+        keyPair: { public: masterKeys.public, secret: '' },
+    };
+
+        // Create unsigned deploy message
+
+    const unsignedMessage = await contracts.createUnsignedDeployMessage(deployParams);
+        const bytesToSignBase64 = unsignedMessage.signParams.bytesToSignBase64;
+
+        // Create signature for bytes buffer
+        // This can be done in isolated secret place like a HSM
+
+    const signBytesBase64 = await crypto.naclSignDetached(
+            { base64: bytesToSignBase64 }, 
+            `${masterKeys.secret}${masterKeys.public}`, 
+            TONOutputEncoding.Base64
+        );
+
+        // Create signed message with provided sign
+
+    const signed = await contracts.createSignedDeployMessage({
+        address: unsignedMessage.address,
+        createSignedParams: {
+            publicKeyHex: masterKeys.public,
+            signBytesBase64: signBytesBase64,
+            unsignedBytesBase64: unsignedMessage.signParams.unsignedBytesBase64,
+        }
+    });
+
+        // Deploy signed message
+
+    const message = await contracts.createDeployMessage(deployParams);
+    expect(signed.message.messageBodyBase64).toEqual(message.message.messageBodyBase64);
+}
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

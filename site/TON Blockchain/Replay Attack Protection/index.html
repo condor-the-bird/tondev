@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Replay Attack Protection - TON DEV Knowledge-base</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">TON DEV Knowledge-base</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../../Glossary/">The Moonspeak</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Compilers <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../Compilers/About/">Intro</a>
+</li>
+                                    
+<li >
+    <a href="../../Compilers/Linker CLI/">Linker CLI</a>
+</li>
+                                    
+<li >
+    <a href="../../Compilers/Specification of ABI/">Specification of ABI</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">LLVM Compiler</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Compilers/LLVM Compiler/C Support Status/">Language Features</a>
+</li>
+            
+<li >
+    <a href="../../Compilers/LLVM Compiler/C to TVM Library/">C to TVM Library</a>
+</li>
+            
+<li >
+    <a href="../../Compilers/LLVM Compiler/Compiler Highlights/">Compiler Highlights</a>
+</li>
+            
+<li >
+    <a href="../../Compilers/LLVM Compiler/Debugging Options/">Debugging Options</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Solidity Compiler</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Compilers/Solidity-Compiler/Reference Guide/">Reference Guide</a>
+</li>
+            
+<li >
+    <a href="../../Compilers/Solidity-Compiler/Solidity Support Status/">Solidity Support Status</a>
+</li>
+            
+<li >
+    <a href="../../Compilers/Solidity-Compiler/Usage/">Usage</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">FAQ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../FAQ/SDK and Integration/">SDK and Integration</a>
+</li>
+                                    
+<li >
+    <a href="../../FAQ/Smart Contracts/">Smart Contracts</a>
+</li>
+                                    
+<li >
+    <a href="../../FAQ/Solidity Compiler/">Solidity Compiler</a>
+</li>
+                                    
+<li >
+    <a href="../../FAQ/TON and TVM/">TON and TVM</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">SDK <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../SDK/Installation/">Installation</a>
+</li>
+                                    
+<li >
+    <a href="../../SDK/Overview/">Overview</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Auxiliaries</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../SDK/Auxiliaries/Getting Logs/">Getting Logs</a>
+</li>
+            
+<li >
+    <a href="../../SDK/Auxiliaries/Installing Ubuntu VM/">Installing Ubuntu VM</a>
+</li>
+            
+<li >
+    <a href="../../SDK/Auxiliaries/TON SDK CLI/">TON SDK CLI</a>
+</li>
+            
+<li >
+    <a href="../../SDK/Auxiliaries/Troubleshooting/">Troubleshooting</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Client Libraries</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#">Library Modules</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../SDK/Client Libraries/Library Modules/Contracts/">Contracts</a>
+</li>
+            
+<li >
+    <a href="../../SDK/Client Libraries/Library Modules/Crypto/">Crypto</a>
+</li>
+            
+<li >
+    <a href="../../SDK/Client Libraries/Library Modules/Overview/">Overview</a>
+</li>
+            
+<li >
+    <a href="../../SDK/Client Libraries/Library Modules/Queries/">Queries</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Using Libraries</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../SDK/Client Libraries/Using Libraries/Node.js/">Node.js</a>
+</li>
+            
+<li >
+    <a href="../../SDK/Client Libraries/Using Libraries/Rust/">Rust</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Local node</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../SDK/Local node/Local Node/">Local Node</a>
+</li>
+            
+<li >
+    <a href="../../SDK/Local node/Node SE Giver/">Node SE Giver</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">TON Labs Testnet</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../SDK/TON Labs Testnet/Testnet Giver/">Testnet Giver</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">TON Blockchain <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../Gal Calculation Basics/">Gas Calculation Basics</a>
+</li>
+                                    
+<li >
+    <a href="../Lite Client Guide/">Lite client</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">Replay Attack Protection</a>
+</li>
+                                    
+<li >
+    <a href="../Storage Fee Calculation/">Storage Fee Calculation</a>
+</li>
+                                    
+<li >
+    <a href="../TON Blockchain/">TON Blockchain</a>
+</li>
+                                    
+<li >
+    <a href="../TON Virtual Machine/">Introduction</a>
+</li>
+                                    
+<li >
+    <a href="../TON Whitepaper/">TON Whitepaper</a>
+</li>
+                                    
+<li >
+    <a href="../TVM Error Codes/">TVM Error Codes</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../Lite Client Guide/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../Storage Fee Calculation/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#replay-attack-protection">Replay Attack Protection</a></li>
+            <li><a href="#implementation-options">Implementation Options</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="replay-attack-protection">Replay Attack Protection</h1>
+<p>All external messages must be protected against replay attacks. Otherwise, a malicious party can resend an external message obtained from blockchain and repeat a transaction for a smart contract. For example, a hacker can repeat a Gram transfer and bring an account balance to zero. For internal messages the risk of replay attacks is irrelevant, as they only can be generated inside blockchain by other contracts.</p>
+<h2 id="implementation-options">Implementation Options</h2>
+<p>Different approaches to implementing replay attack protection exist. None of them is a silver bullet, but there are several indicators applied to compare and evaluate them:</p>
+<ul>
+<li>Gas consumption</li>
+<li>Storage fees</li>
+<li>Race condition</li>
+<li>Usability</li>
+</ul>
+<h3 id="sequence-number">Sequence number</h3>
+<p>This is a very simple protection option. It implies that each protected contract stores a counter (i.e. 32bit integer) that is initially set to zero. An external message is then accepted by the contract only under condition that it contains a number equal to the current contract counter value. Each time a new message is accepted, the contract counter value is incremented by one.</p>
+<p>Pros:</p>
+<ul>
+<li>simple implementation in contracts;</li>
+<li>low gas and storage fees;</li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li>To get the right sequence number off-chain, a client must request the contract state from blockchain before sending an external message. If the state is large, it can cause a network traffic overhead;</li>
+<li>Race condition issue that arises when there are multiple contract owners who can simultaneously call it. One owner can increment the contract counter value before this counter becomes available to the next owner;</li>
+<li>Less sensitive issue of a potential counter overflow in the future. In this case the TVM will throw an exception causing the owner to lose access to the contract.</li>
+</ul>
+<h3 id="timestamp">Timestamp</h3>
+<p>Another simple protection option is adding a timestamp to every external message. It can be a 64-bit value in unixtime format. The contract must store the timestamp of the last accepted external message. When a new external message comes, the contract verifies the message timestamp. It must to be bigger than the previous message timestamp and less then <code>now + interval</code>. The <code>interval</code> value is necessary, because <code>now</code> does not stand for the current time, but indicates creation time of the relevant block. The interval can be equal the block generation period or bigger.</p>
+<p>Pros:</p>
+<ul>
+<li>very simple implementation;</li>
+<li>No need to request account state before sending external messages.</li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li>Race condition issues remains unresolved as in case of sequence number implementation;</li>
+<li>Client time must be synchronized with blockchain time.</li>
+</ul>
+<h3 id="set-of-accepted-messages">Set of accepted messages</h3>
+<ol>
+<li>Dictionary of randoms</li>
+</ol>
+<p>This option implies that every external message contains a random value, for example, a 32bit integer. A protected contract, in turn, stores previously used randoms in a dictionary, compares message randoms with it and rejects a message if there is a match detected.</p>
+<p>Pros:</p>
+<ul>
+<li>no need to request account state before sending an external message;</li>
+<li>No race condition; simultaneous access to contract of multiple parties is supported. Collisions are still possible when multiple clients have the same random, but chances can be minimized.</li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li>consumes a lot of gas for dictionary write/read operations. Note that the gas fee will increase in the future;</li>
+<li>
+<p>high storage fees for storing dictionary.</p>
+</li>
+<li>
+<p>Dictionary of messages with garbage collection</p>
+</li>
+</ul>
+<p>This option implies that every external message contains an '<em>expire-at</em>' integer that defines the time when the message becomes invalid (i.e. expires). The contract, in turn, must store a dictionary with all recently accepted and not expired external messages. The key is a message hash, the value is the relevant 'expire-at' integer.</p>
+<p>The contract then rejects all messages that are already present in its dictionary. To avoid persistent data increase, a protected contract can delete messages with the <code>expire-at</code> value less than <code>now</code> from its dictionary.</p>
+<p>Pros:</p>
+<ul>
+<li>no need to request the account state before sending an external message;</li>
+<li>No race condition issues.</li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li>Harder to implement compared to the above option with a dictionary of randoms;</li>
+<li>High gas fees caused by the need to access a dictionary;</li>
+<li>High storage fees, yet these can be reduced by deleting expired messages from the dictionary;</li>
+<li>Garbage collecting also involves some gas costs.</li>
+</ul>
+<h3 id="sessions">Sessions</h3>
+<p>Before sending requests to contract, a user creates a session with a contract by sending a <em>create_session</em> external message. The message contains a new session ID, its expired-at time and a starting sequence number. The contract stores a session dictionary.</p>
+<p>After a session is created, the user adds the session_id and the next session sequence number to every external message. For every external message (not <em>create_session</em>) the contract checks that:</p>
+<ul>
+<li>the message session ID exists in dictionary</li>
+<li>the message sequence number is equal to the stored session number, and</li>
+<li>the <code>now</code> value is less then the <code>expired-at</code> value for session</li>
+</ul>
+<p>If all checks are passed successfully, the contract increments the stored sequence number for the session. In case of failure, the message is rejected.</p>
+<p>Also, expired sessions require some garbage collection.</p>
+<p>Pros:</p>
+<ul>
+<li>No need to request the account state before sending an external message;</li>
+<li>No race condition issues;</li>
+<li>No collisions.</li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li>Harder to implement compared to all the options covered above;</li>
+<li>High gas fees;</li>
+<li>High storage fees;</li>
+<li>Need to use garbage collecting;</li>
+<li>Unsuitable for simple single-user contracts.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>In TON Labs, we selected a lightweight and simple replay protection option; it will be implemented in the compiler by default and based on the <strong>timestamp</strong> approach. It is supposed to work well for single-user contracts, as well as for contracts without heavy race conditions. It is easy to use given that TON Labs SDK enables inserting a timestamp automatically on the client side. Also, there will be an option to redefine the default protection method by overloading a special contract function. This is how contract developers will be able to implement any protection option they seem fit.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
