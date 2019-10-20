@@ -1,4 +1,6 @@
-If you are using the local node (Node SE) for your projects, you can use its pre-deployed Giver to transfer Grams, deploy and run other contracts. On the start Node SE giver has 1.5 billion Grams when you first create the Node container. 
+> Note that all references to Gram in this document or other documents in this documentation imply test Grams, not the real ones.
+
+If you are using the local node (Node SE) for your projects, you can use its pre-deployed Giver to transfer test Grams, deploy and run other contracts. On the start Node SE giver has 1.5 billion test Grams when you first create the Node container. 
 
 In the course of usage, the balance dries, so to restore it, you have to recreate the container with tondev CLI `recreate` command 
 
@@ -37,7 +39,7 @@ const nodeSeGiverAbi = {
 
 Check it on our ton-client-js tests.
 
-Declare `get_grams_from_giver` function, and then invoke it to transfer grams to account that you need. 
+Declare `get_grams_from_giver` function, and then invoke it to transfer test Grams to an account that you need. 
 
 ```javascript
 async function get_grams_from_giver(account) {
