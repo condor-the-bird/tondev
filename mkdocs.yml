@@ -48,6 +48,9 @@ nav:
             - 'TON Blockchain': 'TON Blockchain/TON Specifications/TON Blockchain.md'
             - 'Lite Client Guide': 'TON Blockchain/TON Specifications/Lite Client Guide.md'
     - Glossary: 'Glossary.md'
-    - Release notes: 'Release Notes'
+    - Release notes:
+           - 'Archive 2019': 'Release Notes Archive.md'
+
+
 
     
