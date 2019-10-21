@@ -46,7 +46,7 @@ Fully supported features and feature groups.
 | **Abstract contracts**                     | `contract A { function u() public; } `                       |                                                              |
 | **Metadata**                               |                                                              | ABI, version, etc.                                           |
 | **Super**                                  | `super.method()`                                             |                                                              |
-| **Return**                                 |                                                              | See more [about usage particularities of return and callback](https://docs.ton.dev/86757ecb2/p/535dbc/t/08c41f) in TON |
+| **Return**                                 |                                                              | |
 | **Multiple Inheritance and linearization** |                                                              |                                                              |
 | **Arguments for base constructors**        |                                                              |                                                              |
 | **Returning multiple values**              | `return (n1, n2, n3);`                                       |                                                              |
@@ -86,7 +86,7 @@ Note that implementation priority depends on the demand for the feature, its rel
 | **Rational literals**                                     | `.1, 2e-10`                                                  | Planned                                                      |
 | **Hexadecimal literals**                                  | `hex"001122FF"`                                              | Currently tested                                             |
 | **Interfaces**                                            | `interface Token { struct ... function ... }`                | Only pure interfaces are supported                           |
-| **Function Modifiers**                                    |                                                              | Unsupported now, planned to support. See also [Hints and workarounds](https://docs.ton.dev/86757ecb2/p/535dbc/t/2756ce) |
+| **Function Modifiers**                                    |                                                              | Unsupported now, planned to support. |
 | **Function calls**                                        |                                                              | The feature group is partially supported                     |
 | **internal function calls**                               |                                                              | Supported                                                    |
 | **external function calls**                               |                                                              | Supported                                                    |
@@ -101,7 +101,7 @@ Note that implementation priority depends on the demand for the feature, its rel
 | **balance**                                               | `address.balance`                                            | Supported                                                    |
 | **transfer**                                              | `addressPayable.transfer(N)`                                 | Supported                                                    |
 | **send**                                                  | `addressPayable.send(N)`                                     | Supported                                                    |
-| **call, delegatecall, staticcall**                        | *`call(bytes)`                                               | Not supported for security reasons, see additional information [here](https://docs.ton.dev/86757ecb2/p/535dbc/t/00e51e). |
+| **call, delegatecall, staticcall**                        | *`call(bytes)`                                               | |
 | **Arrays:**                                               |                                                              | This feature groups is partially supported                   |
 | **fixed size**                                            | `[k]`                                                        | Supported                                                    |
 | **dynamic size**                                          | `[]`                                                         | Supported                                                    |
@@ -164,7 +164,7 @@ Depending on the project progress, we may decide to provide support for some of 
 
 | **NAME**                                                   | **NOTES/USAGE**                                              | **MORE**                                                     |
 | ---------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **Inline, Solidity, Standalone Assembly**                  | Ethereum-specific feature                                    | [Hints and suggestions](https://docs.ton.dev/86757ecb2/p/535dbc/t/37a6c1) |
+| **Inline, Solidity, Standalone Assembly**                  | Ethereum-specific feature                                    |  |
 | **SMTChecker**                                             | pragma experimental SMTChecker                               |                                                              |
 | **Natspec**                                                | ///, @title, @author, @dev, @param, @return, @notice         | Currently not used in the TVM. Later support may be considered. Refer to the [original documentation](https://solidity.readthedocs.io/en/v0.5.11/natspec-format.html) for more details on the feature. |
 | **Call Functions**                                         |                                                              | Not supported for security reasons. See also the Reference guide. |
@@ -180,7 +180,7 @@ Depending on the project progress, we may decide to provide support for some of 
 | **Special chars**                                          | `\<newline>`, `\\`,` \'` ,`\"` ,`\b `,`\f` ,`\n,` `\r`, `\t`, `\v`, `\xNN`, `\uNNNN` | To be deployed in the framework of literals support          |
 | **Fixed point numbers, operations**                        | fixed/ufixed, fixed/ufixedMxN, <=, <, ==, !=, >=, >, +, -, unary -, *, /, % | Currently the feature is not supported. It is planned to implement mapping connecting text representation of an instruction to its numerical counterpart. On the total, there are 476 instructions. The map will be used for text assembly generation. |
 | **Ether units**                                            | wei, finney, szabo, ether                                    | Not supported, EVM-specific                                  |
-| **Time units**                                             | seconds, minutes, hours, days, weeks                         | Not supported now, see [a workaround](https://docs.ton.dev/86757ecb2/p/535dbc/t/75c163) |
+| **Time units**                                             | seconds, minutes, hours, days, weeks                         | Not supported now. |
 | **Type information:**                                      |                                                              | No plans to support this whole group yet. Usage potential unclear. |
 | **type**                                                   | `type(c)`                                                    |                                                              |
 | **name**                                                   |                                                              |                                                              |
