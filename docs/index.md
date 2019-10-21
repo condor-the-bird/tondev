@@ -14,7 +14,7 @@
 
 ### With the SDK
 
-[JavaScript](SDK/Client Libraries/Using Libraries/JavaScript/)
+[JavaScript](SDK/Client Libraries/Using Libraries/Node.js/)
 
 [Rust](SDK/Client Libraries/Using Libraries/Rust/)
 
