@@ -39,7 +39,7 @@ tondev sol hello -l js -L deploy
 
 Before being able to play with a smart contract on the blockchain, we need a blockchain infrastructure for contract testing and debugging.
 
-Make sure that you started a local node instance according to the guidelines provided in the [**Installation**](https://docs.ton.dev/86757ecb2/p/28b6ba) section.
+Make sure that you started a local node instance according to the guidelines provided in the [**Installation**](/SDK/Installation/) section.
 
 ```shell
 tondev start
@@ -282,7 +282,7 @@ Hello TON Done
 
 
 
-> Find more information about deploying and running in the [**Contracts**](https://docs.ton.dev/86757ecb2/p/891ee9) section.
+> Find more information about deploying and running in the [**Contracts**](/SDK/Client Libraries/Library Modules/Contracts/) section.
 
 ## Querying blockchain
 
