@@ -1,4 +1,4 @@
-## About the ABI
+## lAbout the ABI
 
 Despite the fact that each TON contract is actually a single function, the TON SDK allows defining multiple functions within it. To achieve it, the original multi-functional contract is compiled into a single function one with an incoming message dispatcher.
 
@@ -151,7 +151,7 @@ In the SDK all these steps are incorporated within the `run` library method.
 To run a contract, we need its address, an ABI, a function name with parameters and a key pair if message signing is required.
 
 ```javascript
-const resut = await client.contracts.run({
+const result = await client.contracts.run({
     address: helloAddress,
     abi: HelloContract.package.abi,
     functionName: 'sayHello',
@@ -280,4 +280,3 @@ async function testExternalSigning(client) {
 
 
 
-  
