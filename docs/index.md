@@ -4,7 +4,7 @@
 
 [SDK](/SDK/Overview/)
 
-[Compilers](/Compilers/Intro)
+[Compilers](/Compilers/About)
 
 ## Contract Developer Guides 
 
@@ -14,7 +14,7 @@
 
 ### With the SDK
 
-[Node.js](/SDK/Client Libraries/Using Libraries/node.js/)
+[Node.js](/SDK/Client Libraries/Using Libraries/JavaScript/)
 
 [Rust](/SDK/Client Libraries/Using Libraries/Rust/)
 
