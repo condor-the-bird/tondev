@@ -58,7 +58,7 @@ async function get_grams_from_giver(account) {
     }
 ```
 
-For your information we demonstrate the Giver's solidity code here:
+For your information we demonstrate the Giver Solidity code here:
 
 ```javascript
 pragma solidity >=0.5.0 <0.6.0;

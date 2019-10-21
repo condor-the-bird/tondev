@@ -140,13 +140,6 @@ npm install ton-client-react-native-js
 
 <iframe class="no-border max-full-width full-height flex-grow" src="https://www.youtube.com/embed/FMLTyQ2bYvE?autohide=1&amp;showinfo=0&amp;rel=0&amp;fs=0" style="max-width: 100%; height: 346px; -webkit-box-flex: 1; flex-grow: 1; border: none;"></iframe>
 
-
-
-
-
-
-
 > Visit [TON Dev](https://ton.dev/) for additional product, company & community info.
 
 
-  
