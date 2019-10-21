@@ -171,7 +171,7 @@ async function main(client) {
 
 3. The contract is almost ready for deployment, but **in TON blockchain you must deposit GRAMs to the address of the deployed contract before the actual deploy**. **Otherwise deploy will fail.** 
 
-You can send Grams from another contract or use our giver. To learn how to use giver, check the relevant section in the document covering the [Contracts](/SDK/Client%20Libraries/Library%20Modules/Contracts.md) module. There is a detailed usage example. 
+You can send Grams from another contract or use our giver. To learn how to use giver, check the relevant section in the document covering the [Contracts](/SDK/Client Libraries/Library Modules/Contracts/) module. There is a detailed usage example. 
 
 ```javascript
 ...
