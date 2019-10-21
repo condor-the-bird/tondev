@@ -2,7 +2,7 @@
 
 ##TON DEV Product Guides
 
-[SDK](/SDK/Overview/)
+[SDK](SDK/Overview/)
 
 [Compilers](Compilers/About)
 

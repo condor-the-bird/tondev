@@ -173,7 +173,7 @@ async function main(client) {
 
 3. The contract is almost ready for deployment, but **in TON blockchain you must deposit GRAMs to the address of the deployed contract before the actual deploy**. **Otherwise deploy will fail.** 
 
-You can send Grams from another contract or use our giver. To learn how to use giver, check the relevant section in the document covering the [Contracts](/SDK/Client Libraries/Library Modules/Contracts/) module. There is a detailed usage example. 
+You can send Grams from another contract or use our giver. To learn how to use giver, check the relevant section in the document covering the [Contracts](SDK/Client Libraries/Library Modules/Contracts/) module. There is a detailed usage example. 
 
 ```javascript
 ...
@@ -284,7 +284,7 @@ Hello TON Done
 
 
 
-> Find more information about deploying and running in the [**Contracts**](/SDK/Client Libraries/Library Modules/Contracts/) section.
+> Find more information about deploying and running in the [**Contracts**](SDK/Client Libraries/Library Modules/Contracts/) section.
 
 ## Querying blockchain
 
@@ -316,4 +316,4 @@ console.log('Filtered Transactions: ', transactions);
 
 The example gets all transactions with **now** equals to 1567601735. 
 
-> Find more information about a filtering in the [**Queries**](https://docs.ton.dev/86757ecb2/p/05a847) section.
+> Find more information about a filtering in the [**Queries**](SDK/Client Libraries/Library Modules/Queries) section.
