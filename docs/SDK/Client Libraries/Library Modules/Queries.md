@@ -88,24 +88,12 @@ Scalar filter is a structure with one or more predefined fields. Each field defi
 
 Filter example:
 
-
-
-
-
-
-
-
-
-
-
-```
+```javascript
 {
     id: { eq: 'e19948d53c4fc8d405fbb8bde4af83039f37ce6bc9d0fc07bbd47a1cf59a8465'},
     status: { in: ["Preliminary", "Proposed", "Finalized"] }
 }
 ```
-
-
 
 
 
@@ -212,6 +200,6 @@ We see that the existing approach and schema are not perfect. There are improvem
 
 
 
-  
+
 
 
