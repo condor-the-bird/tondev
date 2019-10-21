@@ -1,4 +1,4 @@
-## lAbout the ABI
+## About the ABI
 
 Despite the fact that each TON contract is actually a single function, the TON SDK allows defining multiple functions within it. To achieve it, the original multi-functional contract is compiled into a single function one with an incoming message dispatcher.
 
@@ -11,7 +11,7 @@ With the SDK compiler you can:
 - obtain TVM-ready code from Solidity sources.
 - obtain TVM-ready code from our LLVM-based compiler that can potentially take source code in various general purpose languages. Now we have an implementation of the C language.
 
-The [Toolchain documentation](https://docs.ton.dev/86757ecb2/p/09bb3d) contains all information on TON Labs Toolchain.
+The [Toolchain documentation](/Compilers/About.md/) contains all information on TON Labs Toolchain.
 
 The Compiler Kit is shipped as a Docker container with pre-configured tools ready to work.
 

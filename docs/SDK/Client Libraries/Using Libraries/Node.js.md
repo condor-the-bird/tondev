@@ -71,7 +71,7 @@ Then execute (in the project folder):
 ~/ton-dev/hello$ npm install 
 ```
 
-\2. Connect to Node SE or to TON Labs testnet. In JS Client Libraries the `TONClient`class is used to connect to TON Blockchain node, that can work with SDK. 
+2. Connect to Node SE or to TON Labs testnet. In JS Client Libraries the `TONClient`class is used to connect to TON Blockchain node, that can work with SDK. 
 
 If you use the local node (NodeSE), specify `'<http://0.0.0.0>'` in the following code:
 
@@ -171,7 +171,7 @@ async function main(client) {
 
 3. The contract is almost ready for deployment, but **in TON blockchain you must deposit GRAMs to the address of the deployed contract before the actual deploy**. **Otherwise deploy will fail.** 
 
-You can send Grams from another contract or use our giver. To learn how to use giver, check the relevant section in the document covering the [Contracts](https://docs.ton.dev/86757ecb2/p/891ee9) module. There is a detailed usage example. 
+You can send Grams from another contract or use our giver. To learn how to use giver, check the relevant section in the document covering the [Contracts](/SDK/Client%20Libraries/Library%20Modules/Contracts.md) module. There is a detailed usage example. 
 
 ```javascript
 ...
