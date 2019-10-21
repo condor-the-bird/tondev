@@ -4,7 +4,7 @@ TON Labs SDK comes with tools and features helping [TON Dev](https://ton.dev/) d
 
 - Compile smart contracts into the TVC format
 
-> See the [Toolchain documentation](https://docs.ton.dev/86757ecb2/p/09bb3d) for detailed information about TON Labs compilers. For additional information on the TVC format, refer to the original TON blockchain documentation. 
+> See the [Toolchain documentation](/Compilers/About/) for detailed information about TON Labs compilers. For additional information on the TVC format, refer to the original TON blockchain documentation. 
 
 - Deploy, run, test and debug smart contracts using a local Node Server (Node SE)
 - Quickly and easily interact with blockchain data and track changes
@@ -48,4 +48,3 @@ You can use the installation procedure provided in the this guide to smoothly cr
 > Visit [TON Dev](https://ton.dev/) for additional product, company & community info.
 
 
-  

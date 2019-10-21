@@ -4,7 +4,7 @@
 
 [SDK](/SDK/Overview/)
 
-[Compilers](/Compilers/Intro.md)
+[Compilers](/Compilers/Intro)
 
 ## Contract Developer Guides 
 
