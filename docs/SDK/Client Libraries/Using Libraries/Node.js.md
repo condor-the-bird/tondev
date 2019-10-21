@@ -1,5 +1,7 @@
 Follow guidelines in this section to create your own environment based on Node.js with the Node SE tools and to develop your first test contract. 
 
+> Note that this guide is also good for React Native and WebAssembly. The only difference is the source library used.
+
 First and foremost, create a local folder for all your test projects. Note that in this documentation the sample folder is called **ton-dev**. If your folder has a different name, make sure to edit the code accordingly.
 
 ## Creating a contract
