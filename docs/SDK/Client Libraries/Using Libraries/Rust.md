@@ -29,7 +29,7 @@ tondev sol hello
 
 To get a functional playground, we need blockchain infrastructure for contract testing and debugging. We suggest using our Node SE. 
 
-Make sure that you ran a Node SE instant according to the guidelines provided in the [**Installation**](https://docs.ton.dev/86757ecb2/p/28b6ba) section.
+Make sure that you ran a Node SE instant according to the guidelines provided in the [**Installation**](/SDK/Installation/) section.
 
 ```shell
 tondev start            
@@ -190,7 +190,7 @@ Hello TON Done
 ~/ton-dev/hello$ 
 ```
 
-> You can find more information about deploying and running in the [**Working with contracts**](https://docs.ton.dev/86757ecb2/p/891ee9) section.
+> You can find more information about deploying and running in the [Contracts](/SDK/Contracts/) section.
 
 ## Querying blockchain
 
@@ -236,7 +236,6 @@ let query_result = ton.queries.transactions.query(
 
 The example gets all transactions with **now** equals to 1567601735. 
 
-> Find more information about a filtering in the [**Queries**](https://docs.ton.dev/86757ecb2/p/05a847) section.
+> Find more information about a filtering in the [**Queries**](/SDK/Client Libraries/Library Modules/Queries/) section.
 
 
-  
