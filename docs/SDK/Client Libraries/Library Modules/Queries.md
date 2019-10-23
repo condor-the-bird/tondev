@@ -9,7 +9,28 @@ To query it, GraphQL protocol with subscription options is implemented (get the 
 
 The structure of each collection item matches that on the TON blochchain. So, for additional details on specific fields refer to official TON documentation.
 
-The `queries` module of the Client library defines four objects to access each collection: `accounts`, `transactions`, `messages` and `blocks`. Each object has a set of query methods:
+The `queries` module of the Client library defines four objects to access each collection: `accounts`, `transactions`, `messages` and `blocks`. 
+
+###### Sample query to an account that returns account balance for an address.
+
+```SQL
+  query {
+  accounts(
+    filter: {
+      id: {eq: "a46af093b38fcae390e9af5104a93e22e82c29bcb35bf88160e4478417028884"}
+    }
+  ) {
+    id
+    storage{
+      balance{
+        Grams
+      }
+    }
+  }
+}
+```
+
+Each object has a set of query methods: 
 
 - `query`: filters collection items according to the requested condition. The available filtration functionality covers a wide range of tasks. If none of the collection items matches the request, an empty set is returned.
 - `waitFor`: same as above, but this method never returns until the requested item appears (i.e. it actually waits).
