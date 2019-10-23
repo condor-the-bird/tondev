@@ -86,7 +86,7 @@ Note that implementation priority depends on the demand for the feature, its rel
 | **Rational literals**                                     | `.1, 2e-10`                                                  | Planned                                                      |
 | **Hexadecimal literals**                                  | `hex"001122FF"`                                              | Currently tested                                             |
 | **Interfaces**                                            | `interface Token { struct ... function ... }`                | Only pure interfaces are supported                           |
-| **Function Modifiers**                                    |                                                              | Unsupported now, planned to support. |
+| **Function Modifiers**                                    |                                                              | Unsupported now, planned to support.                         |
 | **Function calls**                                        |                                                              | The feature group is partially supported                     |
 | **internal function calls**                               |                                                              | Supported                                                    |
 | **external function calls**                               |                                                              | Supported                                                    |
@@ -101,7 +101,7 @@ Note that implementation priority depends on the demand for the feature, its rel
 | **balance**                                               | `address.balance`                                            | Supported                                                    |
 | **transfer**                                              | `addressPayable.transfer(N)`                                 | Supported                                                    |
 | **send**                                                  | `addressPayable.send(N)`                                     | Supported                                                    |
-| **call, delegatecall, staticcall**                        | *`call(bytes)`                                               | |
+| **call, delegatecall, staticcall**                        | *`call(bytes)`                                               |                                                              |
 | **Arrays:**                                               |                                                              | This feature groups is partially supported                   |
 | **fixed size**                                            | `[k]`                                                        | Supported                                                    |
 | **dynamic size**                                          | `[]`                                                         | Supported                                                    |
@@ -121,7 +121,7 @@ Note that implementation priority depends on the demand for the feature, its rel
 | **Keccak-256 hash**                                       | `keccak256(bytes memory) returns (bytes32)`                  | This option will not be supported. An analog is planned for release within the next few months based on `tvm_hash()`. No workarounds at this moment. |
 | **SHA-256 hash**                                          | `sha256(bytes memory) returns (bytes32)`                     | Supported partially                                          |
 | **RIPEMD-160 hash**                                       | `ripemd160(bytes memory) returns (bytes20)`                  | This option will not be supported. An analog is planned for release within the next few months based on tvm_hash(). No workarounds at this moment. |
-| **erecovery**                                             | `ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address)` | EVM-specific operation; replaced by signing and verification mechanic described in the [ABI Spec](https://docs.ton.dev/86757ecb2/p/70c253) |
+| **erecovery**                                             | `ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address)` | EVM-specific operation; replaced by signing and verification mechanic described in the [ABI Spec](https://docs.ton.dev/86757ecb2/p/70c253). ercovery itself is unavailable in TON, as address cannot be derived from a public key (no relation between these entities) |
 | **Fixed-size byte arrays**                                | `bytes1..32 bts`                                             | Partial support soon. **bytes32** pending release, testing under way. |
 | **Control structures:**                                   |                                                              | The feature groups is partially supported, see details below. |
 | **if, else**                                              | `if () { } else { }`                                         | Supported                                                    |
@@ -199,5 +199,5 @@ Depending on the project progress, we may decide to provide support for some of 
 | **Creating contracts via new**                             |                                                              |                                                              |
 
 
-  
+
 
