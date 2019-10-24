@@ -1,3 +1,81 @@
+# TON and TVM
+
+**Q: How to deploy a contract to TON testnet if I use your Toolchain?**
+
+**A**: Follow the procedure [here](https://docs.ton.dev/86757ecb2/p/14cfee/t/57cbaf). If you are a new user, check the related topics as well (Node SE Installation, Deployment). 
+
+**Q: Which messaging format is used in smart contracts?**
+
+**A**: TON Labs uses the same message format as specified at [ton](http://ton.org/).[org](http://test.ton.org/). The message header format is covered in the blockchain whitepaper (ton.pdf clause [2.4.9](https://docs.ton.dev/86757ecb2/p/822e19/t/055645)), the message layout is covered by the blockchain specification (tblkch.pdf [3.1.7.](https://docs.ton.dev/86757ecb2/p/931de7/t/821704)).
+
+**Q: How is hash calculated?**
+
+**A**: Hash calculation principles used in the TON test node are covered in the official TON VM documentation (tvm.pdf [clause 3.1.4 -3.1.7](https://zeroheight.com/86757ecb2/p/836380/t/81c0c8), tblkch.pdf [1.1.4](https://zeroheight.com/86757ecb2/p/67dde7/t/58f8f6)). We use another method to calculate the hash of bag of cells, but we get the same result.
+
+**Q: Is there any standard multisig contract we can use for TON? How can a multisig wallet be implemented in the TON network?**
+
+**A**: The standard TON multisig contract specs and source code are unavailable at the moment. Existing open source multisig contracts can be used, but not all Solidity features are supported now by our compiler. 
+
+**Q: Do you have a good way of doing multiple receive addresses for the same wallet?**
+
+**A**: Within TON every contract has only one address. You can use your **Forwarder.sol** contract, but it cannot be compiled with the current compiler version without some fixes. 
+
+**Q: Are wallets supposed to be deployed on the workchain, masterchain or some other chain?**
+
+**A**: Any chain will do, but the basic workchain 0 is the recommended option. Masterchain has very high fees.
+
+**Q: How do fees work? Does a smart contract pay its own fee or is it charged on the caller address? Does the TON use similar concepts of gas price and gas limit?**
+
+**A**: Fees are charged on the contract that executes a transaction. There is *a storage fee, a gas fee and a fee for sending messages from contracts*. TON contracts consume gas (tvm.pdf clause [1.4](https://zeroheight.com/86757ecb2/p/77e11f/t/24a009), appendix [A.1](https://zeroheight.com/86757ecb2/p/17e4d8/t/783524)) and have gas limits with specific features.
+
+# SDK and Integration
+
+**Q**: Based on your documentation and the white paper, there is a gas limit on transactions/transfers but this is not set by the sender but is a function of the transfer amount or contract balance.  Do senders/contracts have any ability to set an upper limit on the gas consumed by a transaction
+
+**A**: contracts can set upper gas limit in `msg.value` (in nanograms), but receiver contract can increase this limit buying more gas (accept cmd). We cannot set gas limit  for external messages; it is automatically calculated as minimal contract balance or global gas limit per transaction.
+
+------
+
+**Q**: Do you have any insight into the various send modes for `SENDRAWMSG`?
+
+I'm trying to understand  failure scenarios and if that call fails when `mode=0`, then the internal contract state fails to update and we risk the failed message being replayed until the account is drained.
+
+`mode=2` is supposed to "ignore errors" such that the contract state will get updated even if the msg fails to send.  But by changing the mode to 2 I'm now seeing some additional fees taken out of my transfer amount (specifically my transfer amount is reduced by 0.001 Grams which is the `total_fwd_fee`)  Do you have any insight here?
+
+**A**: Forward fees reduce transfer amount even if mode=0; these are always present in internal messages.
+
+
+
+# Solidity Compiler
+
+**Q: There are samples of transaction generation via the LLVM Compiler and via the SOL2TVM Compiler. Yet, there is no signing operation in the sample Solidity code.**
+
+**A**: Check the **contract04.sol** example, it demonstrates how to transfer grams with the `**address.transfer()**`function; Signing is not yet supported, plan to add it in the next release
+
+**Q: Does Solidity compiler support ecrecover? Now it throws “std::exception::what: unknown variable: ecrecover”. If not, will there be support soon? There is nothing in the guide about it.**
+
+**A**: No, this is an Ethereum-specific operation unavailable in TMV (in TVM public address is not related to the public key) But we plan to provide an equivalent, for now use the ABI.
+
+**Q: Is 'address(this)' operational?**
+
+**A**: Only `address(this).balance` is available at this moment. The `address(this) `function will be available soon.
+
+**Q: Can structures be transferred as function parameters?**
+
+**A**: Not for public functions. The feature is to be released later. For internal functions, yes, this is possible.
+
+**Q: The .push method is unavailable. How do I add a new element?**
+
+**A**: You can use `array[array.length] = new_element;.`The`.push`method will be added later.
+
+**Q: How an address is formed for a Solidity contract?**
+
+**A**: The address of a Solidity smart-contract for TON is deterministic and is computed prior to its deployment. Full address of the contract consists of a 32-bit ID of a workchain the contract is being deployed to and of the 256-bit internal address (or account identifier) inside the chosen workchain.
+
+The internal address is a representative hash of the contract initial state. The contract Initial state consists of the contract code serialized according to the TON blockchain specification, section 5.3.10, and its data.
+
+Hash computation principles: the hash function applied to the relevant hash code computation is called "representation hash". Its detailed description is available in the TON blockchain specification, section 1.1.8. Essentially, the representation hash is sha256 function recursively applied to the storage cell of its argument.
+
 # SDK and Integration
 
 **Q**: Would you be able to point me to where BOC messages are created or signed inside the JavaScript or Rust SDK? In the JS SDK, I just see that all calls end up hitting `this.requestLibrary` with some library specified, and that looks like it ends up calling a `TONClientLibrary` module, but it's not clear where these libraries actually exist (they seem to be on the node itself).
@@ -152,4 +230,3 @@ For example you can generate message to call the contract by SDK function. That 
 **A**: The sample message at <https://test.ton.org/testnet/transaction?account=EQDXAswEFIWNg6VTijwchiMYcvAGRTr3yCWln53RLWNq8CvQ<=195287000001&hash=7F09EC8EEBBAF510D7873CD3DEC494B2DD28A790A7A46E83D0A183F3E672B509> has no init (it is `init:nothing`), and a transaction with this message is aborted. But in general, the StateInit data attached to a message is used by the node only once: when a contract is in the Uninit state. Replays of such message can succeed, but the contract code will not be changed. An Init msg created with sol2tvm compiler and tvm_linker contains an encoded constructor call. Now you can call constructor multiple times, but in future releases it will be changed.
 
 
-  
