@@ -2,7 +2,7 @@
 
 **Q: How to deploy a contract to TON testnet if I use your Toolchain?**
 
-**A**: Follow the procedure [here](https://docs.ton.dev/86757ecb2/p/14cfee/t/57cbaf). If you are a new user, check the related topics as well (Node SE Installation, Deployment). 
+**A**: Follow the procedure [here](Compilers/Solidity Compiler/Usage/). If you are a new user, check the related topics as well (Node SE Installation, Deployment). 
 
 **Q: Which messaging format is used in smart contracts?**
 

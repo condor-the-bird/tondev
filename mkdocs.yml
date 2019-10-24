@@ -15,12 +15,8 @@ nav:
     - SDK:
         - 'Overview': 'SDK/Overview.md'
         - 'Installation': 'SDK/Installation.md'
-        - Client Library Modules:     
-            - 'Modules Overview': 'SDK/Client Libraries/Library Modules/Overview.md'
-            - 'Contracts': 'SDK/Client Libraries/Library Modules/Contracts.md'
-            - 'Queries': 'SDK/Client Libraries/Library Modules/Queries.md'
-            - 'Crypto': 'SDK/Client Libraries/Library Modules/Crypto.md'
         - Using Client Libraries:
+            - 'Library Modules': 'SDK/Client Libraries/Library Modules.md'
             - 'Rust': 'SDK/Client Libraries/Using Libraries/Rust.md'
             - 'JavaScript': 'SDK/Client Libraries/Using Libraries/Node.js.md'
         - Local Node:
