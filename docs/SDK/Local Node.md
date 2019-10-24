@@ -1,4 +1,14 @@
+# Overview
+
+TON Labs Local Node is a pre-configured Docker image with a simplified standalone node server instance designed only for debugging and testing.
+
+> **Note:** TON Labs Local Node (Node SE) is not designed to interact with the regular TON network.
+
+# Node SE Test Giver
+
 > Note that all references to Gram in this document or other documents in this documentation imply test Grams, not the real ones.
+
+## Configuration
 
 If you are using the local node (Node SE) for your projects, you can use its pre-deployed Giver to transfer test Grams, deploy and run other contracts. On the start Node SE giver has 1.5 billion test Grams when you first create the Node container. 
 
@@ -35,7 +45,7 @@ const nodeSeGiverAbi = {
 };
 ```
 
-### Usage example
+## Usage example
 
 Check it on our ton-client-js tests.
 
@@ -73,18 +83,4 @@ contract Giver {
 }
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -19,9 +19,7 @@ nav:
             - 'Library Modules': 'SDK/Client Libraries/Library Modules.md'
             - 'Rust': 'SDK/Client Libraries/Using Libraries/Rust.md'
             - 'JavaScript': 'SDK/Client Libraries/Using Libraries/Node.js.md'
-        - Local Node:
-            - 'Local Node': 'SDK/Local node/Local Node.md'
-            - 'Node SE Giver': 'SDK/Local node/Node SE Giver.md'
+        - 'Local Node': 'SDK/Local Node.md'
         - Misc:
             - 'Getting Logs': 'SDK/Auxiliaries/Getting Logs.md'
             - 'TON SDK CLI': 'SDK/Auxiliaries/TON SDK CLI.md'

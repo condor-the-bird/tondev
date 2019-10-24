@@ -1,4 +1,6 @@
-## **Accessible Toolkit**
+# Overview
+
+## Accessible Toolkit
 
 TON Labs SDK comes with tools and features helping [TON Dev](https://ton.dev/) developers to:
 
@@ -6,8 +8,8 @@ TON Labs SDK comes with tools and features helping [TON Dev](https://ton.dev/) d
 
 > See the [Toolchain documentation](/Compilers/About/) for detailed information about TON Labs compilers. For additional information on the TVC format, refer to the original TON blockchain documentation. 
 
-- Deploy, run, test and debug smart contracts using a local Node Server (Node SE)
-- Quickly and easily interact with blockchain data and track changes
+- Deploy, run, test and debug smart contracts using a local Node Server (Node SE);
+- Quickly and easily interact with blockchain data and track changes.
 
 ## **Components**
 
@@ -42,9 +44,3 @@ You can use the installation procedure provided in the this guide to smoothly cr
 - <https://github.com/tonlabs/ton-client-rs>
 - <https://hub.docker.com/r/tonlabs/local-node>
 - <https://hub.docker.com/r/tonlabs/compilers>
-
-
-
-> Visit [TON Dev](https://ton.dev/) for additional product, company & community info.
-
-
