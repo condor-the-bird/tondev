@@ -15,14 +15,15 @@ nav:
     - SDK:
         - 'Overview': 'SDK/Overview.md'
         - 'Installation': 'SDK/Installation.md'
+        - 'Local Node': 'SDK/Local Node.md'
+        - 'TONDEV CLI': 'SDK/TONDEV CLI.md'
         - Using Client Libraries:
             - 'Library Modules': 'SDK/Client Libraries/Library Modules.md'
             - 'Rust': 'SDK/Client Libraries/Using Libraries/Rust.md'
             - 'JavaScript': 'SDK/Client Libraries/Using Libraries/Node.js.md'
-        - 'Local Node': 'SDK/Local Node.md'
+        
         - Misc:
             - 'Getting Logs': 'SDK/Auxiliaries/Getting Logs.md'
-            - 'TON SDK CLI': 'SDK/Auxiliaries/TON SDK CLI.md'
             - 'Troubleshooting': 'SDK/Auxiliaries/Troubleshooting.md'
             - 'Installing Ubuntu VM': 'SDK/Auxiliaries/Installing Ubuntu VM.md'
     - FAQ: 'FAQ.md' 
