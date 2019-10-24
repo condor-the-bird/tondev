@@ -1,4 +1,6 @@
-Now to use compilers separately, you need to access tvm_linker utility from docker containers.
+# Using the Solidity Compiler
+
+Now to use compilers separately, you need to access tvm_linker utility from docker containers. This document covers the case for Sol2TVM compiler.
 
 ## Accessing the Linker
 
