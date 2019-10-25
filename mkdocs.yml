@@ -10,7 +10,7 @@ nav:
             - 'Using the compiler': 'Compilers/Solidity Compiler/Usage.md'
         - LLVM Compiler:
             - 'C Support Status': 'Compilers/LLVM Compiler/C Support Status.md' 
-            - 'Debugging options': 'Compilers/LLVM Compiler/Debugging options.md' 
+            - 'Debugging options': 'Compilers/LLVM Compiler/Debugging Options.md' 
 
     - SDK:
         - 'Overview': 'SDK/Overview.md'

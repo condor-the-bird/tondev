@@ -1,3 +1,4 @@
+# Debugging Options
 ## Analyze & Test
 
 For the time being, there is not way to analyze contract return values: the contract sends external messages, and the instrument which can parse them is yet to be developed.
