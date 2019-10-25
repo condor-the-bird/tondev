@@ -42,7 +42,7 @@ See the [Deployment](https://zeroheight.com/86757ecb2/p/665008/t/286597) section
 
 ## Update Guide
 
-The way the contracts are deployed has been changed. See the [Deployment](https://zeroheight.com/86757ecb2/p/665008/t/286597) section for more details.
+The way the contracts are deployed has been changed. See documentation for more details.
 
 # October 07, 2019
 
@@ -123,7 +123,7 @@ const client = await TONClient.create({
 
 *Version 0.12.0*
 
-- To save gas, dynamic arrays are now passed as dictionaries using HashmapE type from the TVM specification.  Previously, these were passed as contract function parameters (far more gas consumed);
+- To save gas, dynamic arrays are now passed as dictionaries using `HashmapE` type from the TVM specification.  Previously, these were passed as contract function parameters (far more gas consumed);
 -  Queries module and local TVM call function added to the Rust Client.
 
 ### Compiler Kit
