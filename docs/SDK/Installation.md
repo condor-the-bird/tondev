@@ -84,7 +84,6 @@ Home directory may have one of the following formats:
 ​      
 
 <iframe class="no-border max-full-width full-height flex-grow" src="https://www.youtube.com/embed/S-WxdIL3vIA?autohide=1&amp;showinfo=0&amp;rel=0&amp;fs=0" style="max-width: 100%; height: 346px; -webkit-box-flex: 1; flex-grow: 1; border: none;"></iframe>
-
 ## Install Client Libraries
 
 > **Tip**: go to the Getting Started section, to create your own environment and a test project from scratch according to detailed guidelines.
@@ -106,19 +105,19 @@ cargo update
 
 ### Node.js
 
-Call the following command to install Node.js client library (the recommended version comes first):
+1. Call the following command to install Node.js client library (the recommended version comes first):
 
 ```shell
 "dependencies": { "ton-client-node-js": "^0.12.1"}
 ```
 
-Then execute (in the project folder):
+2. Then execute (in the project folder):
 
 ```shell
 ~/ton-dev/hello$ npm install   
 ```
 
-Or instead of steps 1 and 2 call:
+3. Or instead of steps 1 and 2 call:
 
 ```shell
 npm install ton-client-node-js
@@ -126,7 +125,7 @@ npm install ton-client-node-js
 
 ### Web
 
-Call the following command to install client library for web browsers:
+- Call the following command to install client library for web browsers:
 
 ```shell
 npm install ton-client-web-js
@@ -134,14 +133,13 @@ npm install ton-client-web-js
 
 ### React Native
 
-Call the following command to install client library for React Native:
+- Call the following command to install client library for React Native:
 
 ```shell
 npm install ton-client-react-native-js 
 ```
 
 <iframe class="no-border max-full-width full-height flex-grow" src="https://www.youtube.com/embed/FMLTyQ2bYvE?autohide=1&amp;showinfo=0&amp;rel=0&amp;fs=0" style="max-width: 100%; height: 346px; -webkit-box-flex: 1; flex-grow: 1; border: none;"></iframe>
-
 > Visit [TON Dev](https://ton.dev/) for additional product, company & community info.
 
 
