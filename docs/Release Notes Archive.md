@@ -15,20 +15,12 @@
 
 ### **Client Libraries**
 
-1. NEW: Automatic money transfer to the address before deployment was removed from deploy method. Now, you have to carry out the following procedure:
-2. Pre-calculate address of the contract, using `createDeployMessage.`
-3. Transfer Grams to that address from pre-deployed giver or from another contract.
-4. Run the Deploy method to deploy the Contract.
-
-For more details, go to the [Deployment](https://zeroheight.com/86757ecb2/p/665008/t/286597) section.
-
-​     \2.  NEW: Error handling based on the `error-chain` crate implemented in the Rust client.
-
-​     \3. NEW: JS Client Libraries connect to the Internet at request. So, you can now use the crypto module [offline/externally](https://docs.ton.dev/86757ecb2/p/891ee9/t/359b46).
-
-## Documentation
-
-See the [Deployment](https://zeroheight.com/86757ecb2/p/665008/t/286597) section for updates.
+- NEW: Automatic money transfer to the address before deployment was removed from deploy method. Now, you have to carry out the following procedure:
+- Pre-calculate address of the contract, using `createDeployMessage.`
+- Transfer Grams to that address from pre-deployed giver or from another contract.
+- Run the `Deploy` method to deploy the Contract. 
+- NEW: Error handling based on the `error-chain` crate implemented in the Rust client.
+- NEW: JS Client Libraries connect to the Internet at request. So, you can now use the crypto module [offline/externally](https://docs.ton.dev/86757ecb2/p/891ee9/t/359b46).
 
 ## Component Versions
 
