@@ -1,6 +1,4 @@
-# Overview
-
-## Accessible Toolkit
+## **Accessible Toolkit**
 
 TON Labs SDK comes with tools and features helping [TON Dev](https://ton.dev/) developers to:
 
@@ -8,8 +6,8 @@ TON Labs SDK comes with tools and features helping [TON Dev](https://ton.dev/) d
 
 > See the [Toolchain documentation](/Compilers/About/) for detailed information about TON Labs compilers. For additional information on the TVC format, refer to the original TON blockchain documentation. 
 
-- Deploy, run, test and debug smart contracts using a local Node Server (Node SE);
-- Quickly and easily interact with blockchain data and track changes.
+- Deploy, run, test and debug smart contracts using a local Node Server (Node SE)
+- Quickly and easily interact with blockchain data and track changes
 
 ## **Components**
 
@@ -32,7 +30,7 @@ Any supported development/runtime environment can run TON Labs Client Libraries 
 
 > **Warning**: Docker utilizes a built-in virtual machine management component called Hyper-V to run itself. It is not a feature of Windows Home edition. Therefore, the solution cannot be installed on Windows Home Edition. All the other Windows editions fit the required criteria. 
 
-> **Tip**: If you are a Windows Home user, try installing a VM according to the doc [here](https://docs.ton.dev/86757ecb2/p/69f25e).
+> **Tip**: If you are a Windows Home user, try installing a VM according to the doc [here](/SDK/Auxiliaries/Installing Ubuntu VM).
 
 ## Sources
 
@@ -44,3 +42,9 @@ You can use the installation procedure provided in the this guide to smoothly cr
 - <https://github.com/tonlabs/ton-client-rs>
 - <https://hub.docker.com/r/tonlabs/local-node>
 - <https://hub.docker.com/r/tonlabs/compilers>
+
+
+
+> Visit [TON Dev](https://ton.dev/) for additional product, company & community info.
+
+

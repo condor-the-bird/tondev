@@ -14,6 +14,10 @@ Messages, message descriptors, and queues
 
 Under construction. First we add chapters we have to refer to from our product docs.
 
+## 1.1.8. Transparent hash and representation hash of a cell.
+
+In this way, sha256(c) =Hash[(c)is the transparent hash of a cell (c) or the tree of cells rooted in (c). However, sometimes we need to reason about the exact representation of a tree of cells present in a block. To this end, are *presentation hash* Hash(c) is defined, which is not transparent with respect to reference cells and other exotic types of cells. We often say that the representation hash of *c* is “the”hash of c, because it is the most frequently used hash of a cell
+
 
 
 

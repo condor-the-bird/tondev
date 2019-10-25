@@ -173,7 +173,7 @@ To simplify implementation of fixed-point arithmetic, TVM supports combined mult
 
 # The Stack
 
-This chapter contains a general discussion and comparison of register and stack machines, expanded further in Appendix C, and describes the two main classes of stack manipulation primitives employed by TVM: the basic and the compound stack manipulation primitives. An informal explanation of their sufficiency for all stack reordering required for correctly invoking other primitives and user-defined functions is also provided. Finally, the problem of efficiently implementing TVM stack manipulation primitives is discussed in [2.3](#23-efficiency-of-stack-manipulation-primitives). 
+This chapter contains a general discussion and comparison of register and stack machines, expanded further in Appendix C, and describes the two main classes of stack manipulation primitives employed by TVM: the basic and the compound stack manipulation primitives. An informal explanation of their sufficiency for all stack reordering required for correctly invoking other primitives and user-defined functions is also provided. Finally, the problem of efficiently implementing TVM stack manipulation primitives is discussed in [2.3](https://zeroheight.com/86757ecb2/p/6198ce/t/701240). 
 
 ## 2.1 Stack calling conventions 
 

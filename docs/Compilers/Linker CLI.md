@@ -1,5 +1,3 @@
-# TVM Linker CLI
-
 ## Key Use Cases
 
 The linker Toolchain tool is called the *tvm_linker* and can be used in one of the following modes:

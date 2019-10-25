@@ -1,5 +1,3 @@
-# Getting Logs
-
 To review logs, call the following command providing the relevant container name or id:
 
 ```shell

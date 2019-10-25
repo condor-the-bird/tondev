@@ -2,21 +2,21 @@
 
 ##TON DEV Product Guides
 
-[SDK](SDK/Overview/)
+[SDK](/SDK/Overview/)
 
-[Compilers](Compilers/About)
+[Compilers](/Compilers/About)
 
 ## Contract Developer Guides 
 
 ### With Solidity Compiler
 
-[Compiling to .tvc and .boc](Compilers/Solidity Compiler/Usage/)
+[Compiling to .tvc and .boc](/Compilers/Solidity Compiler/Usage/)
 
 ### With the SDK
 
-[JavaScript](SDK/Client Libraries/Using Libraries/Node.js/)
+[Node.js](/SDK/Client Libraries/Using Libraries/JavaScript/)
 
-[Rust](SDK/Client Libraries/Using Libraries/Rust/)
+[Rust](/SDK/Client Libraries/Using Libraries/Rust/)
 
 
 
