@@ -6,7 +6,6 @@ nav:
         - 'Linker CLI': 'Compilers/Linker CLI.md'
         - 'ABI Specification': 'Compilers/ABI Specification.md'
         - Solidity Compiler:
-            - 'Reference Guide': 'Compilers/Solidity Compiler/Reference Guide.md'
             - 'Feature Support': 'Compilers/Solidity Compiler/Solidity Support Status.md'
             - 'Usage': 'Compilers/Solidity Compiler/Usage.md'
         - LLVM Compiler:
