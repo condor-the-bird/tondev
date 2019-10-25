@@ -6,9 +6,8 @@ nav:
         - 'Linker CLI': 'Compilers/Linker CLI.md'
         - 'ABI Specification': 'Compilers/ABI Specification.md'
         - Solidity Compiler:
-            - 'Reference Guide': 'Compilers/Solidity Compiler/Reference Guide.md'
             - 'Feature Support': 'Compilers/Solidity Compiler/Solidity Support Status.md'
-            - 'Usage': 'Compilers/Solidity Compiler/Usage.md'
+            - 'Using the compiler': 'Compilers/Solidity Compiler/Usage.md'
         - LLVM Compiler:
             - 'C Support Status': 'Compilers/LLVM Compiler/C Support Status.md' 
             - 'Debugging options': 'Compilers/LLVM Compiler/Debugging options.md' 
@@ -16,31 +15,22 @@ nav:
     - SDK:
         - 'Overview': 'SDK/Overview.md'
         - 'Installation': 'SDK/Installation.md'
-        - Client Library Modules:     
-            - 'Modules Overview': 'SDK/Client Libraries/Library Modules/Overview.md'
-            - 'Contracts': 'SDK/Client Libraries/Library Modules/Contracts.md'
-            - 'Queries': 'SDK/Client Libraries/Library Modules/Queries.md'
-            - 'Crypto': 'SDK/Client Libraries/Library Modules/Crypto.md'
+        - 'Local Node': 'SDK/Local Node.md'
+        - 'TONDEV CLI': 'SDK/TONDEV CLI.md'
         - Using Client Libraries:
+            - 'Library Modules': 'SDK/Client Libraries/Library Modules.md'
             - 'Rust': 'SDK/Client Libraries/Using Libraries/Rust.md'
             - 'JavaScript': 'SDK/Client Libraries/Using Libraries/Node.js.md'
-        - Local Node:
-            - 'Local Node': 'SDK/Local node/Local Node.md'
-            - 'Node SE Giver': 'SDK/Local node/Node SE Giver.md'
+        
         - Misc:
             - 'Getting Logs': 'SDK/Auxiliaries/Getting Logs.md'
-            - 'TON SDK CLI': 'SDK/Auxiliaries/TON SDK CLI.md'
             - 'Troubleshooting': 'SDK/Auxiliaries/Troubleshooting.md'
             - 'Installing Ubuntu VM': 'SDK/Auxiliaries/Installing Ubuntu VM.md'
-    - FAQ: 
-        - 'Smart Contracts': 'FAQ/Smart Contracts.md'
-        - 'SDK and Integration': 'FAQ/SDK and Integration.md'
-        - 'Solidity Compiler': 'FAQ/Solidity Compiler.md'
-        - 'TON and TVM': 'FAQ/TON and TVM.md'
+    - FAQ: 'FAQ.md' 
+      
     - TON Blockchain:
-        - 'Gas Price Basics': 'TON Blockchain/Gas Calculation Basics.md'
+        - 'Gas and Storage': 'TON Blockchain/Gas Calculation Basics.md'
         - 'Replay Attack Protection': 'TON Blockchain/Replay Attack Protection.md'
-        - 'Storage Fee Calculation': 'TON Blockchain/Storage Fee Calculation.md'
         - 'TVM Error Codes': 'TON Blockchain/TVM Error Codes.md'
         - TON Specifications:
             - 'TON Whitepaper': 'TON Blockchain/TON Specifications/TON Whitepaper.md'
@@ -51,6 +41,8 @@ nav:
     - Release notes:
            - 'Archive 2019': 'Release Notes Archive.md'
 
-
+theme:
+    name: mkdocs
+    custom_dir: custom_dir/
 
     

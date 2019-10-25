@@ -1,3 +1,5 @@
+# Installation
+
 ## Preparation
 
 ### Prerequisites
@@ -65,7 +67,7 @@ docker pull tonlabs/local-node
 docker pull tonlabs/compilers
 
 docker create -e USER_AGREEMENT=yes --name tonlabs-local-node -i -p80:80 tonlabs/local-node
-mkdir <user home directory>/.tonlabs/compilers/projects
+mkdir -p <user home directory>/.tonlabs/compilers/projects
 docker create -e USER_AGREEMENT=yes --name tonlabs-compilers -it --mount type=bind,dst=/projects,src=<user home directory>/.tonlabs/compilers/projects tonlabs/compilers
 
 docker start tonlabs-local-node

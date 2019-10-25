@@ -1,3 +1,7 @@
+# ABI Specification v.0
+
+*(obsolete)*
+
 ## Message Body 
 
 ### Structure
@@ -24,7 +28,7 @@ Version` + `Function ID`+`Enc(Return values)
 
 ###  Signing
 
-To identify user outside the blockchain the message body can be protected with a cryptographic signature. Then an *External inbound message* that calls the function is signed by the user *private key*. This requirement applies only to *External inbound messages* because *Internal inbound messages* are generated within the blockchain and *src address* can be used to identify the caller. **The signature is stored to a separate cell referenced by *index 0* from the message body root cell.
+To identify user outside the blockchain the message body can be protected with a cryptographic signature. Then an *External inbound message* that calls the function is signed by the user *private key*. This requirement applies only to *External inbound messages* because *Internal inbound messages* are generated within the blockchain and *src address* can be used to identify the caller.  The signature is stored to a separate cell referenced by *index 0* from the message body root cell.
 
 If user doesn't want to sign message, empty signature cell must be attached to message body at reference *index 0* of the body root cell.
 
@@ -128,100 +132,30 @@ For example, here is the number 1, it is a single byte, so no msb is set:
 
 
 ```
-0000 0001
+0000 0001 
 ```
 
-
-
-
-
-
-
-Syntax
-
-​                            C, C++, C#                                         CoffeeScript                                         CSS                                         Dockerfile                                         diff                                         Go                                         Groovy                                         HAML                                         Handlebars                                         HTML templates (Rails, ASP.NET)                                         HTML                                         HTTP                                         Java                                         JavaScript                                         JSX (React)                                         LESS                                         Objective C                                         Perl                                         PHP                                         Pug                                         Puppet                                         Python                                         Ruby                                         Rust                                         Sass                                         Scala                                         SCSS                                         Shell                                         SQL                                         Swift                                         Vue.js                                         XML                                         YAML                     HTML   
-
 In this example we handle the number 300, it is more complicated:
-
-
-
-
-
-
-
-
-
-
 
 ```
 1010 1100 0000 0010
 ```
 
-
-
-
-
-
-
-Syntax
-
-​                            C, C++, C#                                         CoffeeScript                                         CSS                                         Dockerfile                                         diff                                         Go                                         Groovy                                         HAML                                         Handlebars                                         HTML templates (Rails, ASP.NET)                                         HTML                                         HTTP                                         Java                                         JavaScript                                         JSX (React)                                         LESS                                         Objective C                                         Perl                                         PHP                                         Pug                                         Puppet                                         Python                                         Ruby                                         Rust                                         Sass                                         Scala                                         SCSS                                         Shell                                         SQL                                         Swift                                         Vue.js                                         XML                                         YAML                     HTML   
-
 Deserializing this number from the above binary string starts from dropping the msb from each byte including the byte with msb set to 0 (it is the set in the first byte, as there is more than one byte in the *varint*):
-
-
-
-
-
-
-
-
-
-
 
 ```
 1010 1100 0000 0010
 → 010 1100  000 0010
 ```
 
-
-
-
-
-
-
-Syntax
-
-​                            C, C++, C#                                         CoffeeScript                                         CSS                                         Dockerfile                                         diff                                         Go                                         Groovy                                         HAML                                         Handlebars                                         HTML templates (Rails, ASP.NET)                                         HTML                                         HTTP                                         Java                                         JavaScript                                         JSX (React)                                         LESS                                         Objective C                                         Perl                                         PHP                                         Pug                                         Puppet                                         Python                                         Ruby                                         Rust                                         Sass                                         Scala                                         SCSS                                         Shell                                         SQL                                         Swift                                         Vue.js                                         XML                                         YAML                     HTML   
-
 Then, to get the final value, the two groups of 7 bits are put in the reverse order and concatenated:
-
-
-
-
-
-
-
-
-
-
 
 ```
 000 0010  010 1100
 →  000 0010 ++ 010 1100
 →  100101100
-→  256 + 32 + 8 + 4 = 300
+→  256 + 32 + 8 + 4 = 300   
 ```
-
-
-
-
-
-
-
-Syntax
-
-​                            C, C++, C#                                         CoffeeScript                                         CSS                                         Dockerfile                                         diff                                         Go                                         Groovy                                         HAML                                         Handlebars                                         HTML templates (Rails, ASP.NET)                                         HTML                                         HTTP                                         Java                                         JavaScript                                         JSX (React)                                         LESS                                         Objective C                                         Perl                                         PHP                                         Pug                                         Puppet                                         Python                                         Ruby                                         Rust                                         Sass                                         Scala                                         SCSS                                         Shell                                         SQL                                         Swift                                         Vue.js                                         XML                                         YAML                     HTML   
 
 ## Overflow
 

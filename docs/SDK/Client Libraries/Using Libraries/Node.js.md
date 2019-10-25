@@ -24,6 +24,7 @@ contract HelloTON {
 ​      
 
 <iframe class="no-border max-full-width full-height flex-grow" src="https://www.youtube.com/embed/TyMOi1kLz20?autohide=1&amp;showinfo=0&amp;rel=0&amp;fs=0" style="max-width: 100%; height: 346px; -webkit-box-flex: 1; flex-grow: 1; border: none;"></iframe>
+
 2. Call `cd hello` to navigate to the new folder.
 
 3. Run TON labs Sol2TVM compiler:
@@ -40,7 +41,7 @@ tondev sol hello -l js -L deploy
 
 Before being able to play with a smart contract on the blockchain, we need a blockchain infrastructure for contract testing and debugging.
 
-Make sure that you started a local node instance according to the guidelines provided in the [**Installation**](/SDK/Installation) section.
+Make sure that you started a local node instance according to the guidelines provided in the [**Installation**](/SDK/Installation/) section.
 
 ```shell
 tondev start
@@ -133,7 +134,7 @@ Hello TON Done
 
 Before a contract is deployed, it has to be defined in your node.js application. The necessary elements are: a compatible TVM code and an ABI structure. Both elements were obtained at the compilation stage before in the `helloPackage.js`file.
 
-> **Tip**: For more details on the ABI, see the [specification](/Compilers/ABI Specification).
+> **Tip**: For more details on the ABI, see the [specification](https://docs.ton.dev/86757ecb2/p/70c253).
 
 For deployment, you also have to take the following steps:
 
@@ -172,7 +173,7 @@ async function main(client) {
 
 3. The contract is almost ready for deployment, but **in TON blockchain you must deposit GRAMs to the address of the deployed contract before the actual deploy**. **Otherwise deploy will fail.** 
 
-You can send Grams from another contract or use our giver. To learn how to use giver, check the relevant section in the document covering the [Contracts](/SDK/Client Libraries/Library Modules/Contracts) module. There is a detailed usage example. 
+You can send Grams from another contract or use our giver. To learn how to use giver, check the relevant section in the document covering the [Contracts](SDK/Client Libraries/Library Modules/Contracts/) module. There is a detailed usage example. 
 
 ```javascript
 ...
@@ -283,7 +284,7 @@ Hello TON Done
 
 
 
-> Find more information about deploying and running in the [**Contracts**](/SDK/Client Libraries/Library Modules/Contracts) section.
+> Find more information about deploying and running in the [**Contracts**](SDK/Client Libraries/Library Modules/Contracts/) section.
 
 ## Querying blockchain
 
@@ -315,4 +316,4 @@ console.log('Filtered Transactions: ', transactions);
 
 The example gets all transactions with **now** equals to 1567601735. 
 
-> Find more information about a filtering in the [**Queries**](/SDK/Client Libraries/Library Modules/Queries) section.
+> Find more information about a filtering in the [**Queries**](SDK/Client Libraries/Library Modules/Queries) section.
