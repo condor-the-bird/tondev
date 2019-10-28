@@ -1,10 +1,9 @@
-site_name: TON DEV Knowledge-base
+site_name: TON.DEV Docs
 
 nav: 
     - Compilers:
         - 'About': 'Compilers/About.md'
         - 'Linker CLI': 'Compilers/Linker CLI.md'
-        - 'ABI Specification': 'Compilers/ABI Specification.md'
         - Solidity Compiler:
             - 'Feature Support': 'Compilers/Solidity Compiler/Solidity Support Status.md'
             - 'Using the compiler': 'Compilers/Solidity Compiler/Usage.md'
@@ -27,23 +26,25 @@ nav:
             - 'Getting Logs': 'SDK/Auxiliaries/Getting Logs.md'
             - 'Troubleshooting': 'SDK/Auxiliaries/Troubleshooting.md'
             - 'Installing Ubuntu VM': 'SDK/Auxiliaries/Installing Ubuntu VM.md'
-    - FAQ: 'FAQ.md' 
+    
       
-    - TON Blockchain:
-        - 'TVM Error Codes': 'TON Blockchain/TVM Error Codes.md'
-        - 'TON Whitepaper': 'TON Blockchain/TON Specifications/TON Whitepaper.md'
-        - 'TON Virtual Machine': 'TON Blockchain/TON Specifications/TON Virtual Machine.md'
-        - 'TON Blockchain': 'TON Blockchain/TON Specifications/TON Blockchain.md'
-        - 'Lite Client Guide': 'TON Blockchain/TON Specifications/Lite Client Guide.md'
+    
     - 'Smart Contract Lore':
         - 'ABI Specification V1': 'Smart Contract Lore/ABI Specification New.md'
         - 'ABI Specification V0': 'Smart Contract Lore/ABI Specification.md'
         - 'Key Generation and Use': 'Smart Contract Lore/Key Generation and Use.md'
         - 'Gas and Storage': 'Smart Contract Lore/Gas Calculation Basics.md'
         - 'Replay Attack Protection': 'Smart Contract Lore/Replay Attack Protection.md'
+    - TON Docs:
+        - 'TVM Error Codes': 'TON Blockchain/TVM Error Codes.md'
+        - 'TON Whitepaper': 'TON Blockchain/TON Specifications/TON Whitepaper.md'
+        - 'TON Virtual Machine': 'TON Blockchain/TON Specifications/TON Virtual Machine.md'
+        - 'TON Blockchain': 'TON Blockchain/TON Specifications/TON Blockchain.md'
+        - 'Lite Client Guide': 'TON Blockchain/TON Specifications/Lite Client Guide.md'
          
     - Glossary: 'Glossary.md'
-    - Release notes:
+    - FAQ: 'FAQ.md' 
+    - Changelog:
            - 'Archive 2019': 'Release Notes Archive.md'
 
 theme:
