@@ -8,58 +8,66 @@ The computation stage consumes gas, and if the limit of gas exceeded the contrac
 
 Contracts are similar to standard programs in C, but there are important syntax differences:
 
-1. ABI file. An ABI file encodes signatures and properties of public functions. This information is not stored in the blockchain and comes in JSON format for the sake of interoperability between contracts written in different languages. `abi_parser` produces header and source code files required for compilation, and the ABI file itself is needed for deploying the contract.
+1. ABI file. An ABI file encodes signatures and properties of public functions. This information is not stored in the blockchain and comes in JSON format to enable interaction between contracts originally written in different languages. `abi_parser` produces header and source code files required for compilation, and the ABI file itself is required to deploy a contract.
 2. A public method must not take an argument or produce a result. Instead, it deserializes parameters from incoming messages and then serializes output values to send a message. `abi_parser` generates boilerplate functions for each public method from abi. These functions perform serialization, call corresponding `*_Impl` function (e.g. `transfer_Impl` for `transfer`), and serialize its result.
 3. There are persistent and non-persistent global data. Persistent data is marked with `_persistent` suffix (we are going to use GCC-style attribute in future). Persistent values are preserved between public contract's functions call.
 
-## Compiling a contract
+## Compilation 
 
-To compile a contract you need Clang for TVM (https://github.com/tonlabs/TON-Compiler) either built from binaries or delivered as a part of Node SE distribution. Aside from the compiler, you need ABI parser tool, C runtime and SDK headers and sources. They are all located in `stdlib` subdirectory of the repository or the distribution:
+To compile a contract, get Clang for TVM (see https://github.com/tonlabs/TON-Compiler) built from binaries or delivered with Node SE distribution. 
+
+Apart from the compiler, you need an ABI parser tool, C runtime, SDK headers and sources. They are all located in `stdlib` subdirectory of the repository or of the distribution package:
 
 - ABI parser - `stdlib/abi_parser.py`
 - C runtime - `stdlib/stdlib_c.tvm`
 - SDK headers and sources - `stdlib/ton-sdk`
 
-To demonstrate the compilation workflow, we use piggybank contract. It's located at `samples/sdk-prototype/piggybank.c` in the source code repository of the compiler.
+To demonstrate the compilation workflow, we use a sample piggybank contract from the compiler repository (`samples/sdk-prototype/piggybank.c` ) .
 
-First, we need to run `abi_parser`:
+1. Run `abi_parser`:
 
 ```
 abi_parser.py path/to/piggybank/piggybank
 ```
 
-**Note** that `.abi` is not need to be specified at the end of the filename.
+**Note** the `.abi` extension is not mandatory.
 
-The script produces `piggybank.h`, `piggybank_wrapper.c`, `piggybank.err` files. The last one should be empty if no errors happen during compilation. `piggybank.h`, `piggybank_wrapper.c` contains the boilerplate code for public functions we described before.
+The script produces `piggybank.h`, `piggybank_wrapper.c`, `piggybank.err` files. 
 
-The compilation of the contract itself is relatively straightforward
+The last file has to be empty if compilation ended successfully.
+
+ `piggybank.h`, `piggybank_wrapper.c` contain the boilerplate code for public functions.
+
+2. Run the compiler:
 
 ```
 clang -target tvm -O3 -S piggybank.c piggybank_wrapper.c -I/path/to/stdlib
 ```
 
-Note that Clang for TVM is not able at the moment generate object or a boc binary file, so `-S` flag is necessary to produce assembly output. `-O3` is recommended to use, because the compiler is more reliable with this option.
+Note that now Clang for TVM is unable to generate an object or a `.boc` binary file, so the `-S` flag is mandatory to produce an assembly output.
 
-Aside from the contract itself, SDK sources also need to be compiled (in future we plan to introduce bootstrapping phase and the work will be performed when the compiler is built from sources)
+ `-O3` is the recommended optimization level that we also use in tests.
+
+3. Aside from the contract itself, compile the SDK sources:
 
 ```
 clang -target tvm -O3 -S /path/to/stdlib/ton-sdk/*.c -I/path/to/stdlib
 ```
 
-The resulting assembly files need to be concatenated because the linker tool doesn't currently support multiple input files
+4. Concatenated the output assembly files for the linker (this utility does not support multiple file input now):
 
 ```
 cat *.s > piggybank.combined.s
 ```
 
-Alternatively (and it's better from optimization point of view) you can use `llvm-linker` tool to link modules on LLVM IR level. Clang for TVM provides a script to automate the work with LTO, and we describe how to work with it later.
+An alternative option is to use the `llvm-linker` tool to link modules on LLVM IR level. 
 
-To link the contract you need `piggybank.combined.s` and `piggybank.abi`:
+5. To link the contract you need `piggybank.combined.s` and `piggybank.abi`:
 
 ```
 tvm_linker compile piggybank.combined.s --abi-json piggybank.abi --lib /path/to/stdlib/stdlib_c.tvm
 ```
 
-## Deploying the contract
+## Deployment
 
 Deploying steps are language independent. Please, refer to the relevant documents in Node SE documentation or in the TVM Linker specification.
