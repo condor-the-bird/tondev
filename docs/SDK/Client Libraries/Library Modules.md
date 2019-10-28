@@ -514,7 +514,7 @@ We see that the existing approach and schema are not perfect. There are improvem
 TON Client Library is shipped with a crypto module that contains the following set of crypto functions for TON blockchain.
 
 - math and random: generate_random_bytes, modular_power, factorize;
-- sha256, sha512;
+- sha256, sha512: used for address and signature hash calculation, see the ABI spec;
 - ed25519 key generation functions;
 - scrypt;
 
