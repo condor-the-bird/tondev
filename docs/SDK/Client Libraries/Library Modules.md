@@ -518,6 +518,12 @@ TON Client Library is shipped with a crypto module that contains the following s
 - ed25519 key generation functions;
 - scrypt;
 
+### Hierarchical deterministic keys
+
+These functions are used to generate BIP39 keys. Keys are derived from a known seed.
+
+hdkey_xprv_from_mnemonic, hdkey_secret_from_xprv, hdkey_public_from_xprv, hdkey_derive_from_xprv, hdkey_derive_from_xprv_path; 
+
 ### Mnemonic Functions
 
 These functions are used to implement a seed phrase at the application side.
