@@ -10,7 +10,8 @@ nav:
             - 'Using the compiler': 'Compilers/Solidity Compiler/Usage.md'
         - LLVM Compiler:
             - 'C Support Status': 'Compilers/LLVM Compiler/C Support Status.md' 
-            - 'Debugging Options': 'Compilers/LLVM Compiler/Debugging Options.md' 
+            - 'Debugging Options': 'Compilers/LLVM Compiler/Debugging Options.md'
+            - 'Compiling C': 'Compilers/LLVM Compiler/Compiling and Deploying C Contracts.md' 
 
     - SDK:
         - 'Overview': 'SDK/Overview.md'
@@ -29,14 +30,18 @@ nav:
     - FAQ: 'FAQ.md' 
       
     - TON Blockchain:
-        - 'Gas and Storage': 'TON Blockchain/Gas Calculation Basics.md'
-        - 'Replay Attack Protection': 'TON Blockchain/Replay Attack Protection.md'
         - 'TVM Error Codes': 'TON Blockchain/TVM Error Codes.md'
-        - TON Specifications:
-            - 'TON Whitepaper': 'TON Blockchain/TON Specifications/TON Whitepaper.md'
-            - 'TON Virtual Machine': 'TON Blockchain/TON Specifications/TON Virtual Machine.md'
-            - 'TON Blockchain': 'TON Blockchain/TON Specifications/TON Blockchain.md'
-            - 'Lite Client Guide': 'TON Blockchain/TON Specifications/Lite Client Guide.md'
+        - 'TON Whitepaper': 'TON Blockchain/TON Specifications/TON Whitepaper.md'
+        - 'TON Virtual Machine': 'TON Blockchain/TON Specifications/TON Virtual Machine.md'
+        - 'TON Blockchain': 'TON Blockchain/TON Specifications/TON Blockchain.md'
+        - 'Lite Client Guide': 'TON Blockchain/TON Specifications/Lite Client Guide.md'
+    - 'Smart Contract Lore':
+        - 'ABI Specification V1': 'Smart Contract Lore/ABI Specification New.md'
+        - 'ABI Specification V0': 'Smart Contract Lore/ABI Specification.md'
+        - 'Key Generation and Use': 'Smart Contract Lore/Key Generation and Use.md'
+        - 'Gas and Storage': 'Smart Contract Lore/Gas Calculation Basics.md'
+        - 'Replay Attack Protection': 'Smart Contract Lore/Replay Attack Protection.md'
+         
     - Glossary: 'Glossary.md'
     - Release notes:
            - 'Archive 2019': 'Release Notes Archive.md'
