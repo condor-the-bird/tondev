@@ -11,6 +11,10 @@ nav:
             - 'C Support Status': 'Compilers/LLVM Compiler/C Support Status.md' 
             - 'Debugging Options': 'Compilers/LLVM Compiler/Debugging Options.md'
             - 'Compiling C': 'Compilers/LLVM Compiler/Compiling and Deploying C Contracts.md' 
+        - Intrinsics: 
+            - 'Intro': 'Compilers/Intrinsics/Intro.md'
+            - 'TVM_setcode': 'Compilers/Intrinsics/TVM_setcode.md'
+            - 'TVM_accept': 'Compilers/Intrinsics/TVM_accept.md'
 
     - SDK:
         - 'Overview': 'SDK/Overview.md'
@@ -21,6 +25,8 @@ nav:
             - 'Library Modules': 'SDK/Client Libraries/Library Modules.md'
             - 'Rust': 'SDK/Client Libraries/Using Libraries/Rust.md'
             - 'JavaScript': 'SDK/Client Libraries/Using Libraries/Node.js.md'
+            - JS API Functions:
+                 - 'Message Functions': 'SDK/Client Libraries/Using Libraries/JS API Functions/Message Functions.md'
         
         - Misc:
             - 'Getting Logs': 'SDK/Auxiliaries/Getting Logs.md'
