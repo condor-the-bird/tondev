@@ -34,7 +34,7 @@ TON Labs implementation of the deployment logic includes the so-called construct
 
 In TON Labs ecosystem the constructor message is created at deploy (within the same function) and there is no need to send it separately.
 
-Note that if the constructor message is sent at deploy via the SDK, constructor parameters are used in address generation. If you create a separate constructor message after deploy, you can still change some initial state parameters  (depends on the realization), but you cannot change the address (which is logical, given that the contract is already deployed).
+Note that if the constructor message is sent at deploy via the SDK, constructor parameters   (in particular, keys, the ABI and some other data) are used in address generation. If you create a separate constructor message after deploy, you can still change some initial state parameters  (depends on the realization), but you cannot change the address (which is logical, given that the contract is already deployed).
 
 If you use TVM Linker utility to deploy a contract, the address is not changed.
 
@@ -111,23 +111,23 @@ The private key is used to sign messages, the public key  (`tvm_sender_pubkey()`
 
 The signing algorithm is covered in the ABI specification, SHA256 hashing is used.
 
-# Message validation
+# Message Validation
 
 Messages to contracts are validated by a signature and public key. Key methods for validation are `msg.sender` that contains the sender address and `tvm_sender_pubkey()`  runtime function that passes the public key. They are used differently, depending on whether an internal or external message is validated.
 
-## Internal Message Validation
+## Internal Message 
 
 To validate internal messages, the public key is not used.  Each message is identified by its address and the public key is not provided. `msg.sender` that contains the address of the sender contract is used, while `tvm_sender_pubkey()`  message is empty.
 
 Message signing is optional. Identification is based on the sender address.
 
-## External Message Validation
+## External Message 
 
 For external messages, `msg.sender` is always empty, while `tvm_sender_pubkey()` is mandatory for identification and validation; it contains the sender public key.
 
 ## Signing Messages
 
-Messages are signed according to the ABI. Please, see the specification, [Message Signing section](/Smart Contract Lore/ABI Specification New/#message-body-signing).
+Messages are signed according to the ABI. Please, see the specification, [Message Signing section](Smart Contract Lore/ABI Specification New/#message-body-signing).
 
 
 
