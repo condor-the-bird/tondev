@@ -3,6 +3,7 @@ site_name: TON.DEV Docs
 nav: 
     - Compilers:
         - 'About': 'Compilers/About.md'
+        - 'Installation': 'Compilers/Installation.md'
         - 'Linker CLI': 'Compilers/Linker CLI.md'
         - Solidity Compiler:
             - 'Feature Support': 'Compilers/Solidity Compiler/Solidity Support Status.md'
