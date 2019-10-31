@@ -81,3 +81,7 @@ contract AcceptExample2 {
 ```
 
 > **Important**: modifier is called before arguments are deserialized from inbound message body. In the example above `AlwaysAccept()` will be called before `a` and `b` are be loaded from the message body slice.
+
+### getMethod
+
+Getmethod is a special function that cannot be called in blockchain, it is called locally. Thus, there is no need for tvm_accept.
