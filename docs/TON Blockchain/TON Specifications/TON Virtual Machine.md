@@ -129,7 +129,7 @@ Gas limits gas — Contains four signed 64-bit integers: the current gas limit g
 
 When gr becomes negative or if the final value of gr is less than gc, an out of gas exception is triggered. Notice that there is no “return stack” containing the return addresses of all previously called but unfinished functions. Instead, only control register c0 is used. 
 
-The reason for this will be explained later in 4.1.9. Also notice that there are no general-purpose registers, because TVM is a stack machine (cf. [1.1](https://zeroheight.com/86757ecb2/p/77e11f/t/08f507)). So the above list, which can be summarized as “stack, control, continuation, codepage, and gas” (SCCCG), similarly to the classical SECD machine state (“stack, environment, control, dump”), is indeed the total state of TVM.
+The reason for this will be explained later in 4.1.9. Also notice that there are no general-purpose registers, because TVM is a stack machine (cf. 1.1). So the above list, which can be summarized as “stack, control, continuation, codepage, and gas” (SCCCG), similarly to the classical SECD machine state (“stack, environment, control, dump”), is indeed the total state of TVM.
 
 ## 1.5 Integer arithmetic 
 
@@ -157,7 +157,7 @@ TVM also has a primitive MODPOW2 n, which reduces the integer at the top of the 
 
 ### 1.5.5. Integer is 257-bit, not 256-bit. 
 
-One can understand now why TVM’s Integer is (signed) 257-bit, not 256-bit. The reason is that it is the smallest integer type containing both signed 256-bit integers and unsigned 256-bit integers, which does not require automatic reinterpreting of the same 256-bit string depending on the operation used (cf. [1.5.1](https://zeroheight.com/86757ecb2/p/77e11f/t/45de2a)). 
+One can understand now why TVM’s Integer is (signed) 257-bit, not 256-bit. The reason is that it is the smallest integer type containing both signed 256-bit integers and unsigned 256-bit integers, which does not require automatic reinterpreting of the same 256-bit string depending on the operation used (cf. 1.5.1). 
 
 ### 1.5.6. Division and rounding. 
 
@@ -173,7 +173,7 @@ To simplify implementation of fixed-point arithmetic, TVM supports combined mult
 
 # The Stack
 
-This chapter contains a general discussion and comparison of register and stack machines, expanded further in Appendix C, and describes the two main classes of stack manipulation primitives employed by TVM: the basic and the compound stack manipulation primitives. An informal explanation of their sufficiency for all stack reordering required for correctly invoking other primitives and user-defined functions is also provided. Finally, the problem of efficiently implementing TVM stack manipulation primitives is discussed in [2.3](#23-efficiency-of-stack-manipulation-primitives). 
+This chapter contains a general discussion and comparison of register and stack machines, expanded further in Appendix C, and describes the two main classes of stack manipulation primitives employed by TVM: the basic and the compound stack manipulation primitives. An informal explanation of their sufficiency for all stack reordering required for correctly invoking other primitives and user-defined functions is also provided. Finally, the problem of efficiently implementing TVM stack manipulation primitives is discussed in 2.3. 
 
 ## 2.1 Stack calling conventions 
 
@@ -227,7 +227,7 @@ In stack machines such as TVM, when a function or primitive needs to return a re
 
 ### 2.1.9. Returning several values. 
 
-Some functions might want to return several values `y1, . . . , yk`, with k not necessarily equal to one. In these cases, the k return values are pushed into the stack in their natural order, starting from y1. For example, the “divide with remainder” primitive DIVMOD needs to return two values, the quotient q and the remainder r. Therefore, DIVMOD pushes q and r into the stack, in that order, so that the quotient is available return values in their place, by convention leaving all deeper values intact. Then the resulting stack, again in its entirety, is returned to the caller. Most TVM primitives behave in this way, and we expect most user-defined functions to be implemented under such conventions. However, TVM provides mechanisms to specify how many arguments must be passed to a called function (cf. [4.1.10](https://zeroheight.com/86757ecb2/p/82565a/t/869715)). When these mechanisms are employed, the specified number of values are moved from the caller’s stack into the (usually initially empty) stack of the called function, while deeper values remain in the caller’s stack and are inaccessible to the callee. The caller can also specify how many return values it expects from the called function. Such argument-checking mechanisms might be useful, for example, for a library function that calls user-provided functions passed as arguments to it.
+Some functions might want to return several values `y1, . . . , yk`, with k not necessarily equal to one. In these cases, the k return values are pushed into the stack in their natural order, starting from y1. For example, the “divide with remainder” primitive DIVMOD needs to return two values, the quotient q and the remainder r. Therefore, DIVMOD pushes q and r into the stack, in that order, so that the quotient is available return values in their place, by convention leaving all deeper values intact. Then the resulting stack, again in its entirety, is returned to the caller. Most TVM primitives behave in this way, and we expect most user-defined functions to be implemented under such conventions. However, TVM provides mechanisms to specify how many arguments must be passed to a called function (cf. 4.1.10). When these mechanisms are employed, the specified number of values are moved from the caller’s stack into the (usually initially empty) stack of the called function, while deeper values remain in the caller’s stack and are inaccessible to the callee. The caller can also specify how many return values it expects from the called function. Such argument-checking mechanisms might be useful, for example, for a library function that calls user-provided functions passed as arguments to it.
 
 ## 2.3 Efficiency of stack manipulation primitives
 
@@ -279,7 +279,7 @@ When a cell needs to be transferred by a network protocol or stored in a disk fi
 
 \2. Then the data bits are serialized as `db/8e` 8-bit octets (bytes). If b is not a multiple of eight, a binary 1 and up to six binary 0s are appended to the data bits. After that, the data is split into `db/8e` eight-bit groups, and each group is interpreted as an unsigned big-endian integer` 0 . . . 255` and stored into an octet. 
 
-\3. Finally, each of the r cell references is represented by 32 bytes containing the 256-bit representation hash `Hash(ci)`, explained below in [3.1.5](https://zeroheight.com/86757ecb2/p/836380/t/185d5f), of the cell ci referred to. 
+\3. Finally, each of the r cell references is represented by 32 bytes containing the 256-bit representation hash `Hash(ci)`, explained below in 3.1.5, of the cell ci referred to. 
 
 In this way, `2 + db/8e + 32r` bytes of `CellRepr(c)` are obtained. 
 
@@ -291,7 +291,7 @@ The 256-bit representation hash or simply hash `Hash(c)` of a cell c is recursiv
 
 ​                                              `Hash(c) := sha256 :=  CellRepr(c)` 
 
-Notice that cyclic cell references are not allowed and cannot be created by means of the TVM (cf. [2.3.5](https://zeroheight.com/86757ecb2/p/6198ce/t/3667d8)), so this recursion always ends, and the representation hash of any cell is well-defined. 
+Notice that cyclic cell references are not allowed and cannot be created by means of the TVM (cf. 2.3.5), so this recursion always ends, and the representation hash of any cell is well-defined. 
 
 ### 3.1.6. The higher hashes of a cell. 
 
@@ -323,11 +323,11 @@ The next large group of TVM instructions consists of data manipulation instructi
 
 ### 3.2.1. Classes of cell manipulation instructions. 
 
-The TVM cell instructions are naturally subdivided into two principal classes: • Cell creation instructions or serialization instructions, used to construct new cells from values previously kept in the stack and previously constructed cells. • Cell parsing instructions or deserialization instructions, used to extract data previously stored into cells by cell creation instructions. Additionally, there are exotic cell instructions used to create and inspect exotic cells (cf. [3.1.2](https://zeroheight.com/86757ecb2/p/836380/t/527d7d)), which in particular are used to represent pruned branches of Merkle proofs and Merkle proofs themselves. 
+The TVM cell instructions are naturally subdivided into two principal classes: • Cell creation instructions or serialization instructions, used to construct new cells from values previously kept in the stack and previously constructed cells. • Cell parsing instructions or deserialization instructions, used to extract data previously stored into cells by cell creation instructions. Additionally, there are exotic cell instructions used to create and inspect exotic cells (cf. 3.1.2), which in particular are used to represent pruned branches of Merkle proofs and Merkle proofs themselves. 
 
 ### 3.2.2. Builder and Slice values. 
 
-Cell creation instructions usually work with Builder values, which can be kept only in the stack (cf. [1.1.3](https://zeroheight.com/86757ecb2/p/77e11f/t/033c4d)). 
+Cell creation instructions usually work with Builder values, which can be kept only in the stack (cf. 1.1.3). 
 
 Such values represent partially constructed cells, for which fast operations for appending bitstrings, integers, other cells, and references to other cells can be defined. Similarly, cell parsing instructions make heavy use of Slice values, which represent either the remainder of a partially parsed cell, or a value (subcell) residing inside such a cell and extracted from it by a parsing instruction. 
 
@@ -339,7 +339,7 @@ This chapter describes continuations, which may represent execution tokens and e
 
 ### 4.1.10. Determining the number of arguments passed to and/or return values accepted from a subroutine. 
 
-Similarly to JMPX and RET, CALLX also has special (rarely used) forms, which allow us to explicitly specify the number n 00 of arguments passed from the current stack to the called subroutine (by default, n 00 equals the depth of the current stack, i.e., it is passed in its entirety). Furthermore, a second number n 000 can be specified, used to set nargs of the modified cc continuation before storing it into the new c0; the new nargs equals the depth of the old stack minus n 00 plus n 000 . This means that the caller is willing to pass exactly n 00 arguments to the called subroutine, and is willing to accept exactly n 000 results in their stead. Such forms of CALLX and RET are mostly intended for library functions that accept functional arguments and want to invoke them safely. Another application is related to the “virtualization support” of TVM, which enables TVM code to run other TVM code inside a “virtual TVM machine”. Such virtualization techniques might be useful for implementing sophisticated payment channels in the TON Blockchain (cf. [5](https://zeroheight.com/86757ecb2/p/36f099)]).
+Similarly to JMPX and RET, CALLX also has special (rarely used) forms, which allow us to explicitly specify the number n 00 of arguments passed from the current stack to the called subroutine (by default, n 00 equals the depth of the current stack, i.e., it is passed in its entirety). Furthermore, a second number n 000 can be specified, used to set nargs of the modified cc continuation before storing it into the new c0; the new nargs equals the depth of the old stack minus n 00 plus n 000 . This means that the caller is willing to pass exactly n 00 arguments to the called subroutine, and is willing to accept exactly n 000 results in their stead. Such forms of CALLX and RET are mostly intended for library functions that accept functional arguments and want to invoke them safely. Another application is related to the “virtualization support” of TVM, which enables TVM code to run other TVM code inside a “virtual TVM machine”. Such virtualization techniques might be useful for implementing sophisticated payment channels in the TON Blockchain (cf. 5).
 
 # Appendix
 
