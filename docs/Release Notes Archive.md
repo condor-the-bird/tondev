@@ -1,5 +1,74 @@
 # Archive
 
+# October 18, 2019
+
+## TON Labs Node SE
+
+## Local Node
+
+- Giver, compatible with new ABI version "1", has been pre-deployed. See Upgrade Guide below for more information.
+
+## Compiler Kit
+
+Added support for:
+
+- New ABI version 1
+- Generic replay attack protection 
+- Contract `selfdestruct` feature
+- Handler function for bounced messages
+- Return of array of structures
+- TickTock handler and emulation
+- Function inlining
+- Fetching public key from the contract code
+- Partial assignment for tuples
+- Return of named variables/parameters
+- Calling base contract functions using `super.f()`
+
+Limited support for:
+
+- Function modifiers
+- Fixed-size byte array type
+
+Improvements:
+
+- Numerous gas consumption optimizations
+- User-friendly addresses in tvm_linker
+- Secure contract construction
+- Fixed serialization of inherited events
+- Additional warnings when trying to compile abstract contracts
+- New TVM dictionary primitives to speed up stdlib loading
+- Optimized gas consumption for stdlib calls
+- Added numerical parameter for require
+- More detailed error reporting
+
+## **Client Libraries**
+
+- ABI Version 1 was supported.
+- `ton-client-js/types.js` file was added. It contains all the types and interfaces defined in JS library for Flow. You can use it in your IDE (if it supports Flow), so it will highlight the code and enable hints.
+
+## Documentation
+
+More new docs added. We have updated guides on:
+
+- Node SE pre-deployed test giver 
+- Giver use with projects in JS
+- GraphQL usage particularities 
+
+## Component Versions
+
+- tonlabs/local-node:0.14.0
+- tonlabs/compilers:0.14.0
+- ton-client-node-js:0.14.0
+- ton-client-js:0.14.0
+- ton-client-web-js:0.14.0
+- ton-client-react-native-js:0.14.0
+- ton-client-rs:0.14.0
+
+## Update Guide
+
+1. To be able to work with ABI version 1 you need to recompile your contracts and re-use them in your projects.
+2. Note that the Node SE pre-deployed giver has been changed. 
+
 # October 11, 2019
 
 ## TON Labs Node SE
