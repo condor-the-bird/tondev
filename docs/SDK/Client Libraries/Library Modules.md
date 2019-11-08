@@ -507,6 +507,63 @@ query{
 
 We see that the existing approach and schema are not perfect. There are improvement options and wee seek to implement them.
 
+##  Working with u64 and u128 numbers
+
+All the numbers larger than 2^32 are stored as hexadecimal strings with a string length prefix as defined below.
+
+### U64String
+
+All number types in range (2^32 ... 2^64) are encoded as a string using the following format:
+
+```
+"MN...N"
+```
+
+where:
+
+- `M` – one char with hex length of hexadecimal representation of a number.
+- `N...N` – hexadecimal lowercased representation of a number.
+
+Number examples:
+
+- `11` – 1
+- `12` – 2
+- `1a` – 10
+- `2ff` – 255
+- `fffffffffffffffff` - 0xffffffffffffffff = 2^(2 * 16)-1 = 2^32-1
+
+### U1024String
+
+All number types in range (2^64 ... 2^1024] are encoded as a string using the following format:
+
+```
+"MMN...N"
+```
+
+where:
+
+- `MM` – two chars with hex length of hexadecimal representation of a number.
+- `N...N` – hexadecimal lowercased representation of a number.
+
+Number examples:
+
+- `011` – 1
+- `012` – 2
+- `01a` – 10
+- `02ff` – 255
+- `ffff..ff` - 2^(2 *256) - 1 = 2^512 - 1
+
+### GraphQL interaction
+
+Within the GraphQL filter fields these numbers can be represented as follows:
+
+1. Hexadecimal number string starting with a `0x` prefix for example `0x10f0345ae`. Note that you can specify characters for hexadecimal numbers in any letter case, for example `0xa4b` is the same as a `0xA4B`.
+2. Decimal number representation, for example `100034012`.
+
+GraphQL always returns large numbers as a hexadecimal number string starting with a `0x` prefix; for example `0xa34ff`. Note that GraphQL always returns characters in lower case.
+
+To interact with large numbers in GraphQl one needs to use `BigInt(value)` where `value` can be both hexadecimal with `0x` prefix or a decimal number.  
+
 # Crypto Functions
 
 ## Library Overview
