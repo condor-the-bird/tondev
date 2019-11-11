@@ -8,6 +8,7 @@ nav:
         - Solidity Compiler:
             - 'Feature Support': 'Compilers/Solidity Compiler/Solidity Support Status.md'
             - 'Using the compiler': 'Compilers/Solidity Compiler/Usage.md'
+            - 'FAQ': 'FAQ/Solidity Compiler.md'
         - LLVM Compiler:
             - 'C Support Status': 'Compilers/LLVM Compiler/C Support Status.md' 
             - 'Debugging Options': 'Compilers/LLVM Compiler/Debugging Options.md'
@@ -26,6 +27,7 @@ nav:
             - SDK API:
                  - 'Contract Management': 'SDK/SDK API/Contract Management.md'
         
+        - 'FAQ': 'FAQ/SDK and Integration.md'
         - Misc:
             - 'Getting Logs': 'SDK/Auxiliaries/Getting Logs.md'
             - 'Troubleshooting': 'SDK/Auxiliaries/Troubleshooting.md'
@@ -38,18 +40,20 @@ nav:
         - 'Deploying contract from contract': 'Smart Contract Lore/Deploying contract from contract.md'
         - 'Modifying Contracts': 'Smart Contract Lore/TVM_setcode.md'
         - 'Managing Gas': 'Smart Contract Lore/TVM_accept.md'
+        - 'FAQ': 'FAQ/Smart Contracts.md'
     - 'Gas Specs':
         - 'Gas Calculation and Storage': Gas Specs/Gas Calculation Basics.md'
         - 'Transaction Fee Calculation': 'Gas Specs/Transaction Fee Calculation.md'
-    - TON Specs:
+    - TON BLockchain:
         - 'TVM Error Codes': 'TON Blockchain/TVM Error Codes.md'
         - 'TON Whitepaper': 'TON Blockchain/TON Specifications/TON Whitepaper.md'
         - 'TON Virtual Machine': 'TON Blockchain/TON Specifications/TON Virtual Machine.md'
         - 'TON Blockchain': 'TON Blockchain/TON Specifications/TON Blockchain.md'
         - 'Lite Client Guide': 'TON Blockchain/TON Specifications/Lite Client Guide.md'
+        - 'FAQ': 'FAQ/TON and TVM.md'
+
          
-    - Glossary: 'Glossary.md'
-    - FAQ: 'FAQ.md' 
+    - Glossary: 'Glossary.md' 
     - Changelog:
            - 'Archive 2019': 'Release Notes Archive.md'
 
