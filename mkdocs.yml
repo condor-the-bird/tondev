@@ -12,10 +12,7 @@ nav:
             - 'C Support Status': 'Compilers/LLVM Compiler/C Support Status.md' 
             - 'Debugging Options': 'Compilers/LLVM Compiler/Debugging Options.md'
             - 'Compiling C': 'Compilers/LLVM Compiler/Compiling and Deploying C Contracts.md' 
-        - Intrinsics: 
-            - 'Intro': 'Compilers/Intrinsics/Intro.md'
-            - 'TVM_setcode': 'Compilers/Intrinsics/TVM_setcode.md'
-            - 'TVM_accept': 'Compilers/Intrinsics/TVM_accept.md'
+   
 
     - SDK:
         - 'Overview': 'SDK/Overview.md'
@@ -26,23 +23,25 @@ nav:
             - 'Library Modules': 'SDK/Client Libraries/Library Modules.md'
             - 'Rust': 'SDK/Client Libraries/Using Libraries/Rust.md'
             - 'JavaScript': 'SDK/Client Libraries/Using Libraries/Node.js.md'
-            - JS API Functions:
-                 - 'Message Functions': 'SDK/Client Libraries/Using Libraries/JS API Functions/Message Functions.md'
+            - SDK API:
+                 - 'Contract Management': 'SDK/SDK API/Contract Management.md'
         
         - Misc:
             - 'Getting Logs': 'SDK/Auxiliaries/Getting Logs.md'
             - 'Troubleshooting': 'SDK/Auxiliaries/Troubleshooting.md'
             - 'Installing Ubuntu VM': 'SDK/Auxiliaries/Installing Ubuntu VM.md'
     
-      
-    
-    - 'Smart Contract Lore':
+    - 'Developing Contracts':
         - 'ABI Specification V1': 'Smart Contract Lore/ABI Specification New.md'
         - 'ABI Specification V0': 'Smart Contract Lore/ABI Specification.md'
         - 'Key Generation and Use': 'Smart Contract Lore/Key Generation and Use.md'
-        - 'Gas and Storage': 'Smart Contract Lore/Gas Calculation Basics.md'
-        - 'Replay Attack Protection': 'Smart Contract Lore/Replay Attack Protection.md'
-    - TON Docs:
+        - 'Deploying contract from contract': 'Smart Contract Lore/Deploying contract from contract.md'
+        - 'Modifying Contracts': 'Smart Contract Lore/TVM_setcode.md'
+        - 'Managing Gas': 'Smart Contract Lore/TVM_accept.md'
+    - 'Gas Specs':
+        - 'Gas Calculation and Storage': Gas Specs/Gas Calculation Basics.md'
+        - 'Transaction Fee Calculation': 'Gas Specs/Transaction Fee Calculation.md'
+    - TON Specs:
         - 'TVM Error Codes': 'TON Blockchain/TVM Error Codes.md'
         - 'TON Whitepaper': 'TON Blockchain/TON Specifications/TON Whitepaper.md'
         - 'TON Virtual Machine': 'TON Blockchain/TON Specifications/TON Virtual Machine.md'
