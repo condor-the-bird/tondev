@@ -1,10 +1,10 @@
-# TVM_setcode
+# Modifying Contracts
 
-`tvm_setcode` is designed to implement the TVM SETCODE primitive (see the original TON specification) in the compiler.
+Unlike other platforms, TON blockchain allows modifying code of a previously deployed contract. The feature is implemented via TVM SETCODE primitive (see the original TON specification).
 
-The function itself is private and it works in combination with a public function (e.g. `main`, as in the example below) that takes the new code and passes it to `tvm_setcode`.
+In TON Labs Solidity Compiler there is `tvm_setcode` function. 	The function itself is private and it works in combination with a public function (e.g. `main`, as in the example below) that takes the new code and passes it to `tvm_setcode`.
 
-Code samples below show how the function is defined in Solidity and how it works to actually update code in a test script.
+​	Code samples below show how the function is defined in Solidity and how it is used in the SDK to actually update code in a test script.
 
 The test script calls the `getVersion` function then the `main` function to indicate that an update in `getVersion` is to be made ( `input: { newcode: code.codeBase64 }`) and then redefines the `getVersion` function with new parameters. Note that the updated code is not used during the current session. It applies next time the contract is called.
 
