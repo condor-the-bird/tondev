@@ -350,7 +350,7 @@ const transactions = await client.queries.transactions.waitFor({
 }, 'id now status');
 ```
 
-The signature of the `waitFor` is exactly the same as for the `query`. The only difference is behavior: if there is no transaction with the specified `now` in the requested blockchain, this method waits indefinitely until the transaction appears in the blockchain.
+The signature of the `waitFor` is exactly the same as for the `query`. The only difference is behavior: if there is no transaction with the specified `now` in the requested blockchain, this method waits indefinitely until the transaction appears in the blockchain.  `WaitFor` method has an optional argument: `timeout?: number`. If no transaction with '`finalized`' status appeared, it generates an exception. 
 
 ## Subscriptions
 
