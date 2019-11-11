@@ -24,8 +24,8 @@ nav:
             - 'Library Modules': 'SDK/Client Libraries/Library Modules.md'
             - 'Rust': 'SDK/Client Libraries/Using Libraries/Rust.md'
             - 'JavaScript': 'SDK/Client Libraries/Using Libraries/Node.js.md'
-            - SDK API:
-                 - 'Contract Management': 'SDK/SDK API/Contract Management.md'
+        - SDK API:
+            - 'Contract Management': 'SDK/SDK API/Contract Management.md'
         
         - 'FAQ': 'FAQ/SDK and Integration.md'
         - Misc:
@@ -44,7 +44,7 @@ nav:
     - 'Gas Specs':
         - 'Gas Calculation and Storage': Gas Specs/Gas Calculation Basics.md'
         - 'Transaction Fee Calculation': 'Gas Specs/Transaction Fee Calculation.md'
-    - TON BLockchain:
+    - TON:
         - 'TVM Error Codes': 'TON Blockchain/TVM Error Codes.md'
         - 'TON Whitepaper': 'TON Blockchain/TON Specifications/TON Whitepaper.md'
         - 'TON Virtual Machine': 'TON Blockchain/TON Specifications/TON Virtual Machine.md'
