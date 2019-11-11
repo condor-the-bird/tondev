@@ -1,4 +1,4 @@
-# Gas acceptance
+# Managing Gas
 
 ## Some Theory
 
