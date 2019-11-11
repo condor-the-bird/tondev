@@ -16,7 +16,7 @@ It is calculated according to the following formula:
 trans.total_fees = in_fwd_fee + trans.total_action_fees + trans.gas_fees + trans.storage_fee
 ```
 
-`trans.gas_fees` include all gas fees associated with the transaction. You can find more info in the documentation on [Gas fee calculation](https://www.notion.so/tonlabs/Gas-Calculation-Basics-b7186a4f34c14b48bbd36b70eef5866e).
+`trans.gas_fees` include all gas fees associated with the transaction. You can find more info in the Gas Calculation Basics document.
 
 `trans.total_action_fees` - fees for performing actions. TON transactions currently have three types of actions that add a fee:
 
