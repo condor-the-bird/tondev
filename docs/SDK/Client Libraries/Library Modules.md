@@ -138,17 +138,6 @@ The `keyPair` is a mandatory parameter that specifies the following:
 - public key is placed into contract initial state as a rule for deploying ABI-based contracts;
 - secret key is used to sign a constructor invocation.
 
-The deployment method executes the following sequence:
-
-1. Prepares a deploy request.
-2. Sends a constructor message to a node 
-3. Waits until the deployment is complete.
-4. Generates the constructor invocation request.
-5. Sends the invocation to the blockchain node.
-6. Waits until the invocation phase is complete.
-
-The returned result contains an account address assigned to the newly deployed contract.
-
 ## Running contracts
 
 ### Running functions
@@ -350,7 +339,25 @@ const transactions = await client.queries.transactions.waitFor({
 }, 'id now status');
 ```
 
-The signature of the `waitFor` is exactly the same as for the `query`. The only difference is behavior: if there is no transaction with the specified `now` in the requested blockchain, this method waits indefinitely until the transaction appears in the blockchain.  `WaitFor` method has an optional argument: `timeout?: number`. If no transaction with '`finalized`' status appeared, it generates an exception. 
+The signature of the `waitFor` is exactly the same as for the `query`. The only difference is behavior: if there is no transaction with the specified `now` in the requested blockchain, this method waits indefinitely until the transaction appears in the blockchain. . 
+
+The `WaitFor` method has an optional argument: `timeout?: number`. If no transaction with '`finalized`' status appeared, it generates an exception. See below a script example that can be used in an app.
+
+```javascript
+try {
+    const timeoutInMs = 10000;
+    const transaction = await queries.transactions.waitFor({
+        now: { gt: 1563449 },
+    }, 'id status', timeoutInMs);
+    console.log(`transaction is: ${transaction}`);
+} catch (error) {
+    if (error.code === 1003) {
+        console.log('Timeout expired');
+    } else {
+        throw error;
+    }
+}
+```
 
 ## Subscriptions
 
