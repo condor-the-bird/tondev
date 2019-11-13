@@ -44,32 +44,29 @@ Or, in case you are using Node SE instance, use the pre-deployed Giver for it.
 Add this code to your index.js file:
 
 ```javascript
-const nodeSeGiverAddress = 'a46af093b38fcae390e9af5104a93e22e82c29bcb35bf88160e4478417028884';
-const nodeSeGiverAbi = {
+const giverAddress = '0:841288ed3b55d9cdafa806807f02a0ae0c169aa5edfe88a789a6482429756a94';
+const giverAbi = 
+{
 	"ABI version": 1,
 	"functions": [
 		{
 			"name": "constructor",
-			"inputs": [
-			],
-			"outputs": [
-			]
+			"inputs": [],
+			"outputs": []
 		},
 		{
 			"name": "sendGrams",
 			"inputs": [
-				{"name":"dest","type":"uint256"},
+				{"name":"dest","type":"address"},
 				{"name":"amount","type":"uint64"}
 			],
-			"outputs": [
-			]
+			"outputs": []
 		}
 	],
-	"events": [
-	],
-	"data": [
-	]
+	"events": [],
+	"data": []
 };
+
 async function get_grams_from_giver(client, account) {
     const { contracts, queries } = client;
     const result = await contracts.run({
@@ -77,8 +74,8 @@ async function get_grams_from_giver(client, account) {
         functionName: 'sendGrams',
         abi: giverAbi,
         input: {
-            dest: `0x${account}`,
-            amount: 10000000000
+            dest: `account`,
+            amount: 5000000000
         },
         keyPair: null,
     });
@@ -86,13 +83,9 @@ async function get_grams_from_giver(client, account) {
     const wait = await queries.accounts.waitFor(
         {
             id: { eq: account },
-            storage: {
-                balance: {
-                    Grams: { gt: "0" }
-                }
-            }
+            balance: { gt: "0" }
         },
-		'id storage {balance {Grams}}'
+		'id balance'
     );
 };
 ```
@@ -466,17 +459,17 @@ The `limit` parameter determines the maximum number of items returned. This para
 
 Each items in each collection has a unique key stored in the `id` field. This ID is the same as the item blockchain identifier.
 
-## Variability and Nested Levels 
+## Schema Simplification
 
 GraphQL is designed to search for entities similar to documents. In our case these entities are represented by the above mentioned collections.
 
 Obviously, each entity may have a set of fields. A field can be used as a filter. But, some complex fields (e.g. a message header) also include fields (values) and whole structures. These enclosed fields are not consistent even within a single collection. Therefore, you cannot make a query that is filtered by, say, `header` field alone. 
 
-You have to build a complex query that drills down to а particular scalar field or field with primitive value (string, number or boolean) at the bottom level of the whole nested structure. 
+In previous schema version you would have to build a complex query that drills down to а particular scalar field or field with primitive value (string, number or boolean) at the bottom level of the whole nested structure. 
 
-As mentioned before, field structures may depend on document type or other conditions. In this case we have to use the GraphQL 'union' type which means that a value can have one of alternative types. For example the message `header` field depends on message type: internal, external inbound or external outbound, so we have three alternative variants for message header structure with three fields in the header (`MsgInt`, `MsgExtIn` or` MsgExtOut`).
+As mentioned before, field structures may depend on document type or other conditions. In this case you would have to use the GraphQL 'union' type which means that a value can have one of alternative types. For example the message `header` field depends on message type: internal, external inbound or external outbound, so we have three alternative variants for message header structure with three fields in the header (`MsgInt`, `MsgExtIn` or` MsgExtOut`).
 
-In the projection part of GraphQl queries we can use '`...on`' syntax to specify a result set for every variant at any level. Thus, the sample implies two nested levels and the number is unlimited. you can drill down as deep, as needed.
+In the projection part of GraphQl queries one has to use '`...on`' syntax to specify a result set for every variant at any level. Thus, the sample implies two nested levels and the number is unlimited. you can drill down as deep, as needed.
 
 ```
 ...on field_name {
@@ -488,7 +481,7 @@ In the projection part of GraphQl queries we can use '`...on`' syntax to specify
 
 Once you type `...on`, autocomplete hints appear. 
 
-See the usage example below.
+ Thanks to schema simplification, most of the problems above are resolved. See two samples below. The first shows previous usage, the second illustrates how the schema works now 
 
 ```sql
 query{
@@ -512,7 +505,12 @@ query{
 }
 ```
 
-We see that the existing approach and schema are not perfect. There are improvement options and wee seek to implement them.
+```sql
+query{
+    messages(filter: {created_lt: {gt: 281}}, orderBy: [{path:"created_lt", direction: ASC}])
+    { id created_lt }
+}
+```
 
 ##  Working with u64 and u128 numbers
 
