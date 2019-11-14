@@ -160,6 +160,8 @@ The result contains the `output` field with a decoded output message returned by
 
 If an optional `keyPair` parameter is specified, the input message is signed and accompanied with a public key. So, the contract can perform authorization using a verifiable public key passed to it.
 
+ In addition to the `output` field the `run` method returns the transaction field which contains a related transaction object. This object contains an id of the transaction and a subset of transaction attributes, such as` tr_type status out_msgs block_id now aborted storage { status_change } compute { compute_type skipped_reason success exit_code } action { success valid result_code no_funds }`. The example below uses the transaction field. 
+
 ### Running  locally
 
 Cases are when all a contract function does is calculate some data based on the current contract state and return the calculation result. In these cases we do not need the standard sequence to run a contract. Instead, the following steps are taken:
