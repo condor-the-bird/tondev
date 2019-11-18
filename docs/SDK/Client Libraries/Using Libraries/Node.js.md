@@ -9,14 +9,28 @@ First and foremost, create a local folder for all your test projects. Note that 
 1. Create "hello" folder and place the "hello.sol" contract source code into it:
 
 ```javascript
-pragma solidity >=0.5.0 <0.6.0;
+pragma solidity ^0.5.4;
+
 contract HelloTON {
-    uint32 deployTime;
-  constructor() public {
-        deployTime = uint32(now);
+    uint32 timestamp;
+
+    modifier alwaysAccept {
+      tvm_accept();
+      _;
+  }
+
+    function tvm_accept() private pure {}
+
+    constructor() public {
+        timestamp = uint32(now);
     }
-    function sayHello() public view returns (uint32) {
-        return deployTime;
+
+    function touch() external alwaysAccept {
+        timestamp = uint32(now);
+    }
+
+    function sayHello() external view returns (uint32) {
+        return timestamp;
     }
 }
 ```
@@ -24,7 +38,6 @@ contract HelloTON {
 ​      
 
 <iframe class="no-border max-full-width full-height flex-grow" src="https://www.youtube.com/embed/TyMOi1kLz20?autohide=1&amp;showinfo=0&amp;rel=0&amp;fs=0" style="max-width: 100%; height: 346px; -webkit-box-flex: 1; flex-grow: 1; border: none;"></iframe>
-
 2. Call `cd hello` to navigate to the new folder.
 
 3. Run TON labs Sol2TVM compiler:
@@ -139,15 +152,6 @@ Before a contract is deployed, it has to be defined in your node.js application.
 For deployment, you also have to take the following steps:
 
 1. Generate the key pair. Each time a contract is deployed, you can generate keys with a built-in `ton.crypto.ed25519Keypair` crypto module.
-
-Or use pre-generated keys to get predictable results. It is the option used for this example:
-
-```shell
-{
-    public: '55d7bab463a6a3ef5e03bb5f975836ddfb589b9ccb00329be7da8ea981c5268a',
-    secret: 'de93a97c7103c2d44e47972265cfdfe266fd28c8cadc4875804ee9f57cf786d6',
-}
-```
 
 2. Switch to your test app source code to declare a smart contract package and the relevant key pair:
 

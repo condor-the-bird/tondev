@@ -4,52 +4,53 @@
 
 Fully supported features and feature groups.
 
-| **FEATURE**                                | **USAGE**                                                    | **NOTES**                                                    |
-| ------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **Pragmas**                                | Pragma...                                                    |                                                              |
-| **Version**                                | pragma solidity >=0.5.0 <0.6.0                               |                                                              |
-| **Experimental**                           | pragma experimental ...                                      |                                                              |
-| **ABIEncoderV2**                           | pragma experimental ABIEncoderV2                             |                                                              |
-| **Import**                                 | `import "filename" ``import * as symbolName from "filename" ``import {symbol1 as alias, symbol2} from "filename"` | Additional test are in the pipeline                          |
-| **Comments**                               | //, /* */                                                    |                                                              |
-| **Boolean:**                               | bool, true, false                                            |                                                              |
-| **operators**                              | !, &&, II, ==, !=                                            |                                                              |
-| **lazy evaluation**                        | `f(x) == true ⇒ (f(x) || g(y)) == true`                      |                                                              |
-| **integers**                               | `intN/uintN`, `N=8..256`                                     |                                                              |
-| **comparisons**                            | `<=`, `<`,` ==`,` !=`,` >=`,` >`                             |                                                              |
-| **Bit Operators:**                         | `&`, `|`,` ^`,` ~`                                           |                                                              |
-| **shift**                                  | `<<`, `>>`                                                   |                                                              |
-| **base arithmetic**                        | `+`, `-`, `unary -`, `*`                                     |                                                              |
-| **division**                               | `/`                                                          |                                                              |
-| **modulo**                                 | `%`                                                          |                                                              |
-| **exponent**                               | `**`                                                         |                                                              |
-| **Ternary operator**                       | `b = true ? 2 : 3;`                                          |                                                              |
-| **Enums**                                  | `enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill }` |                                                              |
-| **Return variables**                       |                                                              |                                                              |
-| **Structs**                                | `struct`                                                     |                                                              |
-| **Mapping types**                          | `mapping`                                                    |                                                              |
-| **Integer types**                          |                                                              |                                                              |
-| **Conversions between Elementary Types**   | Implicit conversions	Explicit conversions                 |                                                              |
-| **Order of Evaluation of Expressions**     | not specified, lazy bools                                    |                                                              |
-| **Assignments for arrays and structs**     |                                                              |                                                              |
-| **Assignments in expressions**             |                                                              |                                                              |
-| **Member constants**                       |                                                              |                                                              |
-| **Default member values**                  |                                                              |                                                              |
-| **View functions**                         | `function f(uint a) public view returns (uint)`              |                                                              |
-| **Pure functions**                         | `function f(uint a) public pure returns (uint)`              |                                                              |
-| **Now**                                    |                                                              |                                                              |
-| **Arrays in events**                       |                                                              |                                                              |
-| **Return arrays in public methods**        |                                                              |                                                              |
-| **Nested structure encoding**              |                                                              |                                                              |
-| **Contract types**                         | `My contractC`                                               |                                                              |
-| **Using for**                              | Using B for A                                                | Library functions are added to a type                        |
-| **Abstract contracts**                     | `contract A { function u() public; } `                       |                                                              |
-| **Metadata**                               |                                                              | ABI, version, etc.                                           |
-| **Super**                                  | `super.method()`                                             |                                                              |
-| **Return**                                 |                                                              | |
-| **Multiple Inheritance and linearization** |                                                              |                                                              |
-| **Arguments for base constructors**        |                                                              |                                                              |
-| **Returning multiple values**              | `return (n1, n2, n3);`                                       |                                                              |
+| **FEATURE**                                | **USAGE**                                                    | **NOTES**                                 |
+| ------------------------------------------ | ------------------------------------------------------------ | ----------------------------------------- |
+| **Pragmas**                                | Pragma...                                                    |                                           |
+| **Version**                                | pragma solidity >=0.5.0 <0.6.0                               |                                           |
+| **Experimental**                           | pragma experimental ...                                      |                                           |
+| **ABIEncoderV2**                           | pragma experimental ABIEncoderV2                             |                                           |
+| **Import**                                 | `import "filename" ``import * as symbolName from "filename" ``import {symbol1 as alias, symbol2} from "filename"` | Additional test are in the pipeline       |
+| **Comments**                               | //, /* */                                                    |                                           |
+| **Boolean:**                               | bool, true, false                                            |                                           |
+| **operators**                              | !, &&, II, ==, !=                                            |                                           |
+| **lazy evaluation**                        | `f(x) == true ⇒ (f(x) || g(y)) == true`                      |                                           |
+| **integers**                               | `intN/uintN`, `N=8..256`                                     |                                           |
+| **comparisons**                            | `<=`, `<`,` ==`,` !=`,` >=`,` >`                             |                                           |
+| **Bit Operators:**                         | `&`, `|`,` ^`,` ~`                                           |                                           |
+| **shift**                                  | `<<`, `>>`                                                   |                                           |
+| **base arithmetic**                        | `+`, `-`, `unary -`, `*`                                     |                                           |
+| **division**                               | `/`                                                          |                                           |
+| **modulo**                                 | `%`                                                          |                                           |
+| **exponent**                               | `**`                                                         |                                           |
+| **Ternary operator**                       | `b = true ? 2 : 3;`                                          |                                           |
+| **Enums**                                  | `enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill }` |                                           |
+| **Return variables**                       |                                                              |                                           |
+| **Structs**                                | `struct`                                                     |                                           |
+| **Mapping types**                          | `mapping`                                                    |                                           |
+| **Integer types**                          |                                                              |                                           |
+| **Conversions between Elementary Types**   | Implicit conversions	Explicit conversions                 |                                           |
+| **Order of Evaluation of Expressions**     | not specified, lazy bools                                    |                                           |
+| **Assignments for arrays and structs**     |                                                              |                                           |
+| **Assignments in expressions**             |                                                              |                                           |
+| **Member constants**                       |                                                              |                                           |
+| **Default member values**                  |                                                              |                                           |
+| **View functions**                         | `function f(uint a) public view returns (uint)`              |                                           |
+| **Pure functions**                         | `function f(uint a) public pure returns (uint)`              |                                           |
+| **Now**                                    |                                                              |                                           |
+| **Arrays in events**                       |                                                              |                                           |
+| **Return arrays in public methods**        |                                                              |                                           |
+| **Nested structure encoding**              |                                                              |                                           |
+| **Contract types**                         | `My contractC`                                               |                                           |
+| **Using for**                              | Using B for A                                                | Library functions are added to a type     |
+| **Abstract contracts**                     | `contract A { function u() public; } `                       |                                           |
+| **Metadata**                               |                                                              | ABI, version, etc.                        |
+| **Super**                                  | `super.method()`                                             |                                           |
+| **Return**                                 |                                                              |                                           |
+| **Multiple Inheritance and linearization** |                                                              |                                           |
+| **Arguments for base constructors**        |                                                              |                                           |
+| **Returning multiple values**              | `return (n1, n2, n3);`                                       |                                           |
+| **Function modifiers**                     |                                                              | Supported without parameters and prefixes |
 
 ## Partially  Supported/Planned
 
@@ -86,7 +87,6 @@ Note that implementation priority depends on the demand for the feature, its rel
 | **Rational literals**                                     | `.1, 2e-10`                                                  | Planned                                                      |
 | **Hexadecimal literals**                                  | `hex"001122FF"`                                              | Currently tested                                             |
 | **Interfaces**                                            | `interface Token { struct ... function ... }`                | Only pure interfaces are supported                           |
-| **Function Modifiers**                                    |                                                              | Unsupported now, planned to support.                         |
 | **Function calls**                                        |                                                              | The feature group is partially supported                     |
 | **internal function calls**                               |                                                              | Supported                                                    |
 | **external function calls**                               |                                                              | Supported                                                    |

@@ -72,3 +72,44 @@ test('testSetCode', async () => {
 });
 ```
 
+A `setcode_package` consists of the ABI version and imageBase64 (the compiled contract code as a TVC file). The package is sent in two parts : first package deploys the contract, second one changes the code to a newer version. Then we use `getversion` to check that code has been replaced.
+
+```javascript
+const setCode1_package: TONContractPackage = {
+    abi: {
+        "ABI version": 1,
+        "functions": [
+            {
+                "name": "main",
+                "inputs": [
+                    {"name":"newcode","type":"cell"}
+                ],
+                "outputs": [
+                    {"name":"value0","type":"uint256"}
+                ]
+            },
+            {
+                "name": "getVersion",
+                "inputs": [
+                ],
+                "outputs": [
+                    {"name":"value0","type":"uint256"}
+                ]
+            },
+            {
+                "name": "constructor",
+                "inputs": [
+                ],
+                "outputs": [
+                ]
+            }
+        ],
+        "events": [
+        ],
+        "data": [
+        ]
+    } ,
+    imageBase64: //TVC file here
+}
+```
+

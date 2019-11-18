@@ -30,15 +30,9 @@ async ed25519Keypair(): Promise<TONKeyPairData> {
     }
 ```
 
-TON Labs implementation of the deployment logic includes the so-called constructor message. The concept is borrowed from Solidity. 
+TON Labs implementation of the deployment logic includes the so-called constructor message defined by TON specification. Constructor message parameters (in particular, keys) are used in address generation. In the current implementation you cannot deploy a contract with zero balance. So, before deploying the contract code you already have to know its address and send some (test) Grams to it. 
 
-In TON Labs ecosystem the constructor message is created at deploy (within the same function) and there is no need to send it separately.
-
-Note that if the constructor message is sent at deploy via the SDK, constructor parameters   (in particular, keys, the ABI and some other data) are used in address generation. If you create a separate constructor message after deploy, you can still change some initial state parameters  (depends on the realization), but you cannot change the address (which is logical, given that the contract is already deployed).
-
-If you use TVM Linker utility to deploy a contract, the address is not changed.
-
-**Note**: Constructor message can only be sent once.
+For more details on SDK deploy methods, refer to Contract Interaction document covering key API functions.
 
 **Linker deploy command:**
 
@@ -46,7 +40,7 @@ If you use TVM Linker utility to deploy a contract, the address is not changed.
 tvm_linker message <contract-address> [--init] [--data] [-w]
 ```
 
-The command above creates a constructor message at deploy, but you can separate these steps by calling `tvm_linker message [--init]` for deploy and tvm_linker message ` --data XXXX...` for a constructor message. XXXX stands for the message body in hex.
+For more details on TVM linker, see the TVM Linker CLI guide.
 
 **SDK Deploy Function Implementations in Rust and JavaScript**
 
@@ -105,7 +99,7 @@ class myContract {
     }
 ```
 
-The public key is then stored in the contract persistent memory and the private key is stored at the client (user) side (e.g., in a hardwallet) and never leaves the storage point.
+The public key is then stored in the contract persistent memory and the private key is stored at the client (user) side (e.g., in a hardware wallet) and never leaves the storage point.
 
 The private key is used to sign messages, the public key  (`tvm_sender_pubkey()`) is used in external messages to verify the signature.
 
@@ -124,6 +118,8 @@ Message signing is optional. Identification is based on the sender address.
 ## External Message 
 
 For external messages, `msg.sender` is always empty, while `tvm_sender_pubkey()` is mandatory for identification and validation; it contains the sender public key.
+
+Signature is verified by the contract runtime.
 
 ## Signing Messages
 

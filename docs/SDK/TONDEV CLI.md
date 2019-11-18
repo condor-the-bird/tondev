@@ -1,232 +1,135 @@
-# TONDEV CLI
+# **tondev CLI**
 
-## Install and Run
+The tondev command line tool helps managing containers to build Solidity contracts and run them in a TON node.
 
-To install, call:
+## Initialization
 
-```shell
-npm install -g ton-dev-cli   
-```
+In order to get started, run:
 
-To run, call:
+    tondev setup
 
-```shell
-tondev command ...args
-```
+The command triggers Docker image pull and launches the corresponding containers:
 
-## Key Сommands
+- `tonlabs-compilers-<local user name>` that is used for building solidity contracts
 
-- `help`: displays the complete list of available commands;
-- `setup`: installs all required TON Labs software and start services;
-- `start`: starts Node SE and Compiler containers;
-- `sol files` *[* -l js*]*: build the contract .tvc and .abi.json files from Solidity files 
+- `tonlabs-local-node-<local user name>` is a local TON node container runs compiled contracts.
 
-> Optionally you can generate a JavaScript file with contract ABI and TVC encoded with base64
+You can specify additional options to customize the installation:
 
-```shell
-tondev setup 
-tondev sol filename 
-tondev sol filename -l js   
-```
+- -n, --networks
 
-- `clean`: stops and removes all containers and images related to Node SE and its components;
-- `info` gets the current Node SE state. The command shows:
+- -m, --compilers
 
-1. the list of images and docker containers related to Node SE. 
-2. current container state
-3. list of versions available at docker hub. 
-4. container settings
-5. the version in use
+## **Managing containers**
 
-- `use <version>`: allows switching between containers, e.g.: `tondev use 0.11.0`. By default` :latest` is used.
-- `restart`restarts the containers;
-- `recreate` used to recreate containers;
-- When called without parameters, `tondev` is similar to the` info` command.
+To start and stop both containers, use the `tondev start` and `tondev stop` commands. Use these commands to save machine resources.
 
-​      
+`restart`  restarts the installed containers.
 
-<iframe class="no-border max-full-width full-height flex-grow" src="https://www.youtube.com/embed/Jsix7U0oZHI?autohide=1&amp;showinfo=0&amp;rel=0&amp;fs=0" style="max-width: 100%; height: 346px; -webkit-box-flex: 1; flex-grow: 1; border: none;"></iframe>
+`recreate` removes containers and re-creates them again. Start tondev utility again after. 
 
-## Reference List
+-n, --networks [names] applies the command to specified network[s] (use comma to separate)
 
-```html
-Usage: tondev [options] [command]
+-m, --compilers applies the command to the compiler kit container
 
-TON Labs development tools
+## Getting environment information
 
-Options:
-  -V, --version               output the version number
-  -a, --available             show available versions
-  -h, --help                  output usage information
+`tondev`  with the following options:
 
-Commands:
-  info [options]              Show summary about dev environment
-  setup [options]             Setup dev environment
-  start [options]             Start dev containers
-  stop [options]              Stop dev containers
-  restart [options]           Restart dev containers
-  recreate [options]          Recreate dev containers
-  clean [options]             Remove docker containers and images related to TON Dev
-  use [options] <version>     Use specified version for containers
-  set [options] [network...]  Set network[s] options
-  add [network...]            Add network[s]
-  remove|rm [network...]      Remove network[s]
-  sol [options] [files...]    Build solidity contract[s]
+`tondev -a` - available versions of the compiler kit and node Docker containers
 
--------------- 
-Commands help:
---------------
+`tondev -V` - version of tondev itself
 
+`tondev info`
 
-Command: info
+## **Building local nodes network**
 
- Usage: tondev info [options]
+To test your contract at multiple nodes, create a network. A network consists of multiple inter-connected local nodes. 
 
-Show summary about dev environment
+A single run of `tondev setup` creates a single local node listening to
 
-Options:
-  -a, --available  show available versions
-  -h, --help       output usage information
+port 80.
 
+In order to add another node:
 
+    tondev add anotherNode
+    
+    tondev set --port 81 anotherNode
 
-Command: setup
+`tondev add` adds another node to network config. By default it uses port 80.
 
- Usage: tondev setup [options]
+Given that multiple nodes cannot use the same port, reset the port with `tondev set -p`.
 
-Setup dev environment
+> Note: You can add multiple nodes simultaneously by separating names with a space.
 
-Options:
-  -n, --networks [names]  apply command to specified network[s] (names must be separated with comma)
-  -m, --compilers         apply command to the compilers container
-  -h, --help              output usage information
+## **Exposing local node ArangoDB**
 
+It is useful to expose ArangoDB built in each local node. To do it, run:
 
+    tondev set --db-port 8881 anotherNode
 
-Command: start
+Instead of the port number you can specify "bind" to use the default Arango DB
 
- Usage: tondev start [options]
+port or "unbind" to stop exposing the port.
 
-Start dev containers
+## **Renaming local node**
 
-Options:
-  -n, --networks [names]  apply command to specified network[s] (names must be separated with comma)
-  -m, --compilers         apply command to the compilers container
-  -h, --help              output usage information
+In order to rename a node, run:
 
+    tondev set --new-name newName oldName
 
+To remove a node run `tondev remove anotherNode` or `tondev rm anotherNode`.
 
-Command: stop
+## **Compiling Solidity contracts**
 
- Usage: tondev stop [options]
+Solidity contracts are compiled with the following command:
 
-Stop dev containers
+    tondev sol [options] [files...]
 
-Options:
-  -n, --networks [names]  apply command to specified network[s] (names must be separated with comma)
-  -m, --compilers         apply command to the compilers container
-  -h, --help              output usage information
+The following options are available:
+-l, --client-languages <languages>  to generate client code for languages: "js", "rs" (use comma to separate several languages)
+-L, --client-level <client-level> client code level: "run" to run only, "deploy" to run and deploy (includes an imageBase64 of a binary contract)
 
+## **Switching between compiler versions**
 
+tondev CLI allows switching between compiler versions; run:
 
-Command: restart
+    tondev use 0.14.0
 
- Usage: tondev restart [options]
+The command pulls a relevant Docker container. You can also run:
 
-Restart dev containers
+use [options] <version> to use specified version for containers
 
-Options:
-  -n, --networks [names]  apply command to specified network[s] (names must be separated with comma)
-  -m, --compilers         apply command to the compilers container
-  -h, --help              output usage information
+## **Removing containers**
 
+In order to remove Docker containers and images related to TON Dev, run:
 
+    tondev clean
 
-Command: recreate
+The following options are available to customize the command:
 
- Usage: tondev recreate [options]
+-n, --networks clean local node docker containers and images
 
-Recreate dev containers
+-m, --compilers clean compilers docker containers and images
 
-Options:
-  -n, --networks [names]  apply command to specified network[s] (names must be separated with comma)
-  -m, --compilers         apply command to the compilers container
-  -h, --help              output usage information
+-c, --containers clean containers only (default: false) 
 
+If no option is specified, the command removes all TON Dev docker containers and images.
 
+## Key Pair Generation
 
-Command: clean
+ command: keys 
 
- Usage: tondev clean [options]
+Usage: tondev keys|k [options] 
 
-Remove docker containers and images related to TON Dev
+Generate random Key Pair 
 
-Options:
-  -n, --networks   clean compilers docker containers and images
-  -m, --compilers  clean local node docker containers and images
-  -h, --help       output usage information
+Options: -h, --help output usage information 
 
+## Scanning the network
 
+ command: tondev spy [options] [networks...] 
 
-Command: use
+Run network scanner 
 
- Usage: tondev use [options] <version>
-
-Use specified version for containers
-
-Options:
-  -n, --networks [names]  apply command to specified network[s] (names must be separated with comma)
-  -m, --compilers         apply command to the compilers container
-  -h, --help              output usage information
-
-
-
-Command: set
-
- Usage: tondev set [options] [network...]
-
-Set network[s] options
-
-Options:
-  -p, --port <port>        host port to bound local node
-  -d, --db-port <binding>  host port to bound local nodes Arango DB ("bind" to use default Arango DB port, "unbind" to unbind Arango DB port)
-  -n, --new-name <name>    set new name for network
-  -h, --help               output usage information
-
-
-
-Command: add
-
- Usage: tondev add [options] [network...]
-
-Add network[s]
-
-Options:
-  -h, --help  output usage information
-
-
-
-Command: remove
-
- Usage: tondev remove|rm [options] [network...]
-
-Remove network[s]
-
-Options:
-  -h, --help  output usage information
-
-
-
-Command: sol
-
- Usage: tondev sol [options] [files...]
-
-Build solidity contract[s]
-
-Options:
-  -l, --client-languages <languages>  generate client code for languages: "js", "rs" (multiple languages must be separated with comma)
-  -L, --client-level <client-level>   client code level: "run" to run only, "deploy" to run and deploy (includes an imageBase64 of binary contract)
-  -h, --help                          output usage information
-```
-
-
+Options: -h, --help output usage information 
