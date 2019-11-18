@@ -57,7 +57,7 @@ nav:
        - 'Smart Contracts': 'FAQ/Smart Contracts.md' 
        - 'TON and TVM': 'FAQ/TON and TVM.md'    
        - 'SDK and Integration': 'FAQ/SDK and Integration.md'
-       - Glossary: 'Glossary.md' 
+       - 'Glossary': 'Glossary.md' 
     - Changelog:
            - 'Archive 2019': 'Release Notes Archive.md'
 
