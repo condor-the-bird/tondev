@@ -126,10 +126,3 @@ Generate random Key Pair
 
 Options: -h, --help output usage information 
 
-## Scanning the network
-
- command: tondev spy [options] [networks...] 
-
-Run network scanner 
-
-Options: -h, --help output usage information 

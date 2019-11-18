@@ -35,7 +35,9 @@ contract HelloTON {
 }
 ```
 
-​      
+> ​    **Note**:  If you do not use the tvm_accept method, use runlocal method to call all functions that do not change the contract state.
+
+
 
 <iframe class="no-border max-full-width full-height flex-grow" src="https://www.youtube.com/embed/TyMOi1kLz20?autohide=1&amp;showinfo=0&amp;rel=0&amp;fs=0" style="max-width: 100%; height: 346px; -webkit-box-flex: 1; flex-grow: 1; border: none;"></iframe>
 2. Call `cd hello` to navigate to the new folder.
