@@ -52,14 +52,14 @@ nav:
         - 'Lite Client Guide': 'TON Blockchain/TON Specifications/Lite Client Guide.md'
         
 
-    -FAQ:
+    - FAQ:
        - 'Solidity Compiler': 'FAQ/Solidity Compiler.md' 
        - 'Smart Contracts': 'FAQ/Smart Contracts.md' 
        - 'TON and TVM': 'FAQ/TON and TVM.md'    
        - 'SDK and Integration': 'FAQ/SDK and Integration.md'
        - 'Glossary': 'Glossary.md' 
     - Changelog:
-           - 'Archive 2019': 'Release Notes Archive.md'
+        - 'Archive 2019': 'Release Notes Archive.md'
 
 theme:
     name: mkdocs
