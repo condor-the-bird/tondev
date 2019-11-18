@@ -9,14 +9,28 @@ First and foremost, create a local folder for all your test projects. Note that 
 1. Create "hello" folder and place the "hello.sol" contract source code into it:
 
 ```javascript
-pragma solidity >=0.5.0 <0.6.0;
+pragma solidity ^0.5.4;
+
 contract HelloTON {
-    uint32 deployTime;
-  constructor() public {
-        deployTime = uint32(now);
+    uint32 timestamp;
+
+    modifier alwaysAccept {
+      tvm_accept();
+      _;
+  }
+
+    function tvm_accept() private pure {}
+
+    constructor() public {
+        timestamp = uint32(now);
     }
-    function sayHello() public view returns (uint32) {
-        return deployTime;
+
+    function touch() external alwaysAccept {
+        timestamp = uint32(now);
+    }
+
+    function sayHello() external view returns (uint32) {
+        return timestamp;
     }
 }
 ```
