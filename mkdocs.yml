@@ -33,7 +33,7 @@ nav:
             - 'Troubleshooting': 'SDK/Auxiliaries/Troubleshooting.md'
             - 'Installing Ubuntu VM': 'SDK/Auxiliaries/Installing Ubuntu VM.md'
     
-    - 'Developing Contracts':
+    - Developing Contracts:
         - 'ABI Specification V1': 'Smart Contract Lore/ABI Specification New.md'
         - 'ABI Specification V0': 'Smart Contract Lore/ABI Specification.md'
         - 'Key Generation and Use': 'Smart Contract Lore/Key Generation and Use.md'
@@ -41,7 +41,7 @@ nav:
         - 'Modifying Contracts': 'Smart Contract Lore/TVM_setcode.md'
         - 'Managing Gas': 'Smart Contract Lore/TVM_accept.md'
         
-    - 'Gas Specs':
+    - Gas Specs:
         - 'Gas Calculation and Storage': Gas Specs/Gas Calculation Basics.md'
         - 'Transaction Fee Calculation': 'Gas Specs/Transaction Fee Calculation.md'
     - TON:
