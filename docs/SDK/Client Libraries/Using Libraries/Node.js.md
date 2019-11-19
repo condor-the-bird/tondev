@@ -149,7 +149,7 @@ Hello TON Done
 
 Before a contract is deployed, it has to be defined in your node.js application. The necessary elements are: a compatible TVM code and an ABI structure. Both elements were obtained at the compilation stage before in the `helloPackage.js`file.
 
-> **Tip**: For more details on the ABI, see the [specification](https://docs.ton.dev/86757ecb2/p/70c253).
+> **Tip**: For more details on the ABI, see the Specification.
 
 For deployment, you also have to take the following steps:
 
