@@ -35,7 +35,9 @@ contract HelloTON {
 }
 ```
 
-​      
+> ​    **Note**:  If you do not use the tvm_accept method, use runLocal method to call all functions that do not change the contract state.
+
+
 
 <iframe class="no-border max-full-width full-height flex-grow" src="https://www.youtube.com/embed/TyMOi1kLz20?autohide=1&amp;showinfo=0&amp;rel=0&amp;fs=0" style="max-width: 100%; height: 346px; -webkit-box-flex: 1; flex-grow: 1; border: none;"></iframe>
 2. Call `cd hello` to navigate to the new folder.
@@ -147,7 +149,7 @@ Hello TON Done
 
 Before a contract is deployed, it has to be defined in your node.js application. The necessary elements are: a compatible TVM code and an ABI structure. Both elements were obtained at the compilation stage before in the `helloPackage.js`file.
 
-> **Tip**: For more details on the ABI, see the [specification](https://docs.ton.dev/86757ecb2/p/70c253).
+> **Tip**: For more details on the ABI, see the Specification.
 
 For deployment, you also have to take the following steps:
 
