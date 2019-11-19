@@ -24,6 +24,6 @@
 
 **A**: The address of a Solidity smart-contract for TON is deterministic and is computed prior to its deployment. Full address of the contract consists of a 32-bit ID of a workchain the contract is being deployed to and of the 256-bit internal address (or account identifier) inside the chosen workchain.
 
-The internal address is a representative hash of the contract initial state. The contract Initial state consists of the contract code serialized according to the [TON blockchain specification](/TON Blockchain/TON Specifications/TON Blockchain), section 5.3.10, and its data.
+The internal address is a representative hash of the contract initial state. The contract Initial state consists of the contract code serialized according to the [TON blockchain specification](../../TON Blockchain/TON Specifications/TON Blockchain), section 5.3.10, and its data.
 
-Hash computation principles: the hash function applied to the relevant hash code computation is called "representation hash". Its detailed description is available in the [TON blockchain specification](/TON Blockchain/TON Specifications/TON Blockchain), section 1.1.8. Essentially, the representation hash is sha256 function recursively applied to the storage cell of its argument.
+Hash computation principles: the hash function applied to the relevant hash code computation is called "representation hash". Its detailed description is available in the [TON blockchain specification](../../TON Blockchain/TON Specifications/TON Blockchain), section 1.1.8. Essentially, the representation hash is sha256 function recursively applied to the storage cell of its argument.

@@ -4,8 +4,6 @@
 
 [SDK](SDK/Overview/)
 
-[Compilers](Compilers/About)
-
 ## Contract Developer Guides 
 
 ### With Solidity Compiler

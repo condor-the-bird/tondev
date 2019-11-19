@@ -25,7 +25,7 @@ With the SDK compiler you can:
 - obtain TVM-ready code from Solidity sources.
 - obtain TVM-ready code from our LLVM-based compiler that can potentially take source code in various general purpose languages. Now we have an implementation of the C language.
 
-The [Toolchain documentation](/Compilers/About) contains all information on TON Labs Toolchain.
+The Toolchain documentation contains all information on TON Labs Toolchain.
 
 The Compiler Kit is shipped as a Docker container with pre-configured tools ready to work.
 
