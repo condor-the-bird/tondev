@@ -35,7 +35,7 @@ contract HelloTON {
 }
 ```
 
-> ​    **Note**:  If you do not use the tvm_accept method, use runlocal method to call all functions that do not change the contract state.
+> ​    **Note**:  If you do not use the tvm_accept method, use runLocal method to call all functions that do not change the contract state.
 
 
 
